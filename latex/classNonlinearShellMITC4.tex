@@ -1,0 +1,361 @@
+\doxysection{Nonlinear\+Shell\+MITC4 Class Reference}
+\hypertarget{classNonlinearShellMITC4}{}\label{classNonlinearShellMITC4}\index{NonlinearShellMITC4@{NonlinearShellMITC4}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classNonlinearShellMITC4_a9bb385c8db54b6399fe64834ea7cc0c3}{Nonlinear\+Shell\+MITC4}} (string path\+\_\+in, vector$<$ vector$<$ double $>$ $>$ \&xyz\+\_\+in, vector$<$ vector$<$ double $>$ $>$ \&vnor\+\_\+in, vector$<$ double $>$ \&thick\+\_\+in, vector$<$ vector$<$ double $>$ $>$ \&xlocal\+\_\+in, vector$<$ vector$<$ double $>$ $>$ \&ylocal\+\_\+in, vector$<$ double $>$ \&zet\+GPcoord\+\_\+in, vector$<$ double $>$ \&zet\+GPweigth\+\_\+in, vector$<$ double $>$ \&stresses\+\_\+in, vector$<$ double $>$ \&DMatrix\+\_\+in)
+\begin{DoxyCompactList}\small\item\em Constructor for a new Nonlinear Shell MITC4 object. This constructor can be used for the stiffness matrix and for the internal force vector. ~\newline
+ The procedure for calculculating the initial local nodal coordinate system (V1, V2, V3) is the following\+: ~\newline
+ \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classNonlinearShellMITC4_ad5f37a2899ce1f35b1bc02ee065ae3cd}{Nonlinear\+Shell\+MITC4}} (string path\+\_\+in, vector$<$ vector$<$ double $>$ $>$ \&xyz\+\_\+in, vector$<$ vector$<$ double $>$ $>$ \&vnor\+\_\+in, vector$<$ double $>$ \&thick\+\_\+in, vector$<$ vector$<$ double $>$ $>$ \&xlocal\+\_\+in, vector$<$ vector$<$ double $>$ $>$ \&ylocal\+\_\+in, vector$<$ double $>$ \&zet\+GPcoord\+\_\+in, vector$<$ double $>$ \&Displacements\+\_\+in, vector$<$ double $>$ \&DMatrix\+\_\+in)
+\begin{DoxyCompactList}\small\item\em Constructor for a new Nonlinear Shell MITC4 object. This constructor can be used for the strains and stresses. ~\newline
+ The procedure for calculculating the initial local nodal coordinate system (V1, V2, V3) is the following\+: ~\newline
+ \end{DoxyCompactList}\item 
+\Hypertarget{classNonlinearShellMITC4_a62d9a97c36b9aab0d28b996fe85b8e6e}\label{classNonlinearShellMITC4_a62d9a97c36b9aab0d28b996fe85b8e6e} 
+size\+\_\+t {\bfseries get\+\_\+\+Rows} ()
+\item 
+\Hypertarget{classNonlinearShellMITC4_af3b83cc9e1c9c2149d3a6a0ce5ad9073}\label{classNonlinearShellMITC4_af3b83cc9e1c9c2149d3a6a0ce5ad9073} 
+size\+\_\+t {\bfseries get\+\_\+\+Cols} ()
+\item 
+void \mbox{\hyperlink{classNonlinearShellMITC4_a83f29417bd0c15ef9c2b9f05c33b4af3}{get\+\_\+\+BMatrix}} (int igaus\+\_\+in, int izet\+\_\+in, double zet\+\_\+in, vector$<$ double $>$ \texorpdfstring{$\ast$}{*}BMat\+\_\+out)
+\begin{DoxyCompactList}\small\item\em Calculates the Strain-\/\+Displacement matrix (B-\/matrix) at the Gauss point defined by "{}izet\+\_\+in"{} and "{}igaus\+\_\+in"{}. \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} Strains = B-\/matrix . displ \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classNonlinearShellMITC4_ac079d2b6d9bd5a5af7a7da33811000d3}{get\+\_\+\+BMatrix\+\_\+\+Transposed}} (vector$<$ double $>$ \texorpdfstring{$\ast$}{*}BMatT)
+\begin{DoxyCompactList}\small\item\em Get the Strain-\/\+Displacement matrix transposed (B-\/matrix)\texorpdfstring{$^\wedge$}{\string^}T at the Gauss point defined by "{}izet\+\_\+in"{} and "{}igaus\+\_\+in"{}. ~\newline
+ warning\+: the method "{}get\+\_\+\+BMatrix"{} must be called first to construct the B-\/\+Matrix at the corresponding Gauss point. Only then, this method can be called for the transposed Strain-\/\+Displacement matrix. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classNonlinearShellMITC4_acc4a67f21b10bc267c05707aef78c0d4}{set\+\_\+\+Local\+Axes\+\_\+\+All}} (vector$<$ double $>$ axesgp\+\_\+in)
+\begin{DoxyCompactList}\small\item\em Set the local axes at the Gauss integration points of the element. If the local axes are not setted then the API will calculate the local axes at the GPs. If the MITC4 shell is to be used for composites or planar plastic anisotropy then the local axes at the GPs should be setted after the instantiation of the shell MITC4 class. \end{DoxyCompactList}\item 
+vector$<$ double $>$ \mbox{\hyperlink{classNonlinearShellMITC4_a93a34de44f138181e1dbf4e876570cfe}{get\+\_\+\+Local\+Axes\+\_\+\+All}} ()
+\begin{DoxyCompactList}\small\item\em Get the local axes at all integration points of the shell element. The return is a vector with the axes at all GPs which is stored in the same order as explained in the setter -\/ "{}set\+\_\+\+Local\+Axes\+\_\+\+All"{}. \end{DoxyCompactList}\item 
+\Hypertarget{classNonlinearShellMITC4_ae62ea52a3008714c27f34f7e2aa2734a}\label{classNonlinearShellMITC4_ae62ea52a3008714c27f34f7e2aa2734a} 
+void {\bfseries Calculate\+\_\+\+Local\+\_\+\+Axes\+\_\+\+All\+\_\+\+GP} ()
+\begin{DoxyCompactList}\small\item\em calculates the local axes at each in-\/plane Gauss point (located at the mid-\/surface (zet = 0.\+0) of the shell). The axes at zet = 0.\+0 are then copied to all other Gauss points of the MITC4 shell element. \end{DoxyCompactList}\item 
+vector$<$ double $>$ \mbox{\hyperlink{classNonlinearShellMITC4_aeff6c53a3abcd7159dded289c9b322a4}{Calculate\+\_\+\+Stiffness\+MITC4}} ()
+\begin{DoxyCompactList}\small\item\em Calculates the linear stiffness matrix "{}\+Stiffness\+\_\+"{} of the MITC4 shell element. The calculation of the stiffness matrix was left on a separated method because we might want to instantiate this class for other features than the stiffness matrix and therefore we don\textquotesingle{}t need to waste CPU time of calculating the stiffness matrix if it is not needed. \end{DoxyCompactList}\item 
+vector$<$ double $>$ \mbox{\hyperlink{classNonlinearShellMITC4_afbd146b83a40e33e411c14595fa2b220}{get\+\_\+\+Stiffness\+MITC4}} ()
+\begin{DoxyCompactList}\small\item\em Get the stiffness matrix "{}\+Stiffness\+\_\+"{} in vector form. This is a getter only for the stiffness matrix, it does not calculate the stiffness matrix. \end{DoxyCompactList}\item 
+vector$<$ double $>$ \mbox{\hyperlink{classNonlinearShellMITC4_a1a5c87105e79ef20cc5d6f4b45563ca4}{get\+\_\+\+Stiffness\+\_\+\+Initial\+Stress}} ()
+\begin{DoxyCompactList}\small\item\em Calculates the Initial Stress Stiffness matrix (or geometric stiffness) for the MITC4 shell element. This stiffness is fundamental for nonlinear continuum analysis. \end{DoxyCompactList}\item 
+vector$<$ double $>$ \mbox{\hyperlink{classNonlinearShellMITC4_a9e32e97ca3fcfeee964361c147c5ccee}{Calculate\+\_\+\+Internal\+\_\+\+Forces}} ()
+\begin{DoxyCompactList}\small\item\em Calculates the Internal Force vector "{}\+Internal\+\_\+\+Force\+\_\+"{} for the MITC4 shell element. The stresses must be passed first to the instance of this element through its constructor. Note that the right constructor must be used. \end{DoxyCompactList}\item 
+vector$<$ double $>$ \mbox{\hyperlink{classNonlinearShellMITC4_a29c6ada86b7524b0f6a5d49c27462661}{get\+\_\+\+Internal\+\_\+\+Forces}} ()
+\begin{DoxyCompactList}\small\item\em Getter for the Internal Force vector "{}\+Internal\+\_\+\+Force\+\_\+"{}. \end{DoxyCompactList}\item 
+\Hypertarget{classNonlinearShellMITC4_af6d8c272935871606caaf2a235a29031}\label{classNonlinearShellMITC4_af6d8c272935871606caaf2a235a29031} 
+void {\bfseries Calculate\+\_\+\+Stiffness\+\_\+\+Internal} ()
+\begin{DoxyCompactList}\small\item\em Compute the total stiffness matrix and the internal force vector. The total stiffness is the sum of the linear stiffness (Stiffness\+\_\+) and the initial-\/stress stiffness (Stiffness\+Initial\+Stress\+\_\+). ~\newline
+ From a CPU-\/efficiency perspective, in nonlinear continuum mechanics it is advantageous to compute the stiffness matrix and the internal force vector simultaneously. ~\newline
+ After calling this method, the method "{}get\+\_\+\+Stiffness\+MITC4()"{} must be called for getting the total stiffness, which is stored in the vector "{}\+Stiffness\+\_\+"{}, and the method "{}get\+\_\+\+Internal\+\_\+\+Forces()"{} for getting the internal force vector. \end{DoxyCompactList}\item 
+vector$<$ double $>$ \mbox{\hyperlink{classNonlinearShellMITC4_af207ccf1752e0f475bee7bc68e21bf5c}{get\+\_\+\+Strains\+MITC4}} ()
+\begin{DoxyCompactList}\small\item\em Get the Strains\+MITC4 object. \end{DoxyCompactList}\item 
+\Hypertarget{classNonlinearShellMITC4_a3da40e68a82b881f4bce519eccdca29d}\label{classNonlinearShellMITC4_a3da40e68a82b881f4bce519eccdca29d} 
+vector$<$ double $>$ {\bfseries get\+\_\+\+Strains\+MITC4\+\_\+\+Global} ()
+\item 
+\Hypertarget{classNonlinearShellMITC4_afcbbc5076e5f6ec04ed8c03c42d0dd61}\label{classNonlinearShellMITC4_afcbbc5076e5f6ec04ed8c03c42d0dd61} 
+void {\bfseries rotate\+\_\+\+GP\+\_\+axes} ()
+\item 
+\Hypertarget{classNonlinearShellMITC4_a4a7b8ba09d5d726028a029fa98f23b09}\label{classNonlinearShellMITC4_a4a7b8ba09d5d726028a029fa98f23b09} 
+vector$<$ double $>$ {\bfseries get\+\_\+\+Stresses\+MITC4} ()
+\item 
+\Hypertarget{classNonlinearShellMITC4_ae37282c58ce0170fd77bf730fd071251}\label{classNonlinearShellMITC4_ae37282c58ce0170fd77bf730fd071251} 
+vector$<$ double $>$ {\bfseries get\+\_\+\+Stresses\+MITC4\+\_\+\+Global} ()
+\item 
+\Hypertarget{classNonlinearShellMITC4_a63997ed773f4d901c4acad90b55a94da}\label{classNonlinearShellMITC4_a63997ed773f4d901c4acad90b55a94da} 
+void {\bfseries Jacobi} (vector$<$ vector$<$ double $>$ $>$ \&ain, vector$<$ vector$<$ double $>$ $>$ \&bin, vector$<$ double $>$ \&eigenvalues\+\_\+, vector$<$ vector$<$ double $>$ $>$ \&eigenvectors\+\_\+)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classNonlinearShellMITC4_a0b20e076bca25d85bdfc120d34698163}\label{classNonlinearShellMITC4_a0b20e076bca25d85bdfc120d34698163} 
+static string {\bfseries path} = "{}"{}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classNonlinearShellMITC4_a9bb385c8db54b6399fe64834ea7cc0c3}\label{classNonlinearShellMITC4_a9bb385c8db54b6399fe64834ea7cc0c3} 
+\index{NonlinearShellMITC4@{NonlinearShellMITC4}!NonlinearShellMITC4@{NonlinearShellMITC4}}
+\index{NonlinearShellMITC4@{NonlinearShellMITC4}!NonlinearShellMITC4@{NonlinearShellMITC4}}
+\doxysubsubsection{\texorpdfstring{NonlinearShellMITC4()}{NonlinearShellMITC4()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Nonlinear\+Shell\+MITC4\+::\+Nonlinear\+Shell\+MITC4 (\begin{DoxyParamCaption}\item[{string}]{path\+\_\+in,  }\item[{vector$<$ vector$<$ double $>$ $>$ \&}]{xyz\+\_\+in,  }\item[{vector$<$ vector$<$ double $>$ $>$ \&}]{vnor\+\_\+in,  }\item[{vector$<$ double $>$ \&}]{thick\+\_\+in,  }\item[{vector$<$ vector$<$ double $>$ $>$ \&}]{xlocal\+\_\+in,  }\item[{vector$<$ vector$<$ double $>$ $>$ \&}]{ylocal\+\_\+in,  }\item[{vector$<$ double $>$ \&}]{zet\+GPcoord\+\_\+in,  }\item[{vector$<$ double $>$ \&}]{zet\+GPweigth\+\_\+in,  }\item[{vector$<$ double $>$ \&}]{stresses\+\_\+in,  }\item[{vector$<$ double $>$ \&}]{DMatrix\+\_\+in }\end{DoxyParamCaption})}
+
+
+
+Constructor for a new Nonlinear Shell MITC4 object. This constructor can be used for the stiffness matrix and for the internal force vector. ~\newline
+ The procedure for calculculating the initial local nodal coordinate system (V1, V2, V3) is the following\+: ~\newline
+ 
+
+
+\begin{DoxyEnumerate}
+\item define a vector\+: vec1 = \{0.\+0, 1.\+0, 0.\+0\}; ~\newline
+
+\item define "{}xloc"{} as the result of the following cross-\/product\+: xloc = vec1 x V3 (V3 is the normal vector at the node); ~\newline
+
+\item if (xloc.\+empty()) \{ xloc = \{1.\+0, 0.\+0, 0.\+0\} \}; ~\newline
+
+\item V1 = xloc; ~\newline
+
+\item V2 = V3 x V1.
+\end{DoxyEnumerate}
+
+
+\begin{DoxyParams}{Parameters}
+{\em path\+\_\+in} & String with the full path to the license file. \\
+\hline
+{\em xyz\+\_\+in} & Nodal coordinates of the four shell element nodes, stored in xyz\+\_\+in\mbox{[}0\+:3\mbox{]}\mbox{[}0\+:2\mbox{]}, where each row corresponds to a node of the element and each column corresponds to the x,y, and z coordinates. \\
+\hline
+{\em vnor\+\_\+in} & Normal vector of the four shell element nodes, stored in vnor\+\_\+in\mbox{[}0\+:3\mbox{]}\mbox{[}0\+:2\mbox{]}, where each row corresponds to a node of the element and each column corresponds to the x,y, and z components of the normal vector. \\
+\hline
+{\em thick\+\_\+in} & Element\textquotesingle{}s thickness at the nodes, stored in thick\+\_\+in\mbox{[}0\+:3\mbox{]}, where each index is a node of the MITC4 shell element. \\
+\hline
+{\em xlocal\+\_\+in} & V1 local nodal vector stored in xlocal\+\_\+in\mbox{[}0\+:3\mbox{]}\mbox{[}0\+:2\mbox{]}, where each row corresponds to a node of the element and each column corresponds to the x,y, and z components of the "{}xlocal\+\_\+in"{} vector. If passed empty then it will be built inside the constructor. ~\newline
+ V1 (xlocal\+\_\+in),V2 (ylocal\+\_\+in) and V3 (vnor\+\_\+in) make a local nodal coordinate system at each node. ~\newline
+ \\
+\hline
+{\em ylocal\+\_\+in} & V2 local nodal vector stored in ylocal\+\_\+in\mbox{[}0\+:3\mbox{]}\mbox{[}0\+:2\mbox{]}, where each row corresponds to a node of the element and each column corresponds to the x,y, and z components of the "{}ylocal\+\_\+in"{} vector. If passed empty then it will be built inside the constructor. ~\newline
+ V1 (xlocal\+\_\+in),V2 (ylocal\+\_\+in) and V3 (vnor\+\_\+in) make a local nodal coordinate system at each node. \\
+\hline
+{\em zet\+GPcoord\+\_\+in} & Natural coordinates of the Gauss integration points along the thickness direction of the shell. The number of integration points along the thickness direction is defined here through the size of this vector. \\
+\hline
+{\em zet\+GPweigth\+\_\+in} & Weights of the Gauss integration points along the thickness direction of the shell. The size of this vector must be the same as the size of "{}zet\+GPcoord\+\_\+in"{}. \\
+\hline
+{\em stresses\+\_\+in} & The stresses at the integration points must be provided as input to the class constructor. These stresses are required for the computation of the internal force vector and the initial stress stiffness matrix. ~\newline
+ The stress input format is defined as follows\+: ~\newline
+ Sxx, Syy, Sxy, Sxz, Syz, i.\+e., five stress components per integration point. The stresses are stored in the "{}stresses\+\_\+"{} vector, ordered by integration points through the thickness in a bottom-\/to-\/top direction, from zet = -\/1.\+0 to zet = +1.\+0. ~\newline
+ For example, with two integration points through the thickness, zet1 = -\/1.\+0 / sqrt(3.\+0) and zet2 = +1.\+0 / sqrt(3.\+0), the ordering in stresses\+\_\+ is\+: ~\newline
+ \mbox{[}Sxx\+\_\+\+I\texorpdfstring{$^\wedge$}{\string^}zet1, Syy\+\_\+\+I\texorpdfstring{$^\wedge$}{\string^}zet1, Sxy\+\_\+\+I\texorpdfstring{$^\wedge$}{\string^}zet1, Sxz\+\_\+\+I\texorpdfstring{$^\wedge$}{\string^}zet1, Syz\+\_\+\+I\texorpdfstring{$^\wedge$}{\string^}zet1,...,Sxx\+\_\+\+IV\texorpdfstring{$^\wedge$}{\string^}zet1, Syy\+\_\+\+IV\texorpdfstring{$^\wedge$}{\string^}zet1, Sxy\+\_\+\+IV\texorpdfstring{$^\wedge$}{\string^}zet1, Sxz\+\_\+\+IV\texorpdfstring{$^\wedge$}{\string^}zet1, Syz\+\_\+\+IV\texorpdfstring{$^\wedge$}{\string^}zet1, ~\newline
+ Sxx\+\_\+\+I\texorpdfstring{$^\wedge$}{\string^}zet2, Syy\+\_\+\+I\texorpdfstring{$^\wedge$}{\string^}zet2, Sxy\+\_\+\+I\texorpdfstring{$^\wedge$}{\string^}zet2, Sxz\+\_\+\+I\texorpdfstring{$^\wedge$}{\string^}zet2, Syz\+\_\+\+I\texorpdfstring{$^\wedge$}{\string^}zet2,...,Sxx\+\_\+\+IV\texorpdfstring{$^\wedge$}{\string^}zet2, Syy\+\_\+\+IV\texorpdfstring{$^\wedge$}{\string^}zet2, Sxy\+\_\+\+IV\texorpdfstring{$^\wedge$}{\string^}zet2, Sxz\+\_\+\+IV\texorpdfstring{$^\wedge$}{\string^}zet2, Syz\+\_\+\+IV\texorpdfstring{$^\wedge$}{\string^}zet2\mbox{]} \\
+\hline
+{\em DMatrix\+\_\+in} & Plane stress constitutive matrix, stored in vector form with size = 25. The "{}\+DMatrix\+\_\+in"{} vector must contain the 5x5 constitutive matrix for all integration points of the shell element. The procedure to construct this vector is the following\+: ~\newline
+
+\begin{DoxyEnumerate}
+\item Loop in the integration points along thickness direction\+: for (int izet = 0; izet \texorpdfstring{$<$}{<} zet\+GPCoord\+\_\+in.\+size(); ++izet) \{ ~\newline
+
+\item Loop in the 4 in-\/plane GPs\+: for (int ig = 0; ig \texorpdfstring{$<$}{<} 4; ++ig) \{ ~\newline
+
+\item Insert the 5x5 D-\/matrix, stored in vector form ("{}\+DMatrix\mbox{[}0\+:24\mbox{]}"{}), into the "{}\+DMatrix\+\_\+in"{} vector\+: ~\newline
+ 3.\+1 for (int i = 0; i \texorpdfstring{$<$}{<} 25; ++i) \{ DMatrix\+\_\+all.\+push\+\_\+back(\+DMatrix\mbox{[}i\mbox{]}); \} 
+\end{DoxyEnumerate}\\
+\hline
+\end{DoxyParams}
+\Hypertarget{classNonlinearShellMITC4_ad5f37a2899ce1f35b1bc02ee065ae3cd}\label{classNonlinearShellMITC4_ad5f37a2899ce1f35b1bc02ee065ae3cd} 
+\index{NonlinearShellMITC4@{NonlinearShellMITC4}!NonlinearShellMITC4@{NonlinearShellMITC4}}
+\index{NonlinearShellMITC4@{NonlinearShellMITC4}!NonlinearShellMITC4@{NonlinearShellMITC4}}
+\doxysubsubsection{\texorpdfstring{NonlinearShellMITC4()}{NonlinearShellMITC4()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Nonlinear\+Shell\+MITC4\+::\+Nonlinear\+Shell\+MITC4 (\begin{DoxyParamCaption}\item[{string}]{path\+\_\+in,  }\item[{vector$<$ vector$<$ double $>$ $>$ \&}]{xyz\+\_\+in,  }\item[{vector$<$ vector$<$ double $>$ $>$ \&}]{vnor\+\_\+in,  }\item[{vector$<$ double $>$ \&}]{thick\+\_\+in,  }\item[{vector$<$ vector$<$ double $>$ $>$ \&}]{xlocal\+\_\+in,  }\item[{vector$<$ vector$<$ double $>$ $>$ \&}]{ylocal\+\_\+in,  }\item[{vector$<$ double $>$ \&}]{zet\+GPcoord\+\_\+in,  }\item[{vector$<$ double $>$ \&}]{Displacements\+\_\+in,  }\item[{vector$<$ double $>$ \&}]{DMatrix\+\_\+in }\end{DoxyParamCaption})}
+
+
+
+Constructor for a new Nonlinear Shell MITC4 object. This constructor can be used for the strains and stresses. ~\newline
+ The procedure for calculculating the initial local nodal coordinate system (V1, V2, V3) is the following\+: ~\newline
+ 
+
+
+\begin{DoxyEnumerate}
+\item define a vector\+: vec1 = \{0.\+0, 1.\+0, 0.\+0\}; ~\newline
+
+\item define "{}xloc"{} as the result of the following cross-\/product\+: xloc = vec1 x V3 (V3 is the normal vector at the node); ~\newline
+
+\item if (xloc.\+empty()) \{ xloc = \{1.\+0, 0.\+0, 0.\+0\} \}; ~\newline
+
+\item V1 = xloc; ~\newline
+
+\item V2 = V3 x V1.
+\end{DoxyEnumerate}
+
+
+\begin{DoxyParams}{Parameters}
+{\em path\+\_\+in} & String with the full path to the license file. \\
+\hline
+{\em xyz\+\_\+in} & Nodal coordinates of the four shell element nodes, stored in xyz\+\_\+in\mbox{[}0\+:3\mbox{]}\mbox{[}0\+:2\mbox{]}, where each row corresponds to a node of the element and each column corresponds to the x,y, and z coordinates. \\
+\hline
+{\em vnor\+\_\+in} & Normal vector of the four shell element nodes, stored in vnor\+\_\+in\mbox{[}0\+:3\mbox{]}\mbox{[}0\+:2\mbox{]}, where each row corresponds to a node of the element and each column corresponds to the x,y, and z components of the normal vector. \\
+\hline
+{\em thick\+\_\+in} & Element\textquotesingle{}s thickness at the nodes, stored in thick\+\_\+in\mbox{[}0\+:3\mbox{]}, where each index is a node of the MITC4 shell element. \\
+\hline
+{\em xlocal\+\_\+in} & V1 local nodal vector stored in xlocal\+\_\+in\mbox{[}0\+:3\mbox{]}\mbox{[}0\+:2\mbox{]}, where each row corresponds to a node of the element and each column corresponds to the x,y, and z components of the "{}xlocal\+\_\+in"{} vector. If passed empty then it will be built inside the constructor. ~\newline
+ V1 (xlocal\+\_\+in),V2 (ylocal\+\_\+in) and V3 (vnor\+\_\+in) make a local nodal coordinate system at each node. \\
+\hline
+{\em ylocal\+\_\+in} & V2 local nodal vector stored in ylocal\+\_\+in\mbox{[}0\+:3\mbox{]}\mbox{[}0\+:2\mbox{]}, where each row corresponds to a node of the element and each column corresponds to the x,y, and z components of the "{}ylocal\+\_\+in"{} vector. If passed empty then it will be built inside the constructor. ~\newline
+ V1 (xlocal\+\_\+in),V2 (ylocal\+\_\+in) and V3 (vnor\+\_\+in) make a local nodal coordinate system at each node. \\
+\hline
+{\em zet\+GPcoord\+\_\+in} & Natural coordinates of the Gauss integration points along the thickness direction of the shell. The number of integration points along the thickness direction is defined here through the size of this vector. \\
+\hline
+{\em Displacements\+\_\+in} & Displacement vector for the element. The shell MITC4 has 4 nodes and each node has 6 degrees of freedom. The size of this vector is 4x6 = 24. \\
+\hline
+{\em DMatrix\+\_\+in} & Plane stress constitutive matrix, stored in vector form with size = 25. The "{}\+DMatrix\+\_\+in"{} vector must contain the 5x5 constitutive matrix for all integration points of the shell element. The procedure to construct this vector is the following\+: ~\newline
+
+\begin{DoxyEnumerate}
+\item Loop in the integration points along thickness direction\+: for (int izet = 0; izet \texorpdfstring{$<$}{<} zet\+GPCoord\+\_\+in.\+size(); ++izet) \{ ~\newline
+
+\item Loop in the 4 in-\/plane GPs\+: for (int ig = 0; ig \texorpdfstring{$<$}{<} 4; ++ig) \{ ~\newline
+
+\item Insert the 5x5 D-\/matrix, stored in vector form ("{}\+DMatrix\mbox{[}0\+:24\mbox{]}"{}), into the "{}\+DMatrix\+\_\+in"{} vector\+: ~\newline
+ 3.\+1 for (int i = 0; i \texorpdfstring{$<$}{<} 25; ++i) \{ DMatrix\+\_\+all.\+push\+\_\+back(\+DMatrix\mbox{[}i\mbox{]}); \} 
+\end{DoxyEnumerate}\\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classNonlinearShellMITC4_a9e32e97ca3fcfeee964361c147c5ccee}\label{classNonlinearShellMITC4_a9e32e97ca3fcfeee964361c147c5ccee} 
+\index{NonlinearShellMITC4@{NonlinearShellMITC4}!Calculate\_Internal\_Forces@{Calculate\_Internal\_Forces}}
+\index{Calculate\_Internal\_Forces@{Calculate\_Internal\_Forces}!NonlinearShellMITC4@{NonlinearShellMITC4}}
+\doxysubsubsection{\texorpdfstring{Calculate\_Internal\_Forces()}{Calculate\_Internal\_Forces()}}
+{\footnotesize\ttfamily vector$<$ double $>$ Nonlinear\+Shell\+MITC4\+::\+Calculate\+\_\+\+Internal\+\_\+\+Forces (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Calculates the Internal Force vector "{}\+Internal\+\_\+\+Force\+\_\+"{} for the MITC4 shell element. The stresses must be passed first to the instance of this element through its constructor. Note that the right constructor must be used. 
+
+\begin{DoxyReturn}{Returns}
+vector$<$double$>$ The return is the Internal Force vector of size = 24. 
+\end{DoxyReturn}
+\Hypertarget{classNonlinearShellMITC4_aeff6c53a3abcd7159dded289c9b322a4}\label{classNonlinearShellMITC4_aeff6c53a3abcd7159dded289c9b322a4} 
+\index{NonlinearShellMITC4@{NonlinearShellMITC4}!Calculate\_StiffnessMITC4@{Calculate\_StiffnessMITC4}}
+\index{Calculate\_StiffnessMITC4@{Calculate\_StiffnessMITC4}!NonlinearShellMITC4@{NonlinearShellMITC4}}
+\doxysubsubsection{\texorpdfstring{Calculate\_StiffnessMITC4()}{Calculate\_StiffnessMITC4()}}
+{\footnotesize\ttfamily vector$<$ double $>$ Nonlinear\+Shell\+MITC4\+::\+Calculate\+\_\+\+Stiffness\+MITC4 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Calculates the linear stiffness matrix "{}\+Stiffness\+\_\+"{} of the MITC4 shell element. The calculation of the stiffness matrix was left on a separated method because we might want to instantiate this class for other features than the stiffness matrix and therefore we don\textquotesingle{}t need to waste CPU time of calculating the stiffness matrix if it is not needed. 
+
+\begin{DoxyReturn}{Returns}
+vector$<$double$>$ The return is the stiffness matrix "{}\+Stiffness\+\_\+"{} in vector form (of size = 576). The first elements in the output vector (Stiffness\+\_\+\mbox{[}0\+:23\mbox{]}) correspond to the first 24 elements in the first row of the 24 x 24 stiffness ~\newline
+ (stif\mbox{[}0\mbox{]}\mbox{[}0\+:23\mbox{]}), the next 24 elements in the output vector (Stiffness\+\_\+\mbox{[}24\+:47\mbox{]}) correspond to stif\mbox{[}1\mbox{]}\mbox{[}0\+:23\mbox{]}, and so on. 
+\end{DoxyReturn}
+\Hypertarget{classNonlinearShellMITC4_a83f29417bd0c15ef9c2b9f05c33b4af3}\label{classNonlinearShellMITC4_a83f29417bd0c15ef9c2b9f05c33b4af3} 
+\index{NonlinearShellMITC4@{NonlinearShellMITC4}!get\_BMatrix@{get\_BMatrix}}
+\index{get\_BMatrix@{get\_BMatrix}!NonlinearShellMITC4@{NonlinearShellMITC4}}
+\doxysubsubsection{\texorpdfstring{get\_BMatrix()}{get\_BMatrix()}}
+{\footnotesize\ttfamily void Nonlinear\+Shell\+MITC4\+::get\+\_\+\+BMatrix (\begin{DoxyParamCaption}\item[{int}]{igaus\+\_\+in,  }\item[{int}]{izet\+\_\+in,  }\item[{double}]{zet\+\_\+in,  }\item[{vector$<$ double $>$ \texorpdfstring{$\ast$}{*}}]{BMat\+\_\+out }\end{DoxyParamCaption})}
+
+
+
+Calculates the Strain-\/\+Displacement matrix (B-\/matrix) at the Gauss point defined by "{}izet\+\_\+in"{} and "{}igaus\+\_\+in"{}. \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} Strains = B-\/matrix . displ \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em igaus\+\_\+in} & Number of the in-\/plane Gauss point (0\+:3). \\
+\hline
+{\em izet\+\_\+in} & Number of the integration point along the thickness direction. \\
+\hline
+{\em zet\+\_\+in} & Natural coordinate of the integration point along the thickness direction. \\
+\hline
+{\em BMat\+\_\+out} & Strain-\/\+Displacement matrix of the MITC4 shell element in vector form and defined in the local GP coordinate system (output). This vector is organised as follows\+: ~\newline
+ BMat\+\_\+out\mbox{[}0\+:23\mbox{]} corresponds to "{}\+Strains\+\_\+xx"{}; ~\newline
+ BMat\+\_\+out\mbox{[}24\+:47\mbox{]} corresponds to "{}\+Strains\+\_\+yy"{}; ~\newline
+ BMat\+\_\+out\mbox{[}48\+:71\mbox{]} corresponds to "{}\+Strains\+\_\+xy"{}; ~\newline
+ BMat\+\_\+out\mbox{[}72\+:95\mbox{]} corresponds to "{}\+Strains\+\_\+xz"{}; ~\newline
+ BMat\+\_\+out\mbox{[}96\+:119\mbox{]} corresponds to "{}\+Strains\+\_\+yz"{}; ~\newline
+ ~\newline
+ \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classNonlinearShellMITC4_ac079d2b6d9bd5a5af7a7da33811000d3}\label{classNonlinearShellMITC4_ac079d2b6d9bd5a5af7a7da33811000d3} 
+\index{NonlinearShellMITC4@{NonlinearShellMITC4}!get\_BMatrix\_Transposed@{get\_BMatrix\_Transposed}}
+\index{get\_BMatrix\_Transposed@{get\_BMatrix\_Transposed}!NonlinearShellMITC4@{NonlinearShellMITC4}}
+\doxysubsubsection{\texorpdfstring{get\_BMatrix\_Transposed()}{get\_BMatrix\_Transposed()}}
+{\footnotesize\ttfamily void Nonlinear\+Shell\+MITC4\+::get\+\_\+\+BMatrix\+\_\+\+Transposed (\begin{DoxyParamCaption}\item[{vector$<$ double $>$ \texorpdfstring{$\ast$}{*}}]{BMatT }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the Strain-\/\+Displacement matrix transposed (B-\/matrix)\texorpdfstring{$^\wedge$}{\string^}T at the Gauss point defined by "{}izet\+\_\+in"{} and "{}igaus\+\_\+in"{}. ~\newline
+ warning\+: the method "{}get\+\_\+\+BMatrix"{} must be called first to construct the B-\/\+Matrix at the corresponding Gauss point. Only then, this method can be called for the transposed Strain-\/\+Displacement matrix. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em BMatT} & Transposed Strain-\/\+Displacement matrix stored in vector form (output). \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classNonlinearShellMITC4_a29c6ada86b7524b0f6a5d49c27462661}\label{classNonlinearShellMITC4_a29c6ada86b7524b0f6a5d49c27462661} 
+\index{NonlinearShellMITC4@{NonlinearShellMITC4}!get\_Internal\_Forces@{get\_Internal\_Forces}}
+\index{get\_Internal\_Forces@{get\_Internal\_Forces}!NonlinearShellMITC4@{NonlinearShellMITC4}}
+\doxysubsubsection{\texorpdfstring{get\_Internal\_Forces()}{get\_Internal\_Forces()}}
+{\footnotesize\ttfamily vector$<$ double $>$ Nonlinear\+Shell\+MITC4\+::get\+\_\+\+Internal\+\_\+\+Forces (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Getter for the Internal Force vector "{}\+Internal\+\_\+\+Force\+\_\+"{}. 
+
+\begin{DoxyReturn}{Returns}
+vector$<$double$>$ The return is the Internal Force vector "{}\+Internal\+\_\+\+Force\+\_\+"{} of size = 24. 
+\end{DoxyReturn}
+\Hypertarget{classNonlinearShellMITC4_a93a34de44f138181e1dbf4e876570cfe}\label{classNonlinearShellMITC4_a93a34de44f138181e1dbf4e876570cfe} 
+\index{NonlinearShellMITC4@{NonlinearShellMITC4}!get\_LocalAxes\_All@{get\_LocalAxes\_All}}
+\index{get\_LocalAxes\_All@{get\_LocalAxes\_All}!NonlinearShellMITC4@{NonlinearShellMITC4}}
+\doxysubsubsection{\texorpdfstring{get\_LocalAxes\_All()}{get\_LocalAxes\_All()}}
+{\footnotesize\ttfamily vector$<$ double $>$ Nonlinear\+Shell\+MITC4\+::get\+\_\+\+Local\+Axes\+\_\+\+All (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the local axes at all integration points of the shell element. The return is a vector with the axes at all GPs which is stored in the same order as explained in the setter -\/ "{}set\+\_\+\+Local\+Axes\+\_\+\+All"{}. 
+
+\begin{DoxyReturn}{Returns}
+vector$<$double$>$ 
+\end{DoxyReturn}
+\Hypertarget{classNonlinearShellMITC4_a1a5c87105e79ef20cc5d6f4b45563ca4}\label{classNonlinearShellMITC4_a1a5c87105e79ef20cc5d6f4b45563ca4} 
+\index{NonlinearShellMITC4@{NonlinearShellMITC4}!get\_Stiffness\_InitialStress@{get\_Stiffness\_InitialStress}}
+\index{get\_Stiffness\_InitialStress@{get\_Stiffness\_InitialStress}!NonlinearShellMITC4@{NonlinearShellMITC4}}
+\doxysubsubsection{\texorpdfstring{get\_Stiffness\_InitialStress()}{get\_Stiffness\_InitialStress()}}
+{\footnotesize\ttfamily vector$<$ double $>$ Nonlinear\+Shell\+MITC4\+::get\+\_\+\+Stiffness\+\_\+\+Initial\+Stress (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Calculates the Initial Stress Stiffness matrix (or geometric stiffness) for the MITC4 shell element. This stiffness is fundamental for nonlinear continuum analysis. 
+
+\begin{DoxyReturn}{Returns}
+vector$<$double$>$ The return is the Initial Stress Stiffness matrix, "{}\+Stiffness\+Initial\+Stress\+\_\+"{}, stored in vector form (of size = 576). The first elements in the output vector (Stiffness\+Initial\+Stress\+\_\+\mbox{[}0\+:23\mbox{]}) correspond to the first 24 elements in the first row of the 24 x 24 "{}\+Stif\+Initial\+Stress"{} ~\newline
+ (Stif\+Initial\+Stress\mbox{[}0\mbox{]}\mbox{[}0\+:23\mbox{]}), the next 24 elements in the output vector (Stiffness\+Initial\+Stress\+\_\+\mbox{[}24\+:47\mbox{]}) correspond to Stif\+Initial\+Stress\mbox{[}1\mbox{]}\mbox{[}0\+:23\mbox{]}, and so on. 
+\end{DoxyReturn}
+\Hypertarget{classNonlinearShellMITC4_afbd146b83a40e33e411c14595fa2b220}\label{classNonlinearShellMITC4_afbd146b83a40e33e411c14595fa2b220} 
+\index{NonlinearShellMITC4@{NonlinearShellMITC4}!get\_StiffnessMITC4@{get\_StiffnessMITC4}}
+\index{get\_StiffnessMITC4@{get\_StiffnessMITC4}!NonlinearShellMITC4@{NonlinearShellMITC4}}
+\doxysubsubsection{\texorpdfstring{get\_StiffnessMITC4()}{get\_StiffnessMITC4()}}
+{\footnotesize\ttfamily vector$<$ double $>$ Nonlinear\+Shell\+MITC4\+::get\+\_\+\+Stiffness\+MITC4 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the stiffness matrix "{}\+Stiffness\+\_\+"{} in vector form. This is a getter only for the stiffness matrix, it does not calculate the stiffness matrix. 
+
+\begin{DoxyReturn}{Returns}
+vector$<$double$>$ The return is the stiffness matrix "{}\+Stiffness\+\_\+"{} in vector form (of size = 576). The first elements in the output vector (Stiffness\+\_\+\mbox{[}0\+:23\mbox{]}) correspond to the first 24 elements in the first row of the 24 x 24 stiffness ~\newline
+ (stif\mbox{[}0\mbox{]}\mbox{[}0\+:23\mbox{]}), the next 24 elements in the output vector (Stiffness\+\_\+\mbox{[}24\+:47\mbox{]}) correspond to stif\mbox{[}1\mbox{]}\mbox{[}0\+:23\mbox{]}, and so on. 
+\end{DoxyReturn}
+\Hypertarget{classNonlinearShellMITC4_af207ccf1752e0f475bee7bc68e21bf5c}\label{classNonlinearShellMITC4_af207ccf1752e0f475bee7bc68e21bf5c} 
+\index{NonlinearShellMITC4@{NonlinearShellMITC4}!get\_StrainsMITC4@{get\_StrainsMITC4}}
+\index{get\_StrainsMITC4@{get\_StrainsMITC4}!NonlinearShellMITC4@{NonlinearShellMITC4}}
+\doxysubsubsection{\texorpdfstring{get\_StrainsMITC4()}{get\_StrainsMITC4()}}
+{\footnotesize\ttfamily vector$<$ double $>$ Nonlinear\+Shell\+MITC4\+::get\+\_\+\+Strains\+MITC4 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get the Strains\+MITC4 object. 
+
+\begin{DoxyReturn}{Returns}
+vector$<$double$>$ 
+\end{DoxyReturn}
+\Hypertarget{classNonlinearShellMITC4_acc4a67f21b10bc267c05707aef78c0d4}\label{classNonlinearShellMITC4_acc4a67f21b10bc267c05707aef78c0d4} 
+\index{NonlinearShellMITC4@{NonlinearShellMITC4}!set\_LocalAxes\_All@{set\_LocalAxes\_All}}
+\index{set\_LocalAxes\_All@{set\_LocalAxes\_All}!NonlinearShellMITC4@{NonlinearShellMITC4}}
+\doxysubsubsection{\texorpdfstring{set\_LocalAxes\_All()}{set\_LocalAxes\_All()}}
+{\footnotesize\ttfamily void Nonlinear\+Shell\+MITC4\+::set\+\_\+\+Local\+Axes\+\_\+\+All (\begin{DoxyParamCaption}\item[{vector$<$ double $>$}]{axesgp\+\_\+in }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Set the local axes at the Gauss integration points of the element. If the local axes are not setted then the API will calculate the local axes at the GPs. If the MITC4 shell is to be used for composites or planar plastic anisotropy then the local axes at the GPs should be setted after the instantiation of the shell MITC4 class. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em axesgp\+\_\+in} & the structure for "{}axesgp\+\_\+in"{} must be the following\+: ~\newline
+ Loop in the integration points along thickness direction\+: for (int izet = 0; izet \texorpdfstring{$<$}{<} zet\+GPCoord\+\_\+in.\+size(); ++izet) \{ ~\newline
+ Loop in the 4 in-\/plane GPs\+: for (int ig = 0; ig \texorpdfstring{$<$}{<} 4; ++ig) \{ ~\newline
+ axesgp\mbox{[}0\+:2\mbox{]} = x-\/local vector ~\newline
+ axesgp\mbox{[}3\+:5\mbox{]} = y-\/local vector ~\newline
+ axesgp\mbox{[}6\+:8\mbox{]} = z-\/local vector ~\newline
+ for (int i = 0; i \texorpdfstring{$<$}{<} axesgp.\+size(); ++i) \{ axesgp\+\_\+in.\+push\+\_\+back(axesgp\mbox{[}i\mbox{]}); \} \} \} \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/mestrrc2/\+Documents/\+Mechin\+Motion\+Ltd/\+APIs/\+Nonlinear\+Shell\+MITC4/\mbox{\hyperlink{NonlinearShellMITC4_8h}{Nonlinear\+Shell\+MITC4.\+h}}\end{DoxyCompactItemize}
