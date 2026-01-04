@@ -25,7 +25,7 @@ void \mbox{\hyperlink{classNonlinearShellMITC4_ac079d2b6d9bd5a5af7a7da33811000d3
 void \mbox{\hyperlink{classNonlinearShellMITC4_acc4a67f21b10bc267c05707aef78c0d4}{set\+\_\+\+Local\+Axes\+\_\+\+All}} (vector$<$ double $>$ axesgp\+\_\+in)
 \begin{DoxyCompactList}\small\item\em Set the local axes at the Gauss integration points of the element. If the local axes are not setted then the API will calculate the local axes at the GPs. If the MITC4 shell is to be used for composites or planar plastic anisotropy then the local axes at the GPs should be setted after the instantiation of the shell MITC4 class. \end{DoxyCompactList}\item 
 vector$<$ double $>$ \mbox{\hyperlink{classNonlinearShellMITC4_a93a34de44f138181e1dbf4e876570cfe}{get\+\_\+\+Local\+Axes\+\_\+\+All}} ()
-\begin{DoxyCompactList}\small\item\em Get the local axes at all integration points of the shell element. The return is a vector with the axes at all GPs which is stored in the same order as explained in the setter -\/ "{}set\+\_\+\+Local\+Axes\+\_\+\+All"{}. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Get the local axes at all integration points of the shell element. The return is a vector with the axes at all GPs which are stored in the same order as explained in the setter -\/ "{}set\+\_\+\+Local\+Axes\+\_\+\+All"{}. \end{DoxyCompactList}\item 
 \Hypertarget{classNonlinearShellMITC4_ae62ea52a3008714c27f34f7e2aa2734a}\label{classNonlinearShellMITC4_ae62ea52a3008714c27f34f7e2aa2734a} 
 void {\bfseries Calculate\+\_\+\+Local\+\_\+\+Axes\+\_\+\+All\+\_\+\+GP} ()
 \begin{DoxyCompactList}\small\item\em calculates the local axes at each in-\/plane Gauss point (located at the mid-\/surface (zet = 0.\+0) of the shell). The axes at zet = 0.\+0 are then copied to all other Gauss points of the MITC4 shell element. \end{DoxyCompactList}\item 
@@ -45,19 +45,16 @@ void {\bfseries Calculate\+\_\+\+Stiffness\+\_\+\+Internal} ()
  From a CPU-\/efficiency perspective, in nonlinear continuum mechanics it is advantageous to compute the stiffness matrix and the internal force vector simultaneously. ~\newline
  After calling this method, the method "{}get\+\_\+\+Stiffness\+MITC4()"{} must be called for getting the total stiffness, which is stored in the vector "{}\+Stiffness\+\_\+"{}, and the method "{}get\+\_\+\+Internal\+\_\+\+Forces()"{} for getting the internal force vector. \end{DoxyCompactList}\item 
 vector$<$ double $>$ \mbox{\hyperlink{classNonlinearShellMITC4_af207ccf1752e0f475bee7bc68e21bf5c}{get\+\_\+\+Strains\+MITC4}} ()
-\begin{DoxyCompactList}\small\item\em Get the Strains\+MITC4 object. \end{DoxyCompactList}\item 
-\Hypertarget{classNonlinearShellMITC4_a3da40e68a82b881f4bce519eccdca29d}\label{classNonlinearShellMITC4_a3da40e68a82b881f4bce519eccdca29d} 
-vector$<$ double $>$ {\bfseries get\+\_\+\+Strains\+MITC4\+\_\+\+Global} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Calculate and get the strain tensor (Strains\+\_\+) at all Gauss points of the shell element. The strains are defined in the local coordinate system at the Gauss point. \end{DoxyCompactList}\item 
+vector$<$ double $>$ \mbox{\hyperlink{classNonlinearShellMITC4_a3da40e68a82b881f4bce519eccdca29d}{get\+\_\+\+Strains\+MITC4\+\_\+\+Global}} ()
+\begin{DoxyCompactList}\small\item\em Calculate and get the strain tensor (Strains\+\_\+\+Global\+\_\+) at all Gauss points of the shell element. The strains are defined in the global coordinate system. \end{DoxyCompactList}\item 
 \Hypertarget{classNonlinearShellMITC4_afcbbc5076e5f6ec04ed8c03c42d0dd61}\label{classNonlinearShellMITC4_afcbbc5076e5f6ec04ed8c03c42d0dd61} 
 void {\bfseries rotate\+\_\+\+GP\+\_\+axes} ()
 \item 
-\Hypertarget{classNonlinearShellMITC4_a4a7b8ba09d5d726028a029fa98f23b09}\label{classNonlinearShellMITC4_a4a7b8ba09d5d726028a029fa98f23b09} 
-vector$<$ double $>$ {\bfseries get\+\_\+\+Stresses\+MITC4} ()
-\item 
-\Hypertarget{classNonlinearShellMITC4_ae37282c58ce0170fd77bf730fd071251}\label{classNonlinearShellMITC4_ae37282c58ce0170fd77bf730fd071251} 
-vector$<$ double $>$ {\bfseries get\+\_\+\+Stresses\+MITC4\+\_\+\+Global} ()
-\item 
+vector$<$ double $>$ \mbox{\hyperlink{classNonlinearShellMITC4_a4a7b8ba09d5d726028a029fa98f23b09}{get\+\_\+\+Stresses\+MITC4}} ()
+\begin{DoxyCompactList}\small\item\em Calculate and get the stress tensor (stresses\+\_\+) at all Gauss points of the shell element. The stresses are defined in the local coordinate system at the Gauss point. \end{DoxyCompactList}\item 
+vector$<$ double $>$ \mbox{\hyperlink{classNonlinearShellMITC4_ae37282c58ce0170fd77bf730fd071251}{get\+\_\+\+Stresses\+MITC4\+\_\+\+Global}} ()
+\begin{DoxyCompactList}\small\item\em Calculate and get the stress tensor (stresses\+\_\+\+Global) at all Gauss points of the shell element. The stresses are defined in the global coordinate system. \end{DoxyCompactList}\item 
 \Hypertarget{classNonlinearShellMITC4_a63997ed773f4d901c4acad90b55a94da}\label{classNonlinearShellMITC4_a63997ed773f4d901c4acad90b55a94da} 
 void {\bfseries Jacobi} (vector$<$ vector$<$ double $>$ $>$ \&ain, vector$<$ vector$<$ double $>$ $>$ \&bin, vector$<$ double $>$ \&eigenvalues\+\_\+, vector$<$ vector$<$ double $>$ $>$ \&eigenvectors\+\_\+)
 \end{DoxyCompactItemize}
@@ -287,10 +284,10 @@ vector$<$double$>$ The return is the Internal Force vector "{}\+Internal\+\_\+\+
 
 
 
-Get the local axes at all integration points of the shell element. The return is a vector with the axes at all GPs which is stored in the same order as explained in the setter -\/ "{}set\+\_\+\+Local\+Axes\+\_\+\+All"{}. 
+Get the local axes at all integration points of the shell element. The return is a vector with the axes at all GPs which are stored in the same order as explained in the setter -\/ "{}set\+\_\+\+Local\+Axes\+\_\+\+All"{}. 
 
 \begin{DoxyReturn}{Returns}
-vector$<$double$>$ 
+vector$<$double$>$ The structure of the return vector "{}axesgp\+\_\+all\+\_\+"{} is the same as the structure of the "{}axesgp\+\_\+in"{} vector defined in the setter "{}set\+\_\+\+Local\+Axes\+\_\+\+All(vector$<$double$>$ axesgp\+\_\+in) \{ axesgp\+\_\+all\+\_\+ = axesgp\+\_\+in; \}"{} 
 \end{DoxyReturn}
 \Hypertarget{classNonlinearShellMITC4_a1a5c87105e79ef20cc5d6f4b45563ca4}\label{classNonlinearShellMITC4_a1a5c87105e79ef20cc5d6f4b45563ca4} 
 \index{NonlinearShellMITC4@{NonlinearShellMITC4}!get\_Stiffness\_InitialStress@{get\_Stiffness\_InitialStress}}
@@ -328,10 +325,65 @@ vector$<$double$>$ The return is the stiffness matrix "{}\+Stiffness\+\_\+"{} in
 
 
 
-Get the Strains\+MITC4 object. 
+Calculate and get the strain tensor (Strains\+\_\+) at all Gauss points of the shell element. The strains are defined in the local coordinate system at the Gauss point. 
 
 \begin{DoxyReturn}{Returns}
-vector$<$double$>$ 
+vector$<$double$>$ The strain input format is defined as follows\+: ~\newline
+ Exx, Eyy, Exy, Exz, Eyz, i.\+e., five strain components per integration point. The strains are stored in the "{}\+Strains\+\_\+"{} vector, ordered by integration points through the thickness in a bottom-\/to-\/top direction, from zet = -\/1.\+0 to zet = +1.\+0. ~\newline
+ For example, with two integration points through the thickness, zet1 = -\/1.\+0 / sqrt(3.\+0) and zet2 = +1.\+0 / sqrt(3.\+0), the ordering in Strains\+\_\+ is\+: ~\newline
+ \mbox{[}Exx\+\_\+\+I\texorpdfstring{$^\wedge$}{\string^}zet1, Eyy\+\_\+\+I\texorpdfstring{$^\wedge$}{\string^}zet1, Exy\+\_\+\+I\texorpdfstring{$^\wedge$}{\string^}zet1, Exz\+\_\+\+I\texorpdfstring{$^\wedge$}{\string^}zet1, Eyz\+\_\+\+I\texorpdfstring{$^\wedge$}{\string^}zet1,...,Exx\+\_\+\+IV\texorpdfstring{$^\wedge$}{\string^}zet1, Eyy\+\_\+\+IV\texorpdfstring{$^\wedge$}{\string^}zet1, Exy\+\_\+\+IV\texorpdfstring{$^\wedge$}{\string^}zet1, Exz\+\_\+\+IV\texorpdfstring{$^\wedge$}{\string^}zet1, Eyz\+\_\+\+IV\texorpdfstring{$^\wedge$}{\string^}zet1, ~\newline
+ Exx\+\_\+\+I\texorpdfstring{$^\wedge$}{\string^}zet2, Eyy\+\_\+\+I\texorpdfstring{$^\wedge$}{\string^}zet2, Exy\+\_\+\+I\texorpdfstring{$^\wedge$}{\string^}zet2, Exz\+\_\+\+I\texorpdfstring{$^\wedge$}{\string^}zet2, Eyz\+\_\+\+I\texorpdfstring{$^\wedge$}{\string^}zet2,...,Exx\+\_\+\+IV\texorpdfstring{$^\wedge$}{\string^}zet2, Eyy\+\_\+\+IV\texorpdfstring{$^\wedge$}{\string^}zet2, Exy\+\_\+\+IV\texorpdfstring{$^\wedge$}{\string^}zet2, Exz\+\_\+\+IV\texorpdfstring{$^\wedge$}{\string^}zet2, Eyz\+\_\+\+IV\texorpdfstring{$^\wedge$}{\string^}zet2\mbox{]} 
+\end{DoxyReturn}
+\Hypertarget{classNonlinearShellMITC4_a3da40e68a82b881f4bce519eccdca29d}\label{classNonlinearShellMITC4_a3da40e68a82b881f4bce519eccdca29d} 
+\index{NonlinearShellMITC4@{NonlinearShellMITC4}!get\_StrainsMITC4\_Global@{get\_StrainsMITC4\_Global}}
+\index{get\_StrainsMITC4\_Global@{get\_StrainsMITC4\_Global}!NonlinearShellMITC4@{NonlinearShellMITC4}}
+\doxysubsubsection{\texorpdfstring{get\_StrainsMITC4\_Global()}{get\_StrainsMITC4\_Global()}}
+{\footnotesize\ttfamily vector$<$ double $>$ Nonlinear\+Shell\+MITC4\+::get\+\_\+\+Strains\+MITC4\+\_\+\+Global (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Calculate and get the strain tensor (Strains\+\_\+\+Global\+\_\+) at all Gauss points of the shell element. The strains are defined in the global coordinate system. 
+
+\begin{DoxyReturn}{Returns}
+vector$<$double$>$ The strain input format is defined as follows\+: ~\newline
+ EGxx, EGyy, EGxy, EGxz, EGyz, i.\+e., five strain components per integration point. The strains are stored in the "{}\+Strains\+\_\+\+Global\+\_\+"{} vector, ordered by integration points through the thickness in a bottom-\/to-\/top direction, from zet = -\/1.\+0 to zet = +1.\+0. ~\newline
+ For example, with two integration points through the thickness, zet1 = -\/1.\+0 / sqrt(3.\+0) and zet2 = +1.\+0 / sqrt(3.\+0), the ordering in Strains\+\_\+\+Global\+\_\+ is\+: ~\newline
+ \mbox{[}EGxx\+\_\+\+I\texorpdfstring{$^\wedge$}{\string^}zet1, EGyy\+\_\+\+I\texorpdfstring{$^\wedge$}{\string^}zet1, EGxy\+\_\+\+I\texorpdfstring{$^\wedge$}{\string^}zet1, EGxz\+\_\+\+I\texorpdfstring{$^\wedge$}{\string^}zet1, EGyz\+\_\+\+I\texorpdfstring{$^\wedge$}{\string^}zet1,...,EGxx\+\_\+\+IV\texorpdfstring{$^\wedge$}{\string^}zet1, EGyy\+\_\+\+IV\texorpdfstring{$^\wedge$}{\string^}zet1, EGxy\+\_\+\+IV\texorpdfstring{$^\wedge$}{\string^}zet1, EGxz\+\_\+\+IV\texorpdfstring{$^\wedge$}{\string^}zet1, EGyz\+\_\+\+IV\texorpdfstring{$^\wedge$}{\string^}zet1, ~\newline
+ EGxx\+\_\+\+I\texorpdfstring{$^\wedge$}{\string^}zet2, EGyy\+\_\+\+I\texorpdfstring{$^\wedge$}{\string^}zet2, EGxy\+\_\+\+I\texorpdfstring{$^\wedge$}{\string^}zet2, EGxz\+\_\+\+I\texorpdfstring{$^\wedge$}{\string^}zet2, EGyz\+\_\+\+I\texorpdfstring{$^\wedge$}{\string^}zet2,...,EGxx\+\_\+\+IV\texorpdfstring{$^\wedge$}{\string^}zet2, EGyy\+\_\+\+IV\texorpdfstring{$^\wedge$}{\string^}zet2, EGxy\+\_\+\+IV\texorpdfstring{$^\wedge$}{\string^}zet2, EGxz\+\_\+\+IV\texorpdfstring{$^\wedge$}{\string^}zet2, EGyz\+\_\+\+IV\texorpdfstring{$^\wedge$}{\string^}zet2\mbox{]} 
+\end{DoxyReturn}
+\Hypertarget{classNonlinearShellMITC4_a4a7b8ba09d5d726028a029fa98f23b09}\label{classNonlinearShellMITC4_a4a7b8ba09d5d726028a029fa98f23b09} 
+\index{NonlinearShellMITC4@{NonlinearShellMITC4}!get\_StressesMITC4@{get\_StressesMITC4}}
+\index{get\_StressesMITC4@{get\_StressesMITC4}!NonlinearShellMITC4@{NonlinearShellMITC4}}
+\doxysubsubsection{\texorpdfstring{get\_StressesMITC4()}{get\_StressesMITC4()}}
+{\footnotesize\ttfamily vector$<$ double $>$ Nonlinear\+Shell\+MITC4\+::get\+\_\+\+Stresses\+MITC4 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Calculate and get the stress tensor (stresses\+\_\+) at all Gauss points of the shell element. The stresses are defined in the local coordinate system at the Gauss point. 
+
+\begin{DoxyReturn}{Returns}
+vector$<$double$>$ The stress input format is defined as follows\+: ~\newline
+ Sxx, Syy, Sxy, Sxz, Syz, i.\+e., five stress components per integration point. The stresses are stored in the "{}stresses\+\_\+"{} vector, ordered by integration points through the thickness in a bottom-\/to-\/top direction, from zet = -\/1.\+0 to zet = +1.\+0. ~\newline
+ For example, with two integration points through the thickness, zet1 = -\/1.\+0 / sqrt(3.\+0) and zet2 = +1.\+0 / sqrt(3.\+0), the ordering in stresses\+\_\+ is\+: ~\newline
+ \mbox{[}Sxx\+\_\+\+I\texorpdfstring{$^\wedge$}{\string^}zet1, Syy\+\_\+\+I\texorpdfstring{$^\wedge$}{\string^}zet1, Sxy\+\_\+\+I\texorpdfstring{$^\wedge$}{\string^}zet1, Sxz\+\_\+\+I\texorpdfstring{$^\wedge$}{\string^}zet1, Syz\+\_\+\+I\texorpdfstring{$^\wedge$}{\string^}zet1,...,Sxx\+\_\+\+IV\texorpdfstring{$^\wedge$}{\string^}zet1, Syy\+\_\+\+IV\texorpdfstring{$^\wedge$}{\string^}zet1, Sxy\+\_\+\+IV\texorpdfstring{$^\wedge$}{\string^}zet1, Sxz\+\_\+\+IV\texorpdfstring{$^\wedge$}{\string^}zet1, Syz\+\_\+\+IV\texorpdfstring{$^\wedge$}{\string^}zet1, ~\newline
+ Sxx\+\_\+\+I\texorpdfstring{$^\wedge$}{\string^}zet2, Syy\+\_\+\+I\texorpdfstring{$^\wedge$}{\string^}zet2, Sxy\+\_\+\+I\texorpdfstring{$^\wedge$}{\string^}zet2, Sxz\+\_\+\+I\texorpdfstring{$^\wedge$}{\string^}zet2, Syz\+\_\+\+I\texorpdfstring{$^\wedge$}{\string^}zet2,...,Sxx\+\_\+\+IV\texorpdfstring{$^\wedge$}{\string^}zet2, Syy\+\_\+\+IV\texorpdfstring{$^\wedge$}{\string^}zet2, Sxy\+\_\+\+IV\texorpdfstring{$^\wedge$}{\string^}zet2, Sxz\+\_\+\+IV\texorpdfstring{$^\wedge$}{\string^}zet2, Syz\+\_\+\+IV\texorpdfstring{$^\wedge$}{\string^}zet2\mbox{]} 
+\end{DoxyReturn}
+\Hypertarget{classNonlinearShellMITC4_ae37282c58ce0170fd77bf730fd071251}\label{classNonlinearShellMITC4_ae37282c58ce0170fd77bf730fd071251} 
+\index{NonlinearShellMITC4@{NonlinearShellMITC4}!get\_StressesMITC4\_Global@{get\_StressesMITC4\_Global}}
+\index{get\_StressesMITC4\_Global@{get\_StressesMITC4\_Global}!NonlinearShellMITC4@{NonlinearShellMITC4}}
+\doxysubsubsection{\texorpdfstring{get\_StressesMITC4\_Global()}{get\_StressesMITC4\_Global()}}
+{\footnotesize\ttfamily vector$<$ double $>$ Nonlinear\+Shell\+MITC4\+::get\+\_\+\+Stresses\+MITC4\+\_\+\+Global (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Calculate and get the stress tensor (stresses\+\_\+\+Global) at all Gauss points of the shell element. The stresses are defined in the global coordinate system. 
+
+\begin{DoxyReturn}{Returns}
+vector$<$double$>$ The stress input format is defined as follows\+: ~\newline
+ SGxx, SGyy, SGxy, SGxz, SGyz, i.\+e., five stress components per integration point. The stresses are stored in the "{}stresses\+\_\+\+Global"{} vector, ordered by integration points through the thickness in a bottom-\/to-\/top direction, from zet = -\/1.\+0 to zet = +1.\+0. ~\newline
+ For example, with two integration points through the thickness, zet1 = -\/1.\+0 / sqrt(3.\+0) and zet2 = +1.\+0 / sqrt(3.\+0), the ordering in stresses\+\_\+ is\+: ~\newline
+ \mbox{[}SGxx\+\_\+\+I\texorpdfstring{$^\wedge$}{\string^}zet1, SGyy\+\_\+\+I\texorpdfstring{$^\wedge$}{\string^}zet1, SGxy\+\_\+\+I\texorpdfstring{$^\wedge$}{\string^}zet1, SGxz\+\_\+\+I\texorpdfstring{$^\wedge$}{\string^}zet1, SGyz\+\_\+\+I\texorpdfstring{$^\wedge$}{\string^}zet1,...,SGxx\+\_\+\+IV\texorpdfstring{$^\wedge$}{\string^}zet1, SGyy\+\_\+\+IV\texorpdfstring{$^\wedge$}{\string^}zet1, SGxy\+\_\+\+IV\texorpdfstring{$^\wedge$}{\string^}zet1, SGxz\+\_\+\+IV\texorpdfstring{$^\wedge$}{\string^}zet1, SGyz\+\_\+\+IV\texorpdfstring{$^\wedge$}{\string^}zet1, ~\newline
+ SGxx\+\_\+\+I\texorpdfstring{$^\wedge$}{\string^}zet2, SGyy\+\_\+\+I\texorpdfstring{$^\wedge$}{\string^}zet2, SGxy\+\_\+\+I\texorpdfstring{$^\wedge$}{\string^}zet2, SGxz\+\_\+\+I\texorpdfstring{$^\wedge$}{\string^}zet2, SGyz\+\_\+\+I\texorpdfstring{$^\wedge$}{\string^}zet2,...,SGxx\+\_\+\+IV\texorpdfstring{$^\wedge$}{\string^}zet2, SGyy\+\_\+\+IV\texorpdfstring{$^\wedge$}{\string^}zet2, SGxy\+\_\+\+IV\texorpdfstring{$^\wedge$}{\string^}zet2, SGxz\+\_\+\+IV\texorpdfstring{$^\wedge$}{\string^}zet2, SGyz\+\_\+\+IV\texorpdfstring{$^\wedge$}{\string^}zet2\mbox{]} 
 \end{DoxyReturn}
 \Hypertarget{classNonlinearShellMITC4_acc4a67f21b10bc267c05707aef78c0d4}\label{classNonlinearShellMITC4_acc4a67f21b10bc267c05707aef78c0d4} 
 \index{NonlinearShellMITC4@{NonlinearShellMITC4}!set\_LocalAxes\_All@{set\_LocalAxes\_All}}

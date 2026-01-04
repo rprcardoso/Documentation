@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>My Project: NonlinearShellMITC4 Class Reference</title>
+<title>MECHINMOTION&#39;s Documentation: NonlinearShellMITC4 Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -21,7 +21,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">My Project
+   <div id="projectname">MECHINMOTION&#39;s Documentation
    </div>
   </td>
  </tr>
@@ -106,7 +106,7 @@ size_t&#160;</td><td class="memItemRight" valign="bottom"><b>get_Cols</b> ()</td
 <tr class="memdesc:acc4a67f21b10bc267c05707aef78c0d4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the local axes at the Gauss integration points of the element. If the local axes are not setted then the API will calculate the local axes at the GPs. If the MITC4 shell is to be used for composites or planar plastic anisotropy then the local axes at the GPs should be setted after the instantiation of the shell MITC4 class.  <br /></td></tr>
 <tr class="separator:acc4a67f21b10bc267c05707aef78c0d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a93a34de44f138181e1dbf4e876570cfe" id="r_a93a34de44f138181e1dbf4e876570cfe"><td class="memItemLeft" align="right" valign="top">vector&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNonlinearShellMITC4.html#a93a34de44f138181e1dbf4e876570cfe">get_LocalAxes_All</a> ()</td></tr>
-<tr class="memdesc:a93a34de44f138181e1dbf4e876570cfe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the local axes at all integration points of the shell element. The return is a vector with the axes at all GPs which is stored in the same order as explained in the setter - "set_LocalAxes_All".  <br /></td></tr>
+<tr class="memdesc:a93a34de44f138181e1dbf4e876570cfe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the local axes at all integration points of the shell element. The return is a vector with the axes at all GPs which are stored in the same order as explained in the setter - "set_LocalAxes_All".  <br /></td></tr>
 <tr class="separator:a93a34de44f138181e1dbf4e876570cfe"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae62ea52a3008714c27f34f7e2aa2734a" id="r_ae62ea52a3008714c27f34f7e2aa2734a"><td class="memItemLeft" align="right" valign="top"><a id="ae62ea52a3008714c27f34f7e2aa2734a" name="ae62ea52a3008714c27f34f7e2aa2734a"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>Calculate_Local_Axes_All_GP</b> ()</td></tr>
@@ -134,19 +134,19 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>Calculate_Stiffness_I
  After calling this method, the method "get_StiffnessMITC4()" must be called for getting the total stiffness, which is stored in the vector "Stiffness_", and the method "get_Internal_Forces()" for getting the internal force vector. <br /></td></tr>
 <tr class="separator:af6d8c272935871606caaf2a235a29031"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af207ccf1752e0f475bee7bc68e21bf5c" id="r_af207ccf1752e0f475bee7bc68e21bf5c"><td class="memItemLeft" align="right" valign="top">vector&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNonlinearShellMITC4.html#af207ccf1752e0f475bee7bc68e21bf5c">get_StrainsMITC4</a> ()</td></tr>
-<tr class="memdesc:af207ccf1752e0f475bee7bc68e21bf5c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the StrainsMITC4 object.  <br /></td></tr>
+<tr class="memdesc:af207ccf1752e0f475bee7bc68e21bf5c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculate and get the strain tensor (Strains_) at all Gauss points of the shell element. The strains are defined in the local coordinate system at the Gauss point.  <br /></td></tr>
 <tr class="separator:af207ccf1752e0f475bee7bc68e21bf5c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3da40e68a82b881f4bce519eccdca29d" id="r_a3da40e68a82b881f4bce519eccdca29d"><td class="memItemLeft" align="right" valign="top"><a id="a3da40e68a82b881f4bce519eccdca29d" name="a3da40e68a82b881f4bce519eccdca29d"></a>
-vector&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>get_StrainsMITC4_Global</b> ()</td></tr>
+<tr class="memitem:a3da40e68a82b881f4bce519eccdca29d" id="r_a3da40e68a82b881f4bce519eccdca29d"><td class="memItemLeft" align="right" valign="top">vector&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNonlinearShellMITC4.html#a3da40e68a82b881f4bce519eccdca29d">get_StrainsMITC4_Global</a> ()</td></tr>
+<tr class="memdesc:a3da40e68a82b881f4bce519eccdca29d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculate and get the strain tensor (Strains_Global_) at all Gauss points of the shell element. The strains are defined in the global coordinate system.  <br /></td></tr>
 <tr class="separator:a3da40e68a82b881f4bce519eccdca29d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afcbbc5076e5f6ec04ed8c03c42d0dd61" id="r_afcbbc5076e5f6ec04ed8c03c42d0dd61"><td class="memItemLeft" align="right" valign="top"><a id="afcbbc5076e5f6ec04ed8c03c42d0dd61" name="afcbbc5076e5f6ec04ed8c03c42d0dd61"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>rotate_GP_axes</b> ()</td></tr>
 <tr class="separator:afcbbc5076e5f6ec04ed8c03c42d0dd61"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4a7b8ba09d5d726028a029fa98f23b09" id="r_a4a7b8ba09d5d726028a029fa98f23b09"><td class="memItemLeft" align="right" valign="top"><a id="a4a7b8ba09d5d726028a029fa98f23b09" name="a4a7b8ba09d5d726028a029fa98f23b09"></a>
-vector&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>get_StressesMITC4</b> ()</td></tr>
+<tr class="memitem:a4a7b8ba09d5d726028a029fa98f23b09" id="r_a4a7b8ba09d5d726028a029fa98f23b09"><td class="memItemLeft" align="right" valign="top">vector&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNonlinearShellMITC4.html#a4a7b8ba09d5d726028a029fa98f23b09">get_StressesMITC4</a> ()</td></tr>
+<tr class="memdesc:a4a7b8ba09d5d726028a029fa98f23b09"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculate and get the stress tensor (stresses_) at all Gauss points of the shell element. The stresses are defined in the local coordinate system at the Gauss point.  <br /></td></tr>
 <tr class="separator:a4a7b8ba09d5d726028a029fa98f23b09"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae37282c58ce0170fd77bf730fd071251" id="r_ae37282c58ce0170fd77bf730fd071251"><td class="memItemLeft" align="right" valign="top"><a id="ae37282c58ce0170fd77bf730fd071251" name="ae37282c58ce0170fd77bf730fd071251"></a>
-vector&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>get_StressesMITC4_Global</b> ()</td></tr>
+<tr class="memitem:ae37282c58ce0170fd77bf730fd071251" id="r_ae37282c58ce0170fd77bf730fd071251"><td class="memItemLeft" align="right" valign="top">vector&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNonlinearShellMITC4.html#ae37282c58ce0170fd77bf730fd071251">get_StressesMITC4_Global</a> ()</td></tr>
+<tr class="memdesc:ae37282c58ce0170fd77bf730fd071251"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculate and get the stress tensor (stresses_Global) at all Gauss points of the shell element. The stresses are defined in the global coordinate system.  <br /></td></tr>
 <tr class="separator:ae37282c58ce0170fd77bf730fd071251"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a63997ed773f4d901c4acad90b55a94da" id="r_a63997ed773f4d901c4acad90b55a94da"><td class="memItemLeft" align="right" valign="top"><a id="a63997ed773f4d901c4acad90b55a94da" name="a63997ed773f4d901c4acad90b55a94da"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>Jacobi</b> (vector&lt; vector&lt; double &gt; &gt; &amp;ain, vector&lt; vector&lt; double &gt; &gt; &amp;bin, vector&lt; double &gt; &amp;eigenvalues_, vector&lt; vector&lt; double &gt; &gt; &amp;eigenvectors_)</td></tr>
@@ -578,8 +578,8 @@ static string&#160;</td><td class="memItemRight" valign="bottom"><b>path</b> = &
 </table>
 </div><div class="memdoc">
 
-<p>Get the local axes at all integration points of the shell element. The return is a vector with the axes at all GPs which is stored in the same order as explained in the setter - "set_LocalAxes_All". </p>
-<dl class="section return"><dt>Returns</dt><dd>vector&lt;double&gt; </dd></dl>
+<p>Get the local axes at all integration points of the shell element. The return is a vector with the axes at all GPs which are stored in the same order as explained in the setter - "set_LocalAxes_All". </p>
+<dl class="section return"><dt>Returns</dt><dd>vector&lt;double&gt; The structure of the return vector "axesgp_all_" is the same as the structure of the "axesgp_in" vector defined in the setter "set_LocalAxes_All(vector&lt;double&gt; axesgp_in) { axesgp_all_ = axesgp_in; }" </dd></dl>
 
 </div>
 </div>
@@ -648,8 +648,84 @@ static string&#160;</td><td class="memItemRight" valign="bottom"><b>path</b> = &
       </table>
 </div><div class="memdoc">
 
-<p>Get the StrainsMITC4 object. </p>
-<dl class="section return"><dt>Returns</dt><dd>vector&lt;double&gt; </dd></dl>
+<p>Calculate and get the strain tensor (Strains_) at all Gauss points of the shell element. The strains are defined in the local coordinate system at the Gauss point. </p>
+<dl class="section return"><dt>Returns</dt><dd>vector&lt;double&gt; The strain input format is defined as follows: <br  />
+ Exx, Eyy, Exy, Exz, Eyz, i.e., five strain components per integration point. The strains are stored in the "Strains_" vector, ordered by integration points through the thickness in a bottom-to-top direction, from zet = -1.0 to zet = +1.0. <br  />
+ For example, with two integration points through the thickness, zet1 = -1.0 / sqrt(3.0) and zet2 = +1.0 / sqrt(3.0), the ordering in Strains_ is: <br  />
+ [Exx_I^zet1, Eyy_I^zet1, Exy_I^zet1, Exz_I^zet1, Eyz_I^zet1,...,Exx_IV^zet1, Eyy_IV^zet1, Exy_IV^zet1, Exz_IV^zet1, Eyz_IV^zet1, <br  />
+ Exx_I^zet2, Eyy_I^zet2, Exy_I^zet2, Exz_I^zet2, Eyz_I^zet2,...,Exx_IV^zet2, Eyy_IV^zet2, Exy_IV^zet2, Exz_IV^zet2, Eyz_IV^zet2] </dd></dl>
+
+</div>
+</div>
+<a id="a3da40e68a82b881f4bce519eccdca29d" name="a3da40e68a82b881f4bce519eccdca29d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3da40e68a82b881f4bce519eccdca29d">&#9670;&#160;</a></span>get_StrainsMITC4_Global()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">vector&lt; double &gt; NonlinearShellMITC4::get_StrainsMITC4_Global </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Calculate and get the strain tensor (Strains_Global_) at all Gauss points of the shell element. The strains are defined in the global coordinate system. </p>
+<dl class="section return"><dt>Returns</dt><dd>vector&lt;double&gt; The strain input format is defined as follows: <br  />
+ EGxx, EGyy, EGxy, EGxz, EGyz, i.e., five strain components per integration point. The strains are stored in the "Strains_Global_" vector, ordered by integration points through the thickness in a bottom-to-top direction, from zet = -1.0 to zet = +1.0. <br  />
+ For example, with two integration points through the thickness, zet1 = -1.0 / sqrt(3.0) and zet2 = +1.0 / sqrt(3.0), the ordering in Strains_Global_ is: <br  />
+ [EGxx_I^zet1, EGyy_I^zet1, EGxy_I^zet1, EGxz_I^zet1, EGyz_I^zet1,...,EGxx_IV^zet1, EGyy_IV^zet1, EGxy_IV^zet1, EGxz_IV^zet1, EGyz_IV^zet1, <br  />
+ EGxx_I^zet2, EGyy_I^zet2, EGxy_I^zet2, EGxz_I^zet2, EGyz_I^zet2,...,EGxx_IV^zet2, EGyy_IV^zet2, EGxy_IV^zet2, EGxz_IV^zet2, EGyz_IV^zet2] </dd></dl>
+
+</div>
+</div>
+<a id="a4a7b8ba09d5d726028a029fa98f23b09" name="a4a7b8ba09d5d726028a029fa98f23b09"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4a7b8ba09d5d726028a029fa98f23b09">&#9670;&#160;</a></span>get_StressesMITC4()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">vector&lt; double &gt; NonlinearShellMITC4::get_StressesMITC4 </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Calculate and get the stress tensor (stresses_) at all Gauss points of the shell element. The stresses are defined in the local coordinate system at the Gauss point. </p>
+<dl class="section return"><dt>Returns</dt><dd>vector&lt;double&gt; The stress input format is defined as follows: <br  />
+ Sxx, Syy, Sxy, Sxz, Syz, i.e., five stress components per integration point. The stresses are stored in the "stresses_" vector, ordered by integration points through the thickness in a bottom-to-top direction, from zet = -1.0 to zet = +1.0. <br  />
+ For example, with two integration points through the thickness, zet1 = -1.0 / sqrt(3.0) and zet2 = +1.0 / sqrt(3.0), the ordering in stresses_ is: <br  />
+ [Sxx_I^zet1, Syy_I^zet1, Sxy_I^zet1, Sxz_I^zet1, Syz_I^zet1,...,Sxx_IV^zet1, Syy_IV^zet1, Sxy_IV^zet1, Sxz_IV^zet1, Syz_IV^zet1, <br  />
+ Sxx_I^zet2, Syy_I^zet2, Sxy_I^zet2, Sxz_I^zet2, Syz_I^zet2,...,Sxx_IV^zet2, Syy_IV^zet2, Sxy_IV^zet2, Sxz_IV^zet2, Syz_IV^zet2] </dd></dl>
+
+</div>
+</div>
+<a id="ae37282c58ce0170fd77bf730fd071251" name="ae37282c58ce0170fd77bf730fd071251"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae37282c58ce0170fd77bf730fd071251">&#9670;&#160;</a></span>get_StressesMITC4_Global()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">vector&lt; double &gt; NonlinearShellMITC4::get_StressesMITC4_Global </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Calculate and get the stress tensor (stresses_Global) at all Gauss points of the shell element. The stresses are defined in the global coordinate system. </p>
+<dl class="section return"><dt>Returns</dt><dd>vector&lt;double&gt; The stress input format is defined as follows: <br  />
+ SGxx, SGyy, SGxy, SGxz, SGyz, i.e., five stress components per integration point. The stresses are stored in the "stresses_Global" vector, ordered by integration points through the thickness in a bottom-to-top direction, from zet = -1.0 to zet = +1.0. <br  />
+ For example, with two integration points through the thickness, zet1 = -1.0 / sqrt(3.0) and zet2 = +1.0 / sqrt(3.0), the ordering in stresses_ is: <br  />
+ [SGxx_I^zet1, SGyy_I^zet1, SGxy_I^zet1, SGxz_I^zet1, SGyz_I^zet1,...,SGxx_IV^zet1, SGyy_IV^zet1, SGxy_IV^zet1, SGxz_IV^zet1, SGyz_IV^zet1, <br  />
+ SGxx_I^zet2, SGyy_I^zet2, SGxy_I^zet2, SGxz_I^zet2, SGyz_I^zet2,...,SGxx_IV^zet2, SGyy_IV^zet2, SGxy_IV^zet2, SGxz_IV^zet2, SGyz_IV^zet2] </dd></dl>
 
 </div>
 </div>

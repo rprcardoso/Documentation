@@ -1,5 +1,19 @@
 var searchData=
 [
-  ['nonlinearshellmitc4_0',['nonlinearshellmitc4',['../classNonlinearShellMITC4.html',1,'NonlinearShellMITC4'],['../classNonlinearShellMITC4.html#a9bb385c8db54b6399fe64834ea7cc0c3',1,'NonlinearShellMITC4::NonlinearShellMITC4(string path_in, vector&lt; vector&lt; double &gt; &gt; &amp;xyz_in, vector&lt; vector&lt; double &gt; &gt; &amp;vnor_in, vector&lt; double &gt; &amp;thick_in, vector&lt; vector&lt; double &gt; &gt; &amp;xlocal_in, vector&lt; vector&lt; double &gt; &gt; &amp;ylocal_in, vector&lt; double &gt; &amp;zetGPcoord_in, vector&lt; double &gt; &amp;zetGPweigth_in, vector&lt; double &gt; &amp;stresses_in, vector&lt; double &gt; &amp;DMatrix_in)'],['../classNonlinearShellMITC4.html#ad5f37a2899ce1f35b1bc02ee065ae3cd',1,'NonlinearShellMITC4::NonlinearShellMITC4(string path_in, vector&lt; vector&lt; double &gt; &gt; &amp;xyz_in, vector&lt; vector&lt; double &gt; &gt; &amp;vnor_in, vector&lt; double &gt; &amp;thick_in, vector&lt; vector&lt; double &gt; &gt; &amp;xlocal_in, vector&lt; vector&lt; double &gt; &gt; &amp;ylocal_in, vector&lt; double &gt; &amp;zetGPcoord_in, vector&lt; double &gt; &amp;Displacements_in, vector&lt; double &gt; &amp;DMatrix_in)']]],
-  ['nonlinearshellmitc4_2eh_1',['NonlinearShellMITC4.h',['../NonlinearShellMITC4_8h.html',1,'']]]
+  ['get_5fbmatrix_0',['get_BMatrix',['../classNonlinearShellMITC4.html#a83f29417bd0c15ef9c2b9f05c33b4af3',1,'NonlinearShellMITC4']]],
+  ['get_5fbmatrix_5ftransposed_1',['get_BMatrix_Transposed',['../classNonlinearShellMITC4.html#ac079d2b6d9bd5a5af7a7da33811000d3',1,'NonlinearShellMITC4']]],
+  ['get_5finternal_5fforces_2',['get_Internal_Forces',['../classNonlinearShellMITC4.html#a29c6ada86b7524b0f6a5d49c27462661',1,'NonlinearShellMITC4']]],
+  ['get_5finternal_5fforces_5fexplicit_3',['Get_Internal_Forces_Explicit',['../classNonlinearShellMCYSE.html#ad96896269f324176d4e7084e519035d6',1,'NonlinearShellMCYSE']]],
+  ['get_5flocalaxes_5fall_4',['get_localaxes_all',['../classNonlinearShellMITC4.html#a93a34de44f138181e1dbf4e876570cfe',1,'NonlinearShellMITC4::get_LocalAxes_All()'],['../classNonlinearShellMCYSE.html#aa9ea7d0620986f4693fd7a93983051ac',1,'NonlinearShellMCYSE::get_LocalAxes_All()']]],
+  ['get_5fstiffness_5finitialstress_5',['get_Stiffness_InitialStress',['../classNonlinearShellMITC4.html#a1a5c87105e79ef20cc5d6f4b45563ca4',1,'NonlinearShellMITC4']]],
+  ['get_5fstiffnessmcyse_6',['get_StiffnessMCYSE',['../classNonlinearShellMCYSE.html#a4cd576269a0f76693e8b9d5d0ee9b73e',1,'NonlinearShellMCYSE']]],
+  ['get_5fstiffnessmitc4_7',['get_StiffnessMITC4',['../classNonlinearShellMITC4.html#afbd146b83a40e33e411c14595fa2b220',1,'NonlinearShellMITC4']]],
+  ['get_5fstrainsmcyse_8',['get_StrainsMCYSE',['../classNonlinearShellMCYSE.html#aa3c4c66f8f62d415a880fc2ab79ab8e9',1,'NonlinearShellMCYSE']]],
+  ['get_5fstrainsmcyse_5fglobal_9',['get_StrainsMCYSE_Global',['../classNonlinearShellMCYSE.html#afb317fc5db17803e16f45e598f6b1f4d',1,'NonlinearShellMCYSE']]],
+  ['get_5fstrainsmitc4_10',['get_StrainsMITC4',['../classNonlinearShellMITC4.html#af207ccf1752e0f475bee7bc68e21bf5c',1,'NonlinearShellMITC4']]],
+  ['get_5fstrainsmitc4_5fglobal_11',['get_StrainsMITC4_Global',['../classNonlinearShellMITC4.html#a3da40e68a82b881f4bce519eccdca29d',1,'NonlinearShellMITC4']]],
+  ['get_5fstressesmcyse_12',['get_StressesMCYSE',['../classNonlinearShellMCYSE.html#a4243ac2b5dea5c7f5f1806bf439296e0',1,'NonlinearShellMCYSE']]],
+  ['get_5fstressesmcyse_5fglobal_13',['get_StressesMCYSE_Global',['../classNonlinearShellMCYSE.html#a2202b660aa0855ef9f5463d94c1bf4f0',1,'NonlinearShellMCYSE']]],
+  ['get_5fstressesmitc4_14',['get_StressesMITC4',['../classNonlinearShellMITC4.html#a4a7b8ba09d5d726028a029fa98f23b09',1,'NonlinearShellMITC4']]],
+  ['get_5fstressesmitc4_5fglobal_15',['get_StressesMITC4_Global',['../classNonlinearShellMITC4.html#ae37282c58ce0170fd77bf730fd071251',1,'NonlinearShellMITC4']]]
 ];

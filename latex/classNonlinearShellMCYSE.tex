@@ -1,0 +1,390 @@
+\doxysection{Nonlinear\+Shell\+MCYSE Class Reference}
+\hypertarget{classNonlinearShellMCYSE}{}\label{classNonlinearShellMCYSE}\index{NonlinearShellMCYSE@{NonlinearShellMCYSE}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classNonlinearShellMCYSE_a0b2fafac4abc85709f500aa1014fd2b6}{Nonlinear\+Shell\+MCYSE}} (string path\+\_\+in, vector$<$ vector$<$ double $>$ $>$ \&xyz\+\_\+in, vector$<$ vector$<$ double $>$ $>$ \&vnor\+\_\+in, vector$<$ double $>$ \&thick\+\_\+in, vector$<$ vector$<$ double $>$ $>$ \&xlocal\+\_\+in, vector$<$ vector$<$ double $>$ $>$ \&ylocal\+\_\+in, vector$<$ double $>$ \&zet\+GPcoord\+\_\+in, vector$<$ double $>$ \&zet\+GPweigth\+\_\+in, vector$<$ double $>$ \&stresses\+\_\+in, vector$<$ double $>$ \&DMatrix\+\_\+in)
+\begin{DoxyCompactList}\small\item\em Constructor for a new Nonlinear Shell MCYSE object. This constructor can be used for the stiffness matrix. ~\newline
+ The procedure for calculculating the initial local nodal coordinate system (V1, V2, V3) is the following\+: ~\newline
+ \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classNonlinearShellMCYSE_af98a67030ae7eb934c57e368d29c724d}{Nonlinear\+Shell\+MCYSE}} (string path\+\_\+in, vector$<$ vector$<$ double $>$ $>$ \&xyz\+\_\+in, vector$<$ vector$<$ double $>$ $>$ \&vnor\+\_\+in, vector$<$ double $>$ \&thick\+\_\+in, vector$<$ vector$<$ double $>$ $>$ \&xlocal\+\_\+in, vector$<$ vector$<$ double $>$ $>$ \&ylocal\+\_\+in, vector$<$ double $>$ \&zet\+GPcoord\+\_\+in, vector$<$ double $>$ \&Displacements\+\_\+in, vector$<$ double $>$ \&DMatrix\+\_\+in)
+\begin{DoxyCompactList}\small\item\em Constructor for a new Nonlinear Shell MCYSE object. This constructor can be used for the strains and stresses. ~\newline
+ The procedure for calculculating the initial local nodal coordinate system (V1, V2, V3) is the following\+: ~\newline
+ \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classNonlinearShellMCYSE_a41976a2295720aa7a8c3620bcc521280}{Nonlinear\+Shell\+MCYSE}} (string path\+\_\+in, vector$<$ vector$<$ double $>$ $>$ \&xyz\+\_\+in, vector$<$ vector$<$ double $>$ $>$ \&vnor\+\_\+in, vector$<$ double $>$ \&thick\+\_\+in, vector$<$ vector$<$ double $>$ $>$ \&xlocal\+\_\+in, vector$<$ vector$<$ double $>$ $>$ \&ylocal\+\_\+in, vector$<$ double $>$ \&zet\+GPcoord\+\_\+in, vector$<$ double $>$ \&zet\+GPweigth\+\_\+in, vector$<$ double $>$ \&Displacements\+\_\+in, vector$<$ double $>$ \&stresses\+\_\+in, vector$<$ double $>$ \&DMatrix\+\_\+in, vector$<$ double $>$ \&stresses\+\_\+hourglass\+\_\+in)
+\begin{DoxyCompactList}\small\item\em Constructor for a new Nonlinear Shell MCYSE object. This constructor can be used for the stiffness and/or the internal force vector. ~\newline
+ The procedure for calculculating the initial local nodal coordinate system (V1, V2, V3) is the following\+: ~\newline
+ \end{DoxyCompactList}\item 
+\Hypertarget{classNonlinearShellMCYSE_af84461a422a23df51fb63f0c8d5beb25}\label{classNonlinearShellMCYSE_af84461a422a23df51fb63f0c8d5beb25} 
+size\+\_\+t {\bfseries get\+\_\+\+Rows} ()
+\item 
+\Hypertarget{classNonlinearShellMCYSE_aec553b1b2e4ad32092dbf54775d9bfe2}\label{classNonlinearShellMCYSE_aec553b1b2e4ad32092dbf54775d9bfe2} 
+size\+\_\+t {\bfseries get\+\_\+\+Cols} ()
+\item 
+\Hypertarget{classNonlinearShellMCYSE_a3211080f17353f2d7f2dbe22b52a1074}\label{classNonlinearShellMCYSE_a3211080f17353f2d7f2dbe22b52a1074} 
+void {\bfseries get\+\_\+\+BMatrix} (vector$<$ double $>$ \texorpdfstring{$\ast$}{*}BMat\+\_\+out)
+\item 
+\Hypertarget{classNonlinearShellMCYSE_af08ab80f9e11bbe1218151c1757805bd}\label{classNonlinearShellMCYSE_af08ab80f9e11bbe1218151c1757805bd} 
+void {\bfseries get\+\_\+\+BMatrix\+\_\+\+Transposed} (vector$<$ double $>$ \texorpdfstring{$\ast$}{*}BMatT)
+\item 
+\Hypertarget{classNonlinearShellMCYSE_a7b0c8ceebc7ce44c24412b4a795ba8d0}\label{classNonlinearShellMCYSE_a7b0c8ceebc7ce44c24412b4a795ba8d0} 
+double {\bfseries get\+\_\+determinant} ()
+\item 
+\Hypertarget{classNonlinearShellMCYSE_a7441086666291b95a0fd6fbc8996eefc}\label{classNonlinearShellMCYSE_a7441086666291b95a0fd6fbc8996eefc} 
+void {\bfseries Calculate\+\_\+\+Stiffness\+MCYSE} ()
+\begin{DoxyCompactList}\small\item\em Calculates the linear stiffness matrix "{}\+Stiffness\+\_\+"{} of the MCYSE shell element. The calculation of the stiffness matrix was left on a separated method because we might want to instantiate this class for other features than the stiffness matrix and therefore we don\textquotesingle{}t need to waste CPU time of calculating the stiffness matrix if it is not needed. \end{DoxyCompactList}\item 
+vector$<$ double $>$ \mbox{\hyperlink{classNonlinearShellMCYSE_a4cd576269a0f76693e8b9d5d0ee9b73e}{get\+\_\+\+Stiffness\+MCYSE}} ()
+\begin{DoxyCompactList}\small\item\em Get the stiffness matrix "{}\+Stiffness\+\_\+"{} in vector form. This is a getter only for the stiffness matrix, it does not calculate the stiffness matrix. ~\newline
+ The logical steps for the stiffness matrix are\+: 1. instantiate a new MCYSE class using the appropriate constructor; 2. call the method "{}\+Calculate\+\_\+\+Stiffness\+MCYSE()"{} to calculate the stiffness matrix; 3. call this getter to get the vector "{}\+Stiffness\+\_\+"{} with the stiffness matrix. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classNonlinearShellMCYSE_a0f14ac0e4254808f85d2c82b8b9410f9}{set\+\_\+\+Local\+Axes}} (vector$<$ double $>$ axesgp\+\_\+in)
+\begin{DoxyCompactList}\small\item\em Set the local axes for the shell MCYSE element. If the local axes are not setted then the API will calculate the local axes. \end{DoxyCompactList}\item 
+vector$<$ double $>$ \mbox{\hyperlink{classNonlinearShellMCYSE_aa9ea7d0620986f4693fd7a93983051ac}{get\+\_\+\+Local\+Axes\+\_\+\+All}} ()
+\begin{DoxyCompactList}\small\item\em Get the local axes of the shell element. \end{DoxyCompactList}\item 
+\Hypertarget{classNonlinearShellMCYSE_a787e1e444098db772935da6d367d5535}\label{classNonlinearShellMCYSE_a787e1e444098db772935da6d367d5535} 
+void {\bfseries Calculate\+\_\+\+Local\+\_\+\+Axes\+\_\+\+All\+\_\+\+GP} ()
+\item 
+vector$<$ double $>$ \mbox{\hyperlink{classNonlinearShellMCYSE_aa3c4c66f8f62d415a880fc2ab79ab8e9}{get\+\_\+\+Strains\+MCYSE}} ()
+\begin{DoxyCompactList}\small\item\em Calculate and get the strain tensor (Strains\+\_\+) at all Gauss points of the shell element. The strains are defined in the local coordinate system at the Gauss point. \end{DoxyCompactList}\item 
+vector$<$ double $>$ \mbox{\hyperlink{classNonlinearShellMCYSE_afb317fc5db17803e16f45e598f6b1f4d}{get\+\_\+\+Strains\+MCYSE\+\_\+\+Global}} ()
+\begin{DoxyCompactList}\small\item\em Calculate and get the strain tensor (Strains\+\_\+\+Global\+\_\+) at all Gauss points of the shell element. The strains are defined in the global coordinate system. \end{DoxyCompactList}\item 
+vector$<$ double $>$ \mbox{\hyperlink{classNonlinearShellMCYSE_a4243ac2b5dea5c7f5f1806bf439296e0}{get\+\_\+\+Stresses\+MCYSE}} ()
+\begin{DoxyCompactList}\small\item\em Calculate and get the elastic stress tensor (stresses\+\_\+) at all Gauss points of the shell element. The stresses are defined in the local coordinate system at the Gauss point. \end{DoxyCompactList}\item 
+vector$<$ double $>$ \mbox{\hyperlink{classNonlinearShellMCYSE_a2202b660aa0855ef9f5463d94c1bf4f0}{get\+\_\+\+Stresses\+MCYSE\+\_\+\+Global}} ()
+\begin{DoxyCompactList}\small\item\em Calculate and get the stress tensor (stresses\+\_\+\+Global) at all Gauss points of the shell element. The stresses are defined in the global coordinate system. \end{DoxyCompactList}\item 
+\Hypertarget{classNonlinearShellMCYSE_a50146d1609dcf85c045d02553c3992bf}\label{classNonlinearShellMCYSE_a50146d1609dcf85c045d02553c3992bf} 
+void {\bfseries rotate\+\_\+\+GP\+\_\+axes} ()
+\item 
+\Hypertarget{classNonlinearShellMCYSE_af221a9032095b28d0f55bda5c6b65d7a}\label{classNonlinearShellMCYSE_af221a9032095b28d0f55bda5c6b65d7a} 
+vector$<$ double $>$ {\bfseries Get\+\_\+\+Force\+\_\+\+Hourglass} ()
+\item 
+\Hypertarget{classNonlinearShellMCYSE_a9c50f12cde5b811d566281452b3d213f}\label{classNonlinearShellMCYSE_a9c50f12cde5b811d566281452b3d213f} 
+void {\bfseries Hourglass\+\_\+\+Forces\+\_\+\+Intermediate} ()
+\item 
+\Hypertarget{classNonlinearShellMCYSE_a1107fac85d92b87059dab0907ac002bf}\label{classNonlinearShellMCYSE_a1107fac85d92b87059dab0907ac002bf} 
+void {\bfseries Calculate\+\_\+\+Internal\+\_\+\+Forces\+\_\+\+Explicit} ()
+\begin{DoxyCompactList}\small\item\em Calculates the internal force vector "{}\+Force\+\_\+\+Internal\+\_\+"{} for the MCYSE shell element. \end{DoxyCompactList}\item 
+vector$<$ double $>$ \mbox{\hyperlink{classNonlinearShellMCYSE_ad96896269f324176d4e7084e519035d6}{Get\+\_\+\+Internal\+\_\+\+Forces\+\_\+\+Explicit}} ()
+\begin{DoxyCompactList}\small\item\em Gets the internal force vector "{}\+Force\+\_\+\+Internal\+\_\+"{} of the MCYSE shell element. The method "{}\+Calculate\+\_\+\+Internal\+\_\+\+Forces\+\_\+\+Explicit()"{} must be used before calling this getter. \end{DoxyCompactList}\item 
+\Hypertarget{classNonlinearShellMCYSE_a73c50cbeb43150e0635556bea0435ce0}\label{classNonlinearShellMCYSE_a73c50cbeb43150e0635556bea0435ce0} 
+vector$<$ double $>$ {\bfseries Get\+\_\+stresses\+\_\+hourglass} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classNonlinearShellMCYSE_a4a67d9fd4cbeb69fb62b4caf5ae05159}\label{classNonlinearShellMCYSE_a4a67d9fd4cbeb69fb62b4caf5ae05159} 
+static string {\bfseries path} = "{}"{}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classNonlinearShellMCYSE_a0b2fafac4abc85709f500aa1014fd2b6}\label{classNonlinearShellMCYSE_a0b2fafac4abc85709f500aa1014fd2b6} 
+\index{NonlinearShellMCYSE@{NonlinearShellMCYSE}!NonlinearShellMCYSE@{NonlinearShellMCYSE}}
+\index{NonlinearShellMCYSE@{NonlinearShellMCYSE}!NonlinearShellMCYSE@{NonlinearShellMCYSE}}
+\doxysubsubsection{\texorpdfstring{NonlinearShellMCYSE()}{NonlinearShellMCYSE()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily Nonlinear\+Shell\+MCYSE\+::\+Nonlinear\+Shell\+MCYSE (\begin{DoxyParamCaption}\item[{string}]{path\+\_\+in,  }\item[{vector$<$ vector$<$ double $>$ $>$ \&}]{xyz\+\_\+in,  }\item[{vector$<$ vector$<$ double $>$ $>$ \&}]{vnor\+\_\+in,  }\item[{vector$<$ double $>$ \&}]{thick\+\_\+in,  }\item[{vector$<$ vector$<$ double $>$ $>$ \&}]{xlocal\+\_\+in,  }\item[{vector$<$ vector$<$ double $>$ $>$ \&}]{ylocal\+\_\+in,  }\item[{vector$<$ double $>$ \&}]{zet\+GPcoord\+\_\+in,  }\item[{vector$<$ double $>$ \&}]{zet\+GPweigth\+\_\+in,  }\item[{vector$<$ double $>$ \&}]{stresses\+\_\+in,  }\item[{vector$<$ double $>$ \&}]{DMatrix\+\_\+in }\end{DoxyParamCaption})}
+
+
+
+Constructor for a new Nonlinear Shell MCYSE object. This constructor can be used for the stiffness matrix. ~\newline
+ The procedure for calculculating the initial local nodal coordinate system (V1, V2, V3) is the following\+: ~\newline
+ 
+
+
+\begin{DoxyEnumerate}
+\item define a vector\+: vec1 = \{0.\+0, 1.\+0, 0.\+0\}; ~\newline
+
+\item define "{}xloc"{} as the result of the following cross-\/product\+: xloc = vec1 x V3 (V3 is the normal vector at the node); ~\newline
+
+\item if (xloc.\+empty()) \{ xloc = \{1.\+0, 0.\+0, 0.\+0\} \}; ~\newline
+
+\item V1 = xloc; ~\newline
+
+\item V2 = V3 x V1.
+\end{DoxyEnumerate}
+
+
+\begin{DoxyParams}{Parameters}
+{\em path\+\_\+in} & String with the full path to the license file. \\
+\hline
+{\em xyz\+\_\+in} & Nodal coordinates of the four shell element nodes, stored in xyz\+\_\+in\mbox{[}0\+:3\mbox{]}\mbox{[}0\+:2\mbox{]}, where each row corresponds to a node of the element and each column corresponds to the x,y, and z coordinates. \\
+\hline
+{\em vnor\+\_\+in} & Normal vector of the four shell element nodes, stored in vnor\+\_\+in\mbox{[}0\+:3\mbox{]}\mbox{[}0\+:2\mbox{]}, where each row corresponds to a node of the element and each column corresponds to the x,y, and z components of the normal vector. \\
+\hline
+{\em thick\+\_\+in} & Element\textquotesingle{}s thickness at the nodes, stored in thick\+\_\+in\mbox{[}0\+:3\mbox{]}, where each index is a node of the MCYSE shell element. \\
+\hline
+{\em xlocal\+\_\+in} & V1 local nodal vector stored in xlocal\+\_\+in\mbox{[}0\+:3\mbox{]}\mbox{[}0\+:2\mbox{]}, where each row corresponds to a node of the element and each column corresponds to the x,y, and z components of the "{}xlocal\+\_\+in"{} vector. If passed empty then it will be built inside the constructor. ~\newline
+ V1 (xlocal\+\_\+in), V2 (ylocal\+\_\+in) and V3 (vnor\+\_\+in) make a local nodal coordinate system at each node. \\
+\hline
+{\em ylocal\+\_\+in} & V2 local nodal vector stored in ylocal\+\_\+in\mbox{[}0\+:3\mbox{]}\mbox{[}0\+:2\mbox{]}, where each row corresponds to a node of the element and each column corresponds to the x,y, and z components of the "{}ylocal\+\_\+in"{} vector. If passed empty then it will be built inside the constructor. ~\newline
+ V1 (xlocal\+\_\+in), V2 (ylocal\+\_\+in) and V3 (vnor\+\_\+in) make a local nodal coordinate system at each node. \\
+\hline
+{\em zet\+GPcoord\+\_\+in} & Natural coordinates of the Gauss integration points along the thickness direction of the shell. The number of integration points along the thickness direction is defined here through the size of this vector. \\
+\hline
+{\em zet\+GPweigth\+\_\+in} & Weights of the Gauss integration points along the thickness direction of the shell. The size of this vector must be the same as the size of "{}zet\+GPcoord\+\_\+in"{}. \\
+\hline
+{\em stresses\+\_\+in} & The stresses at the integration points must be provided as input to the class constructor. These stresses are required for the computation of the internal force vector and the initial stress stiffness matrix. ~\newline
+ The stress input format is defined as follows\+: ~\newline
+ Sxx, Syy, Sxy, Sxz, Syz, i.\+e., five stress components per integration point along the thickness direction. The stresses are stored in the "{}stresses\+\_\+"{} vector, ordered by integration points through the thickness in a bottom-\/to-\/top direction, from zet = -\/1.\+0 to zet = +1.\+0. ~\newline
+ For example, with two integration points through the thickness, zet1 = -\/1.\+0 / sqrt(3.\+0) and zet2 = +1.\+0 / sqrt(3.\+0), the ordering in stresses\+\_\+ is\+: ~\newline
+ \mbox{[}Sxx\texorpdfstring{$^\wedge$}{\string^}zet1, Syy\texorpdfstring{$^\wedge$}{\string^}zet1, Sxy\texorpdfstring{$^\wedge$}{\string^}zet1, Sxz\texorpdfstring{$^\wedge$}{\string^}zet1, Syz\texorpdfstring{$^\wedge$}{\string^}zet1, Sxx\texorpdfstring{$^\wedge$}{\string^}zet2, Syy\texorpdfstring{$^\wedge$}{\string^}zet2, Sxy\texorpdfstring{$^\wedge$}{\string^}zet2, Sxz\texorpdfstring{$^\wedge$}{\string^}zet2, Syz\texorpdfstring{$^\wedge$}{\string^}zet2\mbox{]} \\
+\hline
+{\em DMatrix\+\_\+in} & Plane stress constitutive matrix, stored in vector form with size = 25. The "{}\+DMatrix\+\_\+in"{} vector must contain the 5x5 constitutive matrix for all integration points along the thickness direction of the shell element. The procedure to construct this vector is the following\+: ~\newline
+
+\begin{DoxyEnumerate}
+\item Loop in the integration points along thickness direction\+: for (int izet = 0; izet \texorpdfstring{$<$}{<} zet\+GPCoord\+\_\+in.\+size(); ++izet) \{ ~\newline
+
+\item Insert the 5x5 D-\/matrix, stored in vector form ("{}\+DMatrix\mbox{[}0\+:24\mbox{]}"{}), into the "{}\+DMatrix\+\_\+in"{} vector\+: ~\newline
+ 2.\+1 for (int i = 0; i \texorpdfstring{$<$}{<} 25; ++i) \{ DMatrix\+\_\+all.\+push\+\_\+back(\+DMatrix\mbox{[}i\mbox{]}); \} 
+\end{DoxyEnumerate}\\
+\hline
+\end{DoxyParams}
+\Hypertarget{classNonlinearShellMCYSE_af98a67030ae7eb934c57e368d29c724d}\label{classNonlinearShellMCYSE_af98a67030ae7eb934c57e368d29c724d} 
+\index{NonlinearShellMCYSE@{NonlinearShellMCYSE}!NonlinearShellMCYSE@{NonlinearShellMCYSE}}
+\index{NonlinearShellMCYSE@{NonlinearShellMCYSE}!NonlinearShellMCYSE@{NonlinearShellMCYSE}}
+\doxysubsubsection{\texorpdfstring{NonlinearShellMCYSE()}{NonlinearShellMCYSE()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily Nonlinear\+Shell\+MCYSE\+::\+Nonlinear\+Shell\+MCYSE (\begin{DoxyParamCaption}\item[{string}]{path\+\_\+in,  }\item[{vector$<$ vector$<$ double $>$ $>$ \&}]{xyz\+\_\+in,  }\item[{vector$<$ vector$<$ double $>$ $>$ \&}]{vnor\+\_\+in,  }\item[{vector$<$ double $>$ \&}]{thick\+\_\+in,  }\item[{vector$<$ vector$<$ double $>$ $>$ \&}]{xlocal\+\_\+in,  }\item[{vector$<$ vector$<$ double $>$ $>$ \&}]{ylocal\+\_\+in,  }\item[{vector$<$ double $>$ \&}]{zet\+GPcoord\+\_\+in,  }\item[{vector$<$ double $>$ \&}]{Displacements\+\_\+in,  }\item[{vector$<$ double $>$ \&}]{DMatrix\+\_\+in }\end{DoxyParamCaption})}
+
+
+
+Constructor for a new Nonlinear Shell MCYSE object. This constructor can be used for the strains and stresses. ~\newline
+ The procedure for calculculating the initial local nodal coordinate system (V1, V2, V3) is the following\+: ~\newline
+ 
+
+
+\begin{DoxyEnumerate}
+\item define a vector\+: vec1 = \{0.\+0, 1.\+0, 0.\+0\}; ~\newline
+
+\item define "{}xloc"{} as the result of the following cross-\/product\+: xloc = vec1 x V3 (V3 is the normal vector at the node); ~\newline
+
+\item if (xloc.\+empty()) \{ xloc = \{1.\+0, 0.\+0, 0.\+0\} \}; ~\newline
+
+\item V1 = xloc; ~\newline
+
+\item V2 = V3 x V1.
+\end{DoxyEnumerate}
+
+
+\begin{DoxyParams}{Parameters}
+{\em path\+\_\+in} & String with the full path to the license file. \\
+\hline
+{\em xyz\+\_\+in} & Nodal coordinates of the four shell element nodes, stored in xyz\+\_\+in\mbox{[}0\+:3\mbox{]}\mbox{[}0\+:2\mbox{]}, where each row corresponds to a node of the element and each column corresponds to the x,y, and z coordinates. \\
+\hline
+{\em vnor\+\_\+in} & Normal vector of the four shell element nodes, stored in vnor\+\_\+in\mbox{[}0\+:3\mbox{]}\mbox{[}0\+:2\mbox{]}, where each row corresponds to a node of the element and each column corresponds to the x,y, and z components of the normal vector. \\
+\hline
+{\em thick\+\_\+in} & Element\textquotesingle{}s thickness at the nodes, stored in thick\+\_\+in\mbox{[}0\+:3\mbox{]}, where each index is a node of the MCYSE shell element. \\
+\hline
+{\em xlocal\+\_\+in} & V1 local nodal vector stored in xlocal\+\_\+in\mbox{[}0\+:3\mbox{]}\mbox{[}0\+:2\mbox{]}, where each row corresponds to a node of the element and each column corresponds to the x,y, and z components of the "{}xlocal\+\_\+in"{} vector. If passed empty then it will be built inside the constructor. ~\newline
+ V1 (xlocal\+\_\+in), V2 (ylocal\+\_\+in) and V3 (vnor\+\_\+in) make a local nodal coordinate system at each node. \\
+\hline
+{\em ylocal\+\_\+in} & V2 local nodal vector stored in ylocal\+\_\+in\mbox{[}0\+:3\mbox{]}\mbox{[}0\+:2\mbox{]}, where each row corresponds to a node of the element and each column corresponds to the x,y, and z components of the "{}ylocal\+\_\+in"{} vector. If passed empty then it will be built inside the constructor. ~\newline
+ V1 (xlocal\+\_\+in), V2 (ylocal\+\_\+in) and V3 (vnor\+\_\+in) make a local nodal coordinate system at each node. \\
+\hline
+{\em zet\+GPcoord\+\_\+in} & Natural coordinates of the Gauss integration points along the thickness direction of the shell. The number of integration points along the thickness direction is defined here through the size of this vector. \\
+\hline
+{\em Displacements\+\_\+in} & Displacement vector for the element. The shell MCYSE has 4 nodes and each node has 6 degrees of freedom. The size of this vector is 4x6 = 24. \\
+\hline
+{\em DMatrix\+\_\+in} & Plane stress constitutive matrix, stored in vector form with size = 25. The "{}\+DMatrix\+\_\+in"{} vector must contain the 5x5 constitutive matrix for all integration points along the thickness direction of the shell element. The procedure to construct this vector is the following\+: ~\newline
+
+\begin{DoxyEnumerate}
+\item Loop in the integration points along thickness direction\+: for (int izet = 0; izet \texorpdfstring{$<$}{<} zet\+GPCoord\+\_\+in.\+size(); ++izet) \{ ~\newline
+
+\item Insert the 5x5 D-\/matrix, stored in vector form ("{}\+DMatrix\mbox{[}0\+:24\mbox{]}"{}), into the "{}\+DMatrix\+\_\+in"{} vector\+: ~\newline
+ 2.\+1 for (int i = 0; i \texorpdfstring{$<$}{<} 25; ++i) \{ DMatrix\+\_\+all.\+push\+\_\+back(\+DMatrix\mbox{[}i\mbox{]}); \} 
+\end{DoxyEnumerate}\\
+\hline
+\end{DoxyParams}
+\Hypertarget{classNonlinearShellMCYSE_a41976a2295720aa7a8c3620bcc521280}\label{classNonlinearShellMCYSE_a41976a2295720aa7a8c3620bcc521280} 
+\index{NonlinearShellMCYSE@{NonlinearShellMCYSE}!NonlinearShellMCYSE@{NonlinearShellMCYSE}}
+\index{NonlinearShellMCYSE@{NonlinearShellMCYSE}!NonlinearShellMCYSE@{NonlinearShellMCYSE}}
+\doxysubsubsection{\texorpdfstring{NonlinearShellMCYSE()}{NonlinearShellMCYSE()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily Nonlinear\+Shell\+MCYSE\+::\+Nonlinear\+Shell\+MCYSE (\begin{DoxyParamCaption}\item[{string}]{path\+\_\+in,  }\item[{vector$<$ vector$<$ double $>$ $>$ \&}]{xyz\+\_\+in,  }\item[{vector$<$ vector$<$ double $>$ $>$ \&}]{vnor\+\_\+in,  }\item[{vector$<$ double $>$ \&}]{thick\+\_\+in,  }\item[{vector$<$ vector$<$ double $>$ $>$ \&}]{xlocal\+\_\+in,  }\item[{vector$<$ vector$<$ double $>$ $>$ \&}]{ylocal\+\_\+in,  }\item[{vector$<$ double $>$ \&}]{zet\+GPcoord\+\_\+in,  }\item[{vector$<$ double $>$ \&}]{zet\+GPweigth\+\_\+in,  }\item[{vector$<$ double $>$ \&}]{Displacements\+\_\+in,  }\item[{vector$<$ double $>$ \&}]{stresses\+\_\+in,  }\item[{vector$<$ double $>$ \&}]{DMatrix\+\_\+in,  }\item[{vector$<$ double $>$ \&}]{stresses\+\_\+hourglass\+\_\+in }\end{DoxyParamCaption})}
+
+
+
+Constructor for a new Nonlinear Shell MCYSE object. This constructor can be used for the stiffness and/or the internal force vector. ~\newline
+ The procedure for calculculating the initial local nodal coordinate system (V1, V2, V3) is the following\+: ~\newline
+ 
+
+
+\begin{DoxyEnumerate}
+\item define a vector\+: vec1 = \{0.\+0, 1.\+0, 0.\+0\}; ~\newline
+
+\item define "{}xloc"{} as the result of the following cross-\/product\+: xloc = vec1 x V3 (V3 is the normal vector at the node); ~\newline
+
+\item if (xloc.\+empty()) \{ xloc = \{1.\+0, 0.\+0, 0.\+0\} \}; ~\newline
+
+\item V1 = xloc; ~\newline
+
+\item V2 = V3 x V1.
+\end{DoxyEnumerate}
+
+
+\begin{DoxyParams}{Parameters}
+{\em path\+\_\+in} & String with the full path to the license file. \\
+\hline
+{\em xyz\+\_\+in} & Nodal coordinates of the four shell element nodes, stored in xyz\+\_\+in\mbox{[}0\+:3\mbox{]}\mbox{[}0\+:2\mbox{]}, where each row corresponds to a node of the element and each column corresponds to the x,y, and z coordinates. \\
+\hline
+{\em vnor\+\_\+in} & Normal vector of the four shell element nodes, stored in vnor\+\_\+in\mbox{[}0\+:3\mbox{]}\mbox{[}0\+:2\mbox{]}, where each row corresponds to a node of the element and each column corresponds to the x,y, and z components of the normal vector. \\
+\hline
+{\em thick\+\_\+in} & Element\textquotesingle{}s thickness at the nodes, stored in thick\+\_\+in\mbox{[}0\+:3\mbox{]}, where each index is a node of the MCYSE shell element. \\
+\hline
+{\em xlocal\+\_\+in} & V1 local nodal vector stored in xlocal\+\_\+in\mbox{[}0\+:3\mbox{]}\mbox{[}0\+:2\mbox{]}, where each row corresponds to a node of the element and each column corresponds to the x,y, and z components of the "{}xlocal\+\_\+in"{} vector. If passed empty then it will be built inside the constructor. ~\newline
+ V1 (xlocal\+\_\+in), V2 (ylocal\+\_\+in) and V3 (vnor\+\_\+in) make a local nodal coordinate system at each node. \\
+\hline
+{\em ylocal\+\_\+in} & V2 local nodal vector stored in ylocal\+\_\+in\mbox{[}0\+:3\mbox{]}\mbox{[}0\+:2\mbox{]}, where each row corresponds to a node of the element and each column corresponds to the x,y, and z components of the "{}ylocal\+\_\+in"{} vector. If passed empty then it will be built inside the constructor. ~\newline
+ V1 (xlocal\+\_\+in), V2 (ylocal\+\_\+in) and V3 (vnor\+\_\+in) make a local nodal coordinate system at each node. \\
+\hline
+{\em zet\+GPcoord\+\_\+in} & Natural coordinates of the Gauss integration points along the thickness direction of the shell. The number of integration points along the thickness direction is defined here through the size of this vector. \\
+\hline
+{\em zet\+GPweigth\+\_\+in} & Weights of the Gauss integration points along the thickness direction of the shell. The size of this vector must be the same as the size of "{}zet\+GPcoord\+\_\+in"{}. \\
+\hline
+{\em Displacements\+\_\+in} & Displacement vector for the element. The shell MCYSE has 4 nodes and each node has 6 degrees of freedom. The size of this vector is 4x6 = 24. \\
+\hline
+{\em stresses\+\_\+in} & The stresses at the integration points must be provided as input to the class constructor. These stresses are required for the computation of the internal force vector and the initial stress stiffness matrix. ~\newline
+ The stress input format is defined as follows\+: ~\newline
+ Sxx, Syy, Sxy, Sxz, Syz, i.\+e., five stress components per integration point along the thickness direction. The stresses are stored in the "{}stresses\+\_\+"{} vector, ordered by integration points through the thickness in a bottom-\/to-\/top direction, from zet = -\/1.\+0 to zet = +1.\+0. ~\newline
+ For example, with two integration points through the thickness, zet1 = -\/1.\+0 / sqrt(3.\+0) and zet2 = +1.\+0 / sqrt(3.\+0), the ordering in stresses\+\_\+ is\+: ~\newline
+ \mbox{[}Sxx\texorpdfstring{$^\wedge$}{\string^}zet1, Syy\texorpdfstring{$^\wedge$}{\string^}zet1, Sxy\texorpdfstring{$^\wedge$}{\string^}zet1, Sxz\texorpdfstring{$^\wedge$}{\string^}zet1, Syz\texorpdfstring{$^\wedge$}{\string^}zet1, Sxx\texorpdfstring{$^\wedge$}{\string^}zet2, Syy\texorpdfstring{$^\wedge$}{\string^}zet2, Sxy\texorpdfstring{$^\wedge$}{\string^}zet2, Sxz\texorpdfstring{$^\wedge$}{\string^}zet2, Syz\texorpdfstring{$^\wedge$}{\string^}zet2\mbox{]} \\
+\hline
+{\em DMatrix\+\_\+in} & Plane stress constitutive matrix, stored in vector form with size = 25. The "{}\+DMatrix\+\_\+in"{} vector must contain the 5x5 constitutive matrix for all integration points along the thickness direction of the shell element. The procedure to construct this vector is the following\+: ~\newline
+
+\begin{DoxyEnumerate}
+\item Loop in the integration points along thickness direction\+: for (int izet = 0; izet \texorpdfstring{$<$}{<} zet\+GPCoord\+\_\+in.\+size(); ++izet) \{ ~\newline
+
+\item Insert the 5x5 D-\/matrix, stored in vector form ("{}\+DMatrix\mbox{[}0\+:24\mbox{]}"{}), into the "{}\+DMatrix\+\_\+in"{} vector\+: ~\newline
+ 2.\+1 for (int i = 0; i \texorpdfstring{$<$}{<} 25; ++i) \{ DMatrix\+\_\+all.\+push\+\_\+back(\+DMatrix\mbox{[}i\mbox{]}); \} 
+\end{DoxyEnumerate}\\
+\hline
+{\em stresses\+\_\+hourglass\+\_\+in} & Hourglass stresses updated from the incremental displacements (defined in "{}\+Displacements\+\_\+in"{}). At the input for this constructor "{}stresses\+\_\+hourglass\+\_\+in"{} are the hourglass stresses at configuration "{}n"{}. In the method "{}\+Calculate\+\_\+\+Internal\+\_\+\+Forces\+\_\+\+Explicit()"{}, the incremental hourglass stresses are calculated and the "{}stresses\+\_\+hourglass\+\_\+"{} vector is updated so that the getter "{}\+Get\+\_\+stresses\+\_\+hourglass()"{} can return the hourglass stresses at configuration "{}n+1"{}. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classNonlinearShellMCYSE_ad96896269f324176d4e7084e519035d6}\label{classNonlinearShellMCYSE_ad96896269f324176d4e7084e519035d6} 
+\index{NonlinearShellMCYSE@{NonlinearShellMCYSE}!Get\_Internal\_Forces\_Explicit@{Get\_Internal\_Forces\_Explicit}}
+\index{Get\_Internal\_Forces\_Explicit@{Get\_Internal\_Forces\_Explicit}!NonlinearShellMCYSE@{NonlinearShellMCYSE}}
+\doxysubsubsection{\texorpdfstring{Get\_Internal\_Forces\_Explicit()}{Get\_Internal\_Forces\_Explicit()}}
+{\footnotesize\ttfamily vector$<$ double $>$ Nonlinear\+Shell\+MCYSE\+::\+Get\+\_\+\+Internal\+\_\+\+Forces\+\_\+\+Explicit (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets the internal force vector "{}\+Force\+\_\+\+Internal\+\_\+"{} of the MCYSE shell element. The method "{}\+Calculate\+\_\+\+Internal\+\_\+\+Forces\+\_\+\+Explicit()"{} must be used before calling this getter. 
+
+\begin{DoxyReturn}{Returns}
+vector$<$double$>$ This return is the internal force vector "{}\+Force\+\_\+\+Internal\+\_\+"{} with size of 24 = 4 nodes x 6 dof per node (the DOF number 6 is associated with the drill DOF which is always = 0 in this element formulation). 
+\end{DoxyReturn}
+\Hypertarget{classNonlinearShellMCYSE_aa9ea7d0620986f4693fd7a93983051ac}\label{classNonlinearShellMCYSE_aa9ea7d0620986f4693fd7a93983051ac} 
+\index{NonlinearShellMCYSE@{NonlinearShellMCYSE}!get\_LocalAxes\_All@{get\_LocalAxes\_All}}
+\index{get\_LocalAxes\_All@{get\_LocalAxes\_All}!NonlinearShellMCYSE@{NonlinearShellMCYSE}}
+\doxysubsubsection{\texorpdfstring{get\_LocalAxes\_All()}{get\_LocalAxes\_All()}}
+{\footnotesize\ttfamily vector$<$ double $>$ Nonlinear\+Shell\+MCYSE\+::get\+\_\+\+Local\+Axes\+\_\+\+All (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the local axes of the shell element. 
+
+\begin{DoxyReturn}{Returns}
+vector$<$double$>$ ~\newline
+ 
+\end{DoxyReturn}
+\Hypertarget{classNonlinearShellMCYSE_a4cd576269a0f76693e8b9d5d0ee9b73e}\label{classNonlinearShellMCYSE_a4cd576269a0f76693e8b9d5d0ee9b73e} 
+\index{NonlinearShellMCYSE@{NonlinearShellMCYSE}!get\_StiffnessMCYSE@{get\_StiffnessMCYSE}}
+\index{get\_StiffnessMCYSE@{get\_StiffnessMCYSE}!NonlinearShellMCYSE@{NonlinearShellMCYSE}}
+\doxysubsubsection{\texorpdfstring{get\_StiffnessMCYSE()}{get\_StiffnessMCYSE()}}
+{\footnotesize\ttfamily vector$<$ double $>$ Nonlinear\+Shell\+MCYSE\+::get\+\_\+\+Stiffness\+MCYSE (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get the stiffness matrix "{}\+Stiffness\+\_\+"{} in vector form. This is a getter only for the stiffness matrix, it does not calculate the stiffness matrix. ~\newline
+ The logical steps for the stiffness matrix are\+: 1. instantiate a new MCYSE class using the appropriate constructor; 2. call the method "{}\+Calculate\+\_\+\+Stiffness\+MCYSE()"{} to calculate the stiffness matrix; 3. call this getter to get the vector "{}\+Stiffness\+\_\+"{} with the stiffness matrix. 
+
+\begin{DoxyReturn}{Returns}
+vector$<$double$>$ The return is the stiffness matrix "{}\+Stiffness\+\_\+"{} in vector form (of size = 576). The first elements in the output vector (Stiffness\+\_\+\mbox{[}0\+:23\mbox{]}) correspond to the first 24 elements in the first row of the 24 x 24 stiffness ~\newline
+ (stif\mbox{[}0\mbox{]}\mbox{[}0\+:23\mbox{]}), the next 24 elements in the output vector (Stiffness\+\_\+\mbox{[}24\+:47\mbox{]}) correspond to stif\mbox{[}1\mbox{]}\mbox{[}0\+:23\mbox{]}, and so on. 
+\end{DoxyReturn}
+\Hypertarget{classNonlinearShellMCYSE_aa3c4c66f8f62d415a880fc2ab79ab8e9}\label{classNonlinearShellMCYSE_aa3c4c66f8f62d415a880fc2ab79ab8e9} 
+\index{NonlinearShellMCYSE@{NonlinearShellMCYSE}!get\_StrainsMCYSE@{get\_StrainsMCYSE}}
+\index{get\_StrainsMCYSE@{get\_StrainsMCYSE}!NonlinearShellMCYSE@{NonlinearShellMCYSE}}
+\doxysubsubsection{\texorpdfstring{get\_StrainsMCYSE()}{get\_StrainsMCYSE()}}
+{\footnotesize\ttfamily vector$<$ double $>$ Nonlinear\+Shell\+MCYSE\+::get\+\_\+\+Strains\+MCYSE (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Calculate and get the strain tensor (Strains\+\_\+) at all Gauss points of the shell element. The strains are defined in the local coordinate system at the Gauss point. 
+
+\begin{DoxyReturn}{Returns}
+vector$<$double$>$ The strains input format is defined as follows\+: ~\newline
+ Exx, Eyy, Exy, Exz, Eyz, i.\+e., five strain components per integration point along the thickness direction. The strains are stored in the "{}\+Strains\+\_\+"{} vector, ordered by integration points through the thickness in a bottom-\/to-\/top direction, from zet = -\/1.\+0 to zet = +1.\+0. ~\newline
+ For example, with two integration points through the thickness, zet1 = -\/1.\+0 / sqrt(3.\+0) and zet2 = +1.\+0 / sqrt(3.\+0), the ordering in "{}\+Strains\+\_\+"{} is\+: ~\newline
+ \mbox{[}Exx\texorpdfstring{$^\wedge$}{\string^}zet1, Eyy\texorpdfstring{$^\wedge$}{\string^}zet1, Exy\texorpdfstring{$^\wedge$}{\string^}zet1, Exz\texorpdfstring{$^\wedge$}{\string^}zet1, Eyz\texorpdfstring{$^\wedge$}{\string^}zet1, Exx\texorpdfstring{$^\wedge$}{\string^}zet2, Eyy\texorpdfstring{$^\wedge$}{\string^}zet2, Exy\texorpdfstring{$^\wedge$}{\string^}zet2, Exz\texorpdfstring{$^\wedge$}{\string^}zet2, Eyz\texorpdfstring{$^\wedge$}{\string^}zet2\mbox{]} 
+\end{DoxyReturn}
+\Hypertarget{classNonlinearShellMCYSE_afb317fc5db17803e16f45e598f6b1f4d}\label{classNonlinearShellMCYSE_afb317fc5db17803e16f45e598f6b1f4d} 
+\index{NonlinearShellMCYSE@{NonlinearShellMCYSE}!get\_StrainsMCYSE\_Global@{get\_StrainsMCYSE\_Global}}
+\index{get\_StrainsMCYSE\_Global@{get\_StrainsMCYSE\_Global}!NonlinearShellMCYSE@{NonlinearShellMCYSE}}
+\doxysubsubsection{\texorpdfstring{get\_StrainsMCYSE\_Global()}{get\_StrainsMCYSE\_Global()}}
+{\footnotesize\ttfamily vector$<$ double $>$ Nonlinear\+Shell\+MCYSE\+::get\+\_\+\+Strains\+MCYSE\+\_\+\+Global (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Calculate and get the strain tensor (Strains\+\_\+\+Global\+\_\+) at all Gauss points of the shell element. The strains are defined in the global coordinate system. 
+
+\begin{DoxyReturn}{Returns}
+vector$<$double$>$ The global strains input format is defined as follows\+: ~\newline
+ EGxx, EGyy, EGxy, EGxz, EGyz, i.\+e., five strain components per integration point along the thickness direction. The global strains are stored in the "{}\+Strains\+\_\+\+Global\+\_\+"{} vector, ordered by integration points through the thickness in a bottom-\/to-\/top direction, from zet = -\/1.\+0 to zet = +1.\+0. ~\newline
+ For example, with two integration points through the thickness, zet1 = -\/1.\+0 / sqrt(3.\+0) and zet2 = +1.\+0 / sqrt(3.\+0), the ordering in "{}\+Strains\+\_\+\+Global\+\_\+"{} is\+: ~\newline
+ \mbox{[}EGxx\texorpdfstring{$^\wedge$}{\string^}zet1, EGyy\texorpdfstring{$^\wedge$}{\string^}zet1, EGxy\texorpdfstring{$^\wedge$}{\string^}zet1, EGxz\texorpdfstring{$^\wedge$}{\string^}zet1, EGyz\texorpdfstring{$^\wedge$}{\string^}zet1, EGxx\texorpdfstring{$^\wedge$}{\string^}zet2, EGyy\texorpdfstring{$^\wedge$}{\string^}zet2, EGxy\texorpdfstring{$^\wedge$}{\string^}zet2, EGxz\texorpdfstring{$^\wedge$}{\string^}zet2, EGyz\texorpdfstring{$^\wedge$}{\string^}zet2\mbox{]} 
+\end{DoxyReturn}
+\Hypertarget{classNonlinearShellMCYSE_a4243ac2b5dea5c7f5f1806bf439296e0}\label{classNonlinearShellMCYSE_a4243ac2b5dea5c7f5f1806bf439296e0} 
+\index{NonlinearShellMCYSE@{NonlinearShellMCYSE}!get\_StressesMCYSE@{get\_StressesMCYSE}}
+\index{get\_StressesMCYSE@{get\_StressesMCYSE}!NonlinearShellMCYSE@{NonlinearShellMCYSE}}
+\doxysubsubsection{\texorpdfstring{get\_StressesMCYSE()}{get\_StressesMCYSE()}}
+{\footnotesize\ttfamily vector$<$ double $>$ Nonlinear\+Shell\+MCYSE\+::get\+\_\+\+Stresses\+MCYSE (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Calculate and get the elastic stress tensor (stresses\+\_\+) at all Gauss points of the shell element. The stresses are defined in the local coordinate system at the Gauss point. 
+
+\begin{DoxyReturn}{Returns}
+vector$<$double$>$ The stress input format is defined as follows\+: ~\newline
+ Sxx, Syy, Sxy, Sxz, Syz, i.\+e., five stress components per integration point along the thickness direction. The stresses are stored in the "{}stresses\+\_\+"{} vector, ordered by integration points through the thickness in a bottom-\/to-\/top direction, from zet = -\/1.\+0 to zet = +1.\+0. ~\newline
+ For example, with two integration points through the thickness, zet1 = -\/1.\+0 / sqrt(3.\+0) and zet2 = +1.\+0 / sqrt(3.\+0), the ordering in stresses\+\_\+ is\+: ~\newline
+ \mbox{[}Sxx\texorpdfstring{$^\wedge$}{\string^}zet1, Syy\texorpdfstring{$^\wedge$}{\string^}zet1, Sxy\texorpdfstring{$^\wedge$}{\string^}zet1, Sxz\texorpdfstring{$^\wedge$}{\string^}zet1, Syz\texorpdfstring{$^\wedge$}{\string^}zet1, Sxx\texorpdfstring{$^\wedge$}{\string^}zet2, Syy\texorpdfstring{$^\wedge$}{\string^}zet2, Sxy\texorpdfstring{$^\wedge$}{\string^}zet2, Sxz\texorpdfstring{$^\wedge$}{\string^}zet2, Syz\texorpdfstring{$^\wedge$}{\string^}zet2\mbox{]}. 
+\end{DoxyReturn}
+\Hypertarget{classNonlinearShellMCYSE_a2202b660aa0855ef9f5463d94c1bf4f0}\label{classNonlinearShellMCYSE_a2202b660aa0855ef9f5463d94c1bf4f0} 
+\index{NonlinearShellMCYSE@{NonlinearShellMCYSE}!get\_StressesMCYSE\_Global@{get\_StressesMCYSE\_Global}}
+\index{get\_StressesMCYSE\_Global@{get\_StressesMCYSE\_Global}!NonlinearShellMCYSE@{NonlinearShellMCYSE}}
+\doxysubsubsection{\texorpdfstring{get\_StressesMCYSE\_Global()}{get\_StressesMCYSE\_Global()}}
+{\footnotesize\ttfamily vector$<$ double $>$ Nonlinear\+Shell\+MCYSE\+::get\+\_\+\+Stresses\+MCYSE\+\_\+\+Global (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Calculate and get the stress tensor (stresses\+\_\+\+Global) at all Gauss points of the shell element. The stresses are defined in the global coordinate system. 
+
+\begin{DoxyReturn}{Returns}
+vector$<$double$>$ The global stress input format is defined as follows\+: ~\newline
+ SGxx, SGyy, SGxy, SGxz, SGyz, i.\+e., five global stress components per integration point along the thickness direction. The global stresses are stored in the "{}stresses\+\_\+\+Global"{} vector, ordered by integration points through the thickness in a bottom-\/to-\/top direction, from zet = -\/1.\+0 to zet = +1.\+0. ~\newline
+ For example, with two integration points through the thickness, zet1 = -\/1.\+0 / sqrt(3.\+0) and zet2 = +1.\+0 / sqrt(3.\+0), the ordering in "{}stresses\+\_\+\+Global"{} is\+: ~\newline
+ \mbox{[}SGxx\texorpdfstring{$^\wedge$}{\string^}zet1, SGyy\texorpdfstring{$^\wedge$}{\string^}zet1, SGxy\texorpdfstring{$^\wedge$}{\string^}zet1, SGxz\texorpdfstring{$^\wedge$}{\string^}zet1, SGyz\texorpdfstring{$^\wedge$}{\string^}zet1, SGxx\texorpdfstring{$^\wedge$}{\string^}zet2, SGyy\texorpdfstring{$^\wedge$}{\string^}zet2, SGxy\texorpdfstring{$^\wedge$}{\string^}zet2, SGxz\texorpdfstring{$^\wedge$}{\string^}zet2, SGyz\texorpdfstring{$^\wedge$}{\string^}zet2\mbox{]}. 
+\end{DoxyReturn}
+\Hypertarget{classNonlinearShellMCYSE_a0f14ac0e4254808f85d2c82b8b9410f9}\label{classNonlinearShellMCYSE_a0f14ac0e4254808f85d2c82b8b9410f9} 
+\index{NonlinearShellMCYSE@{NonlinearShellMCYSE}!set\_LocalAxes@{set\_LocalAxes}}
+\index{set\_LocalAxes@{set\_LocalAxes}!NonlinearShellMCYSE@{NonlinearShellMCYSE}}
+\doxysubsubsection{\texorpdfstring{set\_LocalAxes()}{set\_LocalAxes()}}
+{\footnotesize\ttfamily void Nonlinear\+Shell\+MCYSE\+::set\+\_\+\+Local\+Axes (\begin{DoxyParamCaption}\item[{vector$<$ double $>$}]{axesgp\+\_\+in }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Set the local axes for the shell MCYSE element. If the local axes are not setted then the API will calculate the local axes. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em axesgp\+\_\+in} & ~\newline
+ \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/mestrrc2/\+Documents/\+Mechin\+Motion\+Ltd/\+APIs/\+Nonlinear\+Shell\+MCYSE/Nonlinear\+Shell\+MCYSE.\+h\end{DoxyCompactItemize}
