@@ -1,0 +1,441 @@
+\doxysection{Nonlinear\+MRESS Class Reference}
+\hypertarget{classNonlinearMRESS}{}\label{classNonlinearMRESS}\index{NonlinearMRESS@{NonlinearMRESS}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classNonlinearMRESS_a281e13121cde89dcf26127c6602ff139}{Nonlinear\+MRESS}} (string path\+\_\+in, vector$<$ vector$<$ double $>$ $>$ \&xyz\+\_\+in, vector$<$ double $>$ \&stresses\+\_\+in, vector$<$ double $>$ \&DMatrix\+\_\+in, double Young\+\_\+in, double Poisson\+\_\+in, vector$<$ double $>$ \&zet\+GPcoord\+\_\+in, vector$<$ double $>$ \&zet\+GPweight\+\_\+in)
+\begin{DoxyCompactList}\small\item\em Constructor for a new Nonlinear 3D solid-\/shell MRESS object. This constructor can be used for the stiffness matrix. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classNonlinearMRESS_a86a38e5a747f8efc7e952f9641eb086b}{Nonlinear\+MRESS}} (string path\+\_\+in, vector$<$ vector$<$ double $>$ $>$ \&xyz\+\_\+in, vector$<$ double $>$ DMatrix\+\_\+in, double Young\+\_\+in, double Poisson\+\_\+in, vector$<$ double $>$ \&zet\+GPcoord\+\_\+in, vector$<$ double $>$ \&Displacements\+\_\+in, double afor\+\_\+in, double wkaa\+\_\+in, vector$<$ double $>$ \&rkad\+Tot\+\_\+in)
+\begin{DoxyCompactList}\small\item\em Constructor for a new Nonlinear 3D solid-\/shell MRESS object. This constructor can be used for the strains and stresses at the integration points of the element. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classNonlinearMRESS_ae36696e85c3a57636c96cda92fe9f693}{Nonlinear\+MRESS}} (string path\+\_\+in, vector$<$ vector$<$ double $>$ $>$ \&xyz\+\_\+in, vector$<$ double $>$ \&stresses\+\_\+in, vector$<$ double $>$ \&DMatrix\+\_\+in, double Young\+\_\+in, double Poisson\+\_\+in, vector$<$ double $>$ \&zet\+GPcoord\+\_\+in, vector$<$ double $>$ \&zet\+GPweight\+\_\+in, vector$<$ double $>$ \&ply\+\_\+centre\+\_\+coord\+\_\+parametric\+\_\+in, vector$<$ double $>$ \&ply\+\_\+thickness\+\_\+parametric\+\_\+in)
+\begin{DoxyCompactList}\small\item\em Constructor for a new Nonlinear 3D solid-\/shell MRESS object to be used with composite materials. This constructor can be used for the stiffness matrix of the composite laminate. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classNonlinearMRESS_aaf60f1d69ccf7a474b29a7089513f218}{Nonlinear\+MRESS}} (string path\+\_\+in, vector$<$ vector$<$ double $>$ $>$ \&xyz\+\_\+in, vector$<$ double $>$ DMatrix\+\_\+in, double Young\+\_\+in, double Poisson\+\_\+in, vector$<$ double $>$ \&zet\+GPcoord\+\_\+in, vector$<$ double $>$ \&Displacements\+\_\+in, double afor\+\_\+in, double wkaa\+\_\+in, vector$<$ double $>$ \&rkad\+Tot\+\_\+in, vector$<$ double $>$ \&ply\+\_\+centre\+\_\+coord\+\_\+parametric\+\_\+in, vector$<$ double $>$ \&ply\+\_\+thickness\+\_\+parametric\+\_\+in)
+\begin{DoxyCompactList}\small\item\em Constructor for a new Nonlinear 3D solid-\/shell MRESS object to be used with composite materials. This constructor can be used for the strains and stresses of the composite laminate. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classNonlinearMRESS_a7a04b0151d374bb1dfc5f55fd812bb23}{set\+\_\+\+Local\+Axes}} (vector$<$ double $>$ axesgp\+\_\+in)
+\begin{DoxyCompactList}\small\item\em Set the local axes at each integration point (or ply) of the element. If the local axes are not setted then the API will calculate the local axes. ~\newline
+ For composites, the local axes must be setted so to account for the orientation of each ply. \end{DoxyCompactList}\item 
+vector$<$ double $>$ \mbox{\hyperlink{classNonlinearMRESS_ae761c047f9da1aa241c3d78fa99a3ba5}{get\+\_\+\+Local\+Axes}} ()
+\begin{DoxyCompactList}\small\item\em Get the local axes at all integration points (or plies) of the element. The return is a vector with the axes at all GPs which are stored in the same order as explained in the setter -\/ "{}set\+\_\+\+Local\+Axes"{}. \end{DoxyCompactList}\item 
+vector$<$ double $>$ \mbox{\hyperlink{classNonlinearMRESS_a4c9376c728d0206314b50915c98b462e}{get\+\_\+\+Stiffness\+MRESS}} ()
+\begin{DoxyCompactList}\small\item\em Calculates and gets the linear stiffness matrix "{}\+Stiffness\+\_\+"{} of the MRESS element. It includes the hourglass stabilization matrix. \end{DoxyCompactList}\item 
+vector$<$ double $>$ \mbox{\hyperlink{classNonlinearMRESS_a39dd8bdec1d91d46031ed4054a3bcb54}{get\+\_\+\+Stiffness\+\_\+\+Composites\+\_\+\+MRESS}} ()
+\begin{DoxyCompactList}\small\item\em Calculates and gets the linear stiffness matrix "{}\+Stiffness\+\_\+"{} of the MRESS element for composite materials. It includes the hourglass stabilization matrix. \end{DoxyCompactList}\item 
+\Hypertarget{classNonlinearMRESS_ab187ca5e04173cf145156f740c5f011a}\label{classNonlinearMRESS_ab187ca5e04173cf145156f740c5f011a} 
+vector$<$ double $>$ {\bfseries get\+\_\+\+Stiffness\+\_\+\+Geo\+\_\+\+MRESS} ()
+\item 
+\Hypertarget{classNonlinearMRESS_ab574f6eae66895e769401b66f875eef5}\label{classNonlinearMRESS_ab574f6eae66895e769401b66f875eef5} 
+vector$<$ double $>$ {\bfseries get\+\_\+\+Strains\+MRESS} ()
+\item 
+\Hypertarget{classNonlinearMRESS_a63d3519b448ecca54a63715bed51d31f}\label{classNonlinearMRESS_a63d3519b448ecca54a63715bed51d31f} 
+vector$<$ double $>$ {\bfseries get\+\_\+\+Strains\+MRESS\+\_\+\+Global} ()
+\item 
+\Hypertarget{classNonlinearMRESS_a79167d57a095dc12b54cc6cbcfacc1ee}\label{classNonlinearMRESS_a79167d57a095dc12b54cc6cbcfacc1ee} 
+vector$<$ double $>$ {\bfseries get\+\_\+\+Stresses\+MRESS} ()
+\item 
+\Hypertarget{classNonlinearMRESS_af3d55f7e311bddc0cd07351067db6627}\label{classNonlinearMRESS_af3d55f7e311bddc0cd07351067db6627} 
+vector$<$ double $>$ {\bfseries get\+\_\+\+Stresses\+MRESS\+\_\+\+Global} ()
+\item 
+\Hypertarget{classNonlinearMRESS_a95294345256b371d48b2e6d29f94b588}\label{classNonlinearMRESS_a95294345256b371d48b2e6d29f94b588} 
+vector$<$ double $>$ {\bfseries get\+\_\+\+Strains\+MRESS\+\_\+\+Composites\+\_\+\+Global} ()
+\item 
+\Hypertarget{classNonlinearMRESS_a7f8624f57143f2fda94fd3268ff1295f}\label{classNonlinearMRESS_a7f8624f57143f2fda94fd3268ff1295f} 
+double {\bfseries get\+\_\+\+Kaa} ()
+\item 
+\Hypertarget{classNonlinearMRESS_af0b45d5f0925472669bb79bdaf44642d}\label{classNonlinearMRESS_af0b45d5f0925472669bb79bdaf44642d} 
+vector$<$ double $>$ {\bfseries get\+\_\+\+Kad} ()
+\item 
+\Hypertarget{classNonlinearMRESS_af8d5d90278063cfb7125e50d08ef00b1}\label{classNonlinearMRESS_af8d5d90278063cfb7125e50d08ef00b1} 
+void {\bfseries rotate\+\_\+\+GP\+\_\+axes\+\_\+\+MRESS} ()
+\item 
+\Hypertarget{classNonlinearMRESS_a55c178c2862ca643e7d6b5e54c9573a9}\label{classNonlinearMRESS_a55c178c2862ca643e7d6b5e54c9573a9} 
+void {\bfseries Calculate\+\_\+\+Local\+\_\+\+Axes\+\_\+\+GP} ()
+\item 
+\Hypertarget{classNonlinearMRESS_aa5c278bce41a97cd1d53775547004656}\label{classNonlinearMRESS_aa5c278bce41a97cd1d53775547004656} 
+void {\bfseries Calculate\+\_\+\+Local\+\_\+\+Axes\+\_\+\+Composites\+\_\+\+GP} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classNonlinearMRESS_a281e13121cde89dcf26127c6602ff139}\label{classNonlinearMRESS_a281e13121cde89dcf26127c6602ff139} 
+\index{NonlinearMRESS@{NonlinearMRESS}!NonlinearMRESS@{NonlinearMRESS}}
+\index{NonlinearMRESS@{NonlinearMRESS}!NonlinearMRESS@{NonlinearMRESS}}
+\doxysubsubsection{\texorpdfstring{NonlinearMRESS()}{NonlinearMRESS()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily Nonlinear\+MRESS\+::\+Nonlinear\+MRESS (\begin{DoxyParamCaption}\item[{string}]{path\+\_\+in,  }\item[{vector$<$ vector$<$ double $>$ $>$ \&}]{xyz\+\_\+in,  }\item[{vector$<$ double $>$ \&}]{stresses\+\_\+in,  }\item[{vector$<$ double $>$ \&}]{DMatrix\+\_\+in,  }\item[{double}]{Young\+\_\+in,  }\item[{double}]{Poisson\+\_\+in,  }\item[{vector$<$ double $>$ \&}]{zet\+GPcoord\+\_\+in,  }\item[{vector$<$ double $>$ \&}]{zet\+GPweight\+\_\+in }\end{DoxyParamCaption})}
+
+
+
+Constructor for a new Nonlinear 3D solid-\/shell MRESS object. This constructor can be used for the stiffness matrix. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em path\+\_\+in} & String with the full path to the license file. \\
+\hline
+{\em xyz\+\_\+in} & Nodal coordinates of the eight 3D solid-\/shell element nodes, stored in xyz\+\_\+in\mbox{[}0\+:7\mbox{]}\mbox{[}0\+:2\mbox{]}, where each row corresponds to a node of the element and each column corresponds to the x,y, and z coordinates. \\
+\hline
+{\em stresses\+\_\+in} & The stresses at the integration points must be provided as input to the class constructor. These stresses are required for the computation of the internal force vector and the initial stress stiffness matrix. ~\newline
+ The stress input format is defined as follows\+: ~\newline
+ Sxx, Syy, Szz, Sxy, Sxz, Syz, i.\+e., six stress components per integration point along the thickness direction. The stresses are stored in the "{}stresses\+\_\+"{} vector, ordered by integration points through the thickness in a bottom-\/to-\/top direction, from zet = -\/1.\+0 to zet = +1.\+0. ~\newline
+ For example, with two integration points through the thickness, zet1 = -\/1.\+0 / sqrt(3.\+0) and zet2 = +1.\+0 / sqrt(3.\+0), the ordering in stresses\+\_\+ is\+: ~\newline
+ \mbox{[}Sxx\texorpdfstring{$^\wedge$}{\string^}zet1, Syy\texorpdfstring{$^\wedge$}{\string^}zet1, Szz\texorpdfstring{$^\wedge$}{\string^}zet1, Sxy\texorpdfstring{$^\wedge$}{\string^}zet1, Sxz\texorpdfstring{$^\wedge$}{\string^}zet1, Syz\texorpdfstring{$^\wedge$}{\string^}zet1, Sxx\texorpdfstring{$^\wedge$}{\string^}zet2, Syy\texorpdfstring{$^\wedge$}{\string^}zet2, Szz\texorpdfstring{$^\wedge$}{\string^}zet2, Sxy\texorpdfstring{$^\wedge$}{\string^}zet2, Sxz\texorpdfstring{$^\wedge$}{\string^}zet2, Syz\texorpdfstring{$^\wedge$}{\string^}zet2\mbox{]} \\
+\hline
+{\em DMatrix\+\_\+in} & Full 3D constitutive matrix, stored in vector form with size = 36. The "{}\+DMatrix\+\_\+in"{} vector must contain the 6x6 full 3D constitutive matrix for all integration points along the thickness direction of the shell element. The procedure to construct this vector is the following\+: ~\newline
+
+\begin{DoxyEnumerate}
+\item Loop in the integration points along thickness direction\+: for (int izet = 0; izet \texorpdfstring{$<$}{<} zet\+GPCoord\+\_\+in.\+size(); ++izet) \{ ~\newline
+
+\item Insert the 6x6 D-\/matrix, stored in vector form ("{}\+DMatrix\mbox{[}0\+:35\mbox{]}"{}), into the "{}\+DMatrix\+\_\+in"{} vector\+: ~\newline
+ 2.\+1 for (int i = 0; i \texorpdfstring{$<$}{<} 36; ++i) \{ DMatrix\+\_\+in.\+push\+\_\+back(\+DMatrix\mbox{[}i\mbox{]}); \} 
+\end{DoxyEnumerate}\\
+\hline
+{\em Young\+\_\+in} & Young\textquotesingle{}s modulus of the material. \\
+\hline
+{\em Poisson\+\_\+in} & Poisson\textquotesingle{}s ratio of the material. \\
+\hline
+{\em zet\+GPcoord\+\_\+in} & Natural coordinates of the Gauss integration points along the thickness direction of the element. The number of integration points along the thickness direction is defined thereafter through the size of this vector. \\
+\hline
+{\em zet\+GPweight\+\_\+in} & Weights of the Gauss integration points along the thickness direction of the element. The size of this vector must be the same as the size of "{}zet\+GPcoord\+\_\+in"{}. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classNonlinearMRESS_a86a38e5a747f8efc7e952f9641eb086b}\label{classNonlinearMRESS_a86a38e5a747f8efc7e952f9641eb086b} 
+\index{NonlinearMRESS@{NonlinearMRESS}!NonlinearMRESS@{NonlinearMRESS}}
+\index{NonlinearMRESS@{NonlinearMRESS}!NonlinearMRESS@{NonlinearMRESS}}
+\doxysubsubsection{\texorpdfstring{NonlinearMRESS()}{NonlinearMRESS()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily Nonlinear\+MRESS\+::\+Nonlinear\+MRESS (\begin{DoxyParamCaption}\item[{string}]{path\+\_\+in,  }\item[{vector$<$ vector$<$ double $>$ $>$ \&}]{xyz\+\_\+in,  }\item[{vector$<$ double $>$}]{DMatrix\+\_\+in,  }\item[{double}]{Young\+\_\+in,  }\item[{double}]{Poisson\+\_\+in,  }\item[{vector$<$ double $>$ \&}]{zet\+GPcoord\+\_\+in,  }\item[{vector$<$ double $>$ \&}]{Displacements\+\_\+in,  }\item[{double}]{afor\+\_\+in,  }\item[{double}]{wkaa\+\_\+in,  }\item[{vector$<$ double $>$ \&}]{rkad\+Tot\+\_\+in }\end{DoxyParamCaption})}
+
+
+
+Constructor for a new Nonlinear 3D solid-\/shell MRESS object. This constructor can be used for the strains and stresses at the integration points of the element. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em path\+\_\+in} & String with the full path to the license file. \\
+\hline
+{\em xyz\+\_\+in} & Nodal coordinates of the eight 3D solid-\/shell element nodes, stored in xyz\+\_\+in\mbox{[}0\+:7\mbox{]}\mbox{[}0\+:2\mbox{]}, where each row corresponds to a node of the element and each column corresponds to the x,y, and z coordinates. \\
+\hline
+{\em DMatrix\+\_\+in} & Full 3D constitutive matrix, stored in vector form with size = 36. The "{}\+DMatrix\+\_\+in"{} vector must contain the 6x6 full 3D constitutive matrix for all integration points along the thickness direction of the shell element. The procedure to construct this vector is the following\+: ~\newline
+
+\begin{DoxyEnumerate}
+\item Loop in the integration points along thickness direction\+: for (int izet = 0; izet \texorpdfstring{$<$}{<} zet\+GPCoord\+\_\+in.\+size(); ++izet) \{ ~\newline
+
+\item Insert the 6x6 D-\/matrix, stored in vector form ("{}\+DMatrix\mbox{[}0\+:35\mbox{]}"{}), into the "{}\+DMatrix\+\_\+in"{} vector\+: ~\newline
+ 2.\+1 for (int i = 0; i \texorpdfstring{$<$}{<} 36; ++i) \{ DMatrix\+\_\+in.\+push\+\_\+back(\+DMatrix\mbox{[}i\mbox{]}); \} 
+\end{DoxyEnumerate}\\
+\hline
+{\em Young\+\_\+in} & Young\textquotesingle{}s modulus of the material. \\
+\hline
+{\em Poisson\+\_\+in} & Poisson\textquotesingle{}s ratio of the material. \\
+\hline
+{\em zet\+GPcoord\+\_\+in} & Natural coordinates of the Gauss integration points along the thickness direction of the element. The number of integration points along the thickness direction is defined thereafter through the size of this vector. \\
+\hline
+{\em Displacements\+\_\+in} & Displacement vector for the element. The 3D solid-\/shell MRESS has 8 nodes and each node has 3 degrees of freedom (translations only). The size of this vector is 8x3 = 24. \\
+\hline
+{\em afor\+\_\+in} & Internal force scalar associated to the EAS-\/alpha degree of freedom. \\
+\hline
+{\em wkaa\+\_\+in} & Stiffness scalar associated to the EAS-\/alpha degree of freedom. \\
+\hline
+{\em rkad\+Tot\+\_\+in} & Stiffness row associated to the EAS-\/alpha degree of freedom such that "{}afor += rkad\+Tot\+\_\+in \texorpdfstring{$\ast$}{*} Displacement\+\_\+in"{}. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classNonlinearMRESS_ae36696e85c3a57636c96cda92fe9f693}\label{classNonlinearMRESS_ae36696e85c3a57636c96cda92fe9f693} 
+\index{NonlinearMRESS@{NonlinearMRESS}!NonlinearMRESS@{NonlinearMRESS}}
+\index{NonlinearMRESS@{NonlinearMRESS}!NonlinearMRESS@{NonlinearMRESS}}
+\doxysubsubsection{\texorpdfstring{NonlinearMRESS()}{NonlinearMRESS()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily Nonlinear\+MRESS\+::\+Nonlinear\+MRESS (\begin{DoxyParamCaption}\item[{string}]{path\+\_\+in,  }\item[{vector$<$ vector$<$ double $>$ $>$ \&}]{xyz\+\_\+in,  }\item[{vector$<$ double $>$ \&}]{stresses\+\_\+in,  }\item[{vector$<$ double $>$ \&}]{DMatrix\+\_\+in,  }\item[{double}]{Young\+\_\+in,  }\item[{double}]{Poisson\+\_\+in,  }\item[{vector$<$ double $>$ \&}]{zet\+GPcoord\+\_\+in,  }\item[{vector$<$ double $>$ \&}]{zet\+GPweight\+\_\+in,  }\item[{vector$<$ double $>$ \&}]{ply\+\_\+centre\+\_\+coord\+\_\+parametric\+\_\+in,  }\item[{vector$<$ double $>$ \&}]{ply\+\_\+thickness\+\_\+parametric\+\_\+in }\end{DoxyParamCaption})}
+
+
+
+Constructor for a new Nonlinear 3D solid-\/shell MRESS object to be used with composite materials. This constructor can be used for the stiffness matrix of the composite laminate. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em path\+\_\+in} & String with the full path to the license file. \\
+\hline
+{\em xyz\+\_\+in} & Nodal coordinates of the eight 3D solid-\/shell element nodes, stored in xyz\+\_\+in\mbox{[}0\+:7\mbox{]}\mbox{[}0\+:2\mbox{]}, where each row corresponds to a node of the element and each column corresponds to the x,y, and z coordinates. \\
+\hline
+{\em stresses\+\_\+in} & The stresses at each ply must be provided as input to the class constructor if the calculation of internal forces or the geometric stiffness matrix are required. If this constructor is called only for the linear stiffness matrix then the "{}stresses\+\_\+in"{} vector can be passed in as empty. The stress input format is defined as follows\+: ~\newline
+ Sxx, Syy, Szz, Sxy, Sxz, Syz, i.\+e., six stress components per ply of the laminate. The stresses are stored in the "{}stresses\+\_\+"{} vector, ordered by integration points through the thickness in a bottom-\/to-\/top direction, from zet = -\/1.\+0 to zet = +1.\+0. Please note that for composites each integration point along thickness is associated to a ply. ~\newline
+ For example, with two plies through the thickness, zet1 = -\/1.\+0 / sqrt(3.\+0) and zet2 = +1.\+0 / sqrt(3.\+0), the ordering in stresses\+\_\+ is\+: ~\newline
+ \mbox{[}Sxx\texorpdfstring{$^\wedge$}{\string^}zet1, Syy\texorpdfstring{$^\wedge$}{\string^}zet1, Szz\texorpdfstring{$^\wedge$}{\string^}zet1, Sxy\texorpdfstring{$^\wedge$}{\string^}zet1, Sxz\texorpdfstring{$^\wedge$}{\string^}zet1, Syz\texorpdfstring{$^\wedge$}{\string^}zet1, Sxx\texorpdfstring{$^\wedge$}{\string^}zet2, Syy\texorpdfstring{$^\wedge$}{\string^}zet2, Szz\texorpdfstring{$^\wedge$}{\string^}zet2, Sxy\texorpdfstring{$^\wedge$}{\string^}zet2, Sxz\texorpdfstring{$^\wedge$}{\string^}zet2, Syz\texorpdfstring{$^\wedge$}{\string^}zet2\mbox{]} \\
+\hline
+{\em DMatrix\+\_\+in} & Full 3D constitutive matrix for composites (\mbox{[}D\mbox{]}=transpose(\mbox{[}\+C\mbox{]})\texorpdfstring{$\ast$}{*}\mbox{[}Q\mbox{]}\texorpdfstring{$\ast$}{*}\mbox{[}C\mbox{]}), stored in vector form with size = 36. \mbox{[}Q\mbox{]}=\{\mbox{[}Q11 Q12 Q13 0 0 0\mbox{]} \mbox{[}Q21 Q22 Q23 0 0 0\mbox{]} \mbox{[}Q31 Q32 Q33 0 0 0\mbox{]} \mbox{[}0 0 0 Q44 0 0\mbox{]} \mbox{[}0 0 0 0 Q55 0\mbox{]} \mbox{[}0 0 0 0 0 Q66\mbox{]}\} is known as the stiffness of the lamina or ply and \mbox{[}C\mbox{]} is the transformation matrix for the stresses from the global into the local lamina coordinate system. The components of \mbox{[}Q\mbox{]} are \+: ~\newline
+ Q11 = E\+\_\+x/(1.\+0-\/pois\+\_\+xy\texorpdfstring{$\ast$}{*}pois\+\_\+yx); ~\newline
+ Q22 = E\+\_\+y/(1.\+0-\/pois\+\_\+xy\texorpdfstring{$\ast$}{*}pois\+\_\+yx); ~\newline
+ Q33 = Q22; ~\newline
+ Q12 = E\+\_\+x\texorpdfstring{$\ast$}{*}pois\+\_\+yx/(1.\+0-\/pois\+\_\+xy\texorpdfstring{$\ast$}{*}pois\+\_\+yx); ~\newline
+ Q13 = Q12; ~\newline
+ Q21 = E\+\_\+y\texorpdfstring{$\ast$}{*}pois\+\_\+xy/(1.\+0-\/pois\+\_\+xy\texorpdfstring{$\ast$}{*}pois\+\_\+yx); ~\newline
+ Q23 = Q21; ~\newline
+ Q31 = Q21; ~\newline
+ Q32 = Q31; ~\newline
+ Q44 = g\+\_\+xy; ~\newline
+ Q55 = (5.\+0\texorpdfstring{$\ast$}{*}\+E\+\_\+x)\texorpdfstring{$\ast$}{*}(1.\+0/(12.\+0\texorpdfstring{$\ast$}{*}(1.\+0+pois\+\_\+xy))); ~\newline
+ Q66 = Q55; ~\newline
+ \mbox{[}Q\mbox{]} is organised in vector form as follows\+: ~\newline
+ \mbox{[}Q\mbox{]}\mbox{[}0\mbox{]} = Q11; ~\newline
+ \mbox{[}Q\mbox{]}\mbox{[}1\mbox{]} = Q12; ~\newline
+ \mbox{[}Q\mbox{]}\mbox{[}2\mbox{]} = Q13; ~\newline
+ \mbox{[}Q\mbox{]}\mbox{[}6\mbox{]} = Q21; ~\newline
+ \mbox{[}Q\mbox{]}\mbox{[}7\mbox{]} = Q22; ~\newline
+ \mbox{[}Q\mbox{]}\mbox{[}8\mbox{]} = Q23; ~\newline
+ \mbox{[}Q\mbox{]}\mbox{[}12\mbox{]} = Q31; ~\newline
+ \mbox{[}Q\mbox{]}\mbox{[}13\mbox{]} = Q32; ~\newline
+ \mbox{[}Q\mbox{]}\mbox{[}14\mbox{]} = Q33; ~\newline
+ \mbox{[}Q\mbox{]}\mbox{[}21\mbox{]} = Q44; ~\newline
+ \mbox{[}Q\mbox{]}\mbox{[}28\mbox{]} = Q55; ~\newline
+ \mbox{[}Q\mbox{]}\mbox{[}35\mbox{]} = Q66; ~\newline
+ The transformation matrix \mbox{[}C\mbox{]} should be defined as follows\+: ~\newline
+ lx = c; ~\newline
+ mx = s; ~\newline
+ nx = 0.\+0; ~\newline
+ ly = -\/s; ~\newline
+ my = c; ~\newline
+ ny = 0.\+0; ~\newline
+ lz = 0.\+0; ~\newline
+ mz = 0.\+0; ~\newline
+ nz = 1.\+0; ~\newline
+ \mbox{[}C\mbox{]}\mbox{[}0\mbox{]} = lx\texorpdfstring{$\ast$}{*}lx; ~\newline
+ \mbox{[}C\mbox{]}\mbox{[}1\mbox{]} = mx\texorpdfstring{$\ast$}{*}mx; ~\newline
+ \mbox{[}C\mbox{]}\mbox{[}2\mbox{]} = nx\texorpdfstring{$\ast$}{*}nx; ~\newline
+ \mbox{[}C\mbox{]}\mbox{[}3\mbox{]} = lx\texorpdfstring{$\ast$}{*}mx; ~\newline
+ \mbox{[}C\mbox{]}\mbox{[}4\mbox{]} = lx\texorpdfstring{$\ast$}{*}nx; ~\newline
+ \mbox{[}C\mbox{]}\mbox{[}5\mbox{]} = mx\texorpdfstring{$\ast$}{*}nx; ~\newline
+ \mbox{[}C\mbox{]}\mbox{[}6+0\mbox{]} = ly\texorpdfstring{$\ast$}{*}ly; ~\newline
+ \mbox{[}C\mbox{]}\mbox{[}6+1\mbox{]} = my\texorpdfstring{$\ast$}{*}my; ~\newline
+ \mbox{[}C\mbox{]}\mbox{[}6+2\mbox{]} = ny\texorpdfstring{$\ast$}{*}ny; ~\newline
+ \mbox{[}C\mbox{]}\mbox{[}6+3\mbox{]} = ly\texorpdfstring{$\ast$}{*}my; ~\newline
+ \mbox{[}C\mbox{]}\mbox{[}6+4\mbox{]} = ly\texorpdfstring{$\ast$}{*}ny; ~\newline
+ \mbox{[}C\mbox{]}\mbox{[}6+5\mbox{]} = my\texorpdfstring{$\ast$}{*}ny; ~\newline
+ \mbox{[}C\mbox{]}\mbox{[}12+0\mbox{]} = lz\texorpdfstring{$\ast$}{*}lz; ~\newline
+ \mbox{[}C\mbox{]}\mbox{[}12+1\mbox{]} = mz\texorpdfstring{$\ast$}{*}mz; ~\newline
+ \mbox{[}C\mbox{]}\mbox{[}12+2\mbox{]} = nz\texorpdfstring{$\ast$}{*}nz; ~\newline
+ \mbox{[}C\mbox{]}\mbox{[}12+3\mbox{]} = lz\texorpdfstring{$\ast$}{*}mz; ~\newline
+ \mbox{[}C\mbox{]}\mbox{[}12+4\mbox{]} = lz\texorpdfstring{$\ast$}{*}nz; ~\newline
+ \mbox{[}C\mbox{]}\mbox{[}12+5\mbox{]} = mz\texorpdfstring{$\ast$}{*}nz; ~\newline
+ \mbox{[}C\mbox{]}\mbox{[}18+0\mbox{]} = 2.\+0\texorpdfstring{$\ast$}{*}lx\texorpdfstring{$\ast$}{*}ly; ~\newline
+ \mbox{[}C\mbox{]}\mbox{[}18+1\mbox{]} = 2.\+0\texorpdfstring{$\ast$}{*}mx\texorpdfstring{$\ast$}{*}my; ~\newline
+ \mbox{[}C\mbox{]}\mbox{[}18+2\mbox{]} = 2.\+0\texorpdfstring{$\ast$}{*}nx\texorpdfstring{$\ast$}{*}ny; ~\newline
+ \mbox{[}C\mbox{]}\mbox{[}18+3\mbox{]} = lx\texorpdfstring{$\ast$}{*}my+ly\texorpdfstring{$\ast$}{*}mx; ~\newline
+ \mbox{[}C\mbox{]}\mbox{[}18+4\mbox{]} = lx\texorpdfstring{$\ast$}{*}ny+ly\texorpdfstring{$\ast$}{*}nx; ~\newline
+ \mbox{[}C\mbox{]}\mbox{[}18+5\mbox{]} = mx\texorpdfstring{$\ast$}{*}ny+my\texorpdfstring{$\ast$}{*}nx; ~\newline
+ \mbox{[}C\mbox{]}\mbox{[}24+0\mbox{]} = 2.\+0\texorpdfstring{$\ast$}{*}lx\texorpdfstring{$\ast$}{*}lz; ~\newline
+ \mbox{[}C\mbox{]}\mbox{[}24+1\mbox{]} = 2.\+0\texorpdfstring{$\ast$}{*}mx\texorpdfstring{$\ast$}{*}mz; ~\newline
+ \mbox{[}C\mbox{]}\mbox{[}24+2\mbox{]} = 2.\+0\texorpdfstring{$\ast$}{*}nx\texorpdfstring{$\ast$}{*}nz; ~\newline
+ \mbox{[}C\mbox{]}\mbox{[}24+3\mbox{]} = lx\texorpdfstring{$\ast$}{*}mz+lz\texorpdfstring{$\ast$}{*}mx; ~\newline
+ \mbox{[}C\mbox{]}\mbox{[}24+4\mbox{]} = lx\texorpdfstring{$\ast$}{*}nz+lz\texorpdfstring{$\ast$}{*}nx; ~\newline
+ \mbox{[}C\mbox{]}\mbox{[}24+5\mbox{]} = mx\texorpdfstring{$\ast$}{*}nz+mz\texorpdfstring{$\ast$}{*}nx; ~\newline
+ \mbox{[}C\mbox{]}\mbox{[}30+0\mbox{]} = 2.\+0\texorpdfstring{$\ast$}{*}ly\texorpdfstring{$\ast$}{*}lz; ~\newline
+ \mbox{[}C\mbox{]}\mbox{[}30+1\mbox{]} = 2.\+0\texorpdfstring{$\ast$}{*}my\texorpdfstring{$\ast$}{*}mz; ~\newline
+ \mbox{[}C\mbox{]}\mbox{[}30+2\mbox{]} = 2.\+0\texorpdfstring{$\ast$}{*}ny\texorpdfstring{$\ast$}{*}nz; ~\newline
+ \mbox{[}C\mbox{]}\mbox{[}30+3\mbox{]} = ly\texorpdfstring{$\ast$}{*}mz+lz\texorpdfstring{$\ast$}{*}my; ~\newline
+ \mbox{[}C\mbox{]}\mbox{[}30+4\mbox{]} = ly\texorpdfstring{$\ast$}{*}nz+lz\texorpdfstring{$\ast$}{*}ny; ~\newline
+ \mbox{[}C\mbox{]}\mbox{[}30+5\mbox{]} = my\texorpdfstring{$\ast$}{*}nz+mz\texorpdfstring{$\ast$}{*}ny; ~\newline
+ \mbox{[}D\mbox{]}=transpose(\mbox{[}\+C\mbox{]})\texorpdfstring{$\ast$}{*}\mbox{[}Q\mbox{]}\texorpdfstring{$\ast$}{*}\mbox{[}C\mbox{]} ~\newline
+ The "{}\+DMatrix\+\_\+in"{} vector must contain the 6x6 full 3D constitutive matrix for all integration points along the thickness direction of the shell element. The procedure to construct this vector is the following\+: ~\newline
+
+\begin{DoxyEnumerate}
+\item Loop in the integration points along thickness direction\+: for (int izet = 0; izet \texorpdfstring{$<$}{<} zet\+GPCoord\+\_\+in.\+size(); ++izet) \{ ~\newline
+
+\item Insert the 6x6 \mbox{[}D\mbox{]}-\/matrix, stored in vector form ("{}\mbox{[}\+D\mbox{]}\mbox{[}0\+:35\mbox{]}"{}), into the "{}\+DMatrix\+\_\+in"{} vector\+: ~\newline
+ 2.\+1 for (int i = 0; i \texorpdfstring{$<$}{<} 36; ++i) \{ DMatrix\+\_\+in.\+push\+\_\+back(\mbox{[}\+D\mbox{]}\mbox{[}i\mbox{]}); \} 
+\end{DoxyEnumerate}\\
+\hline
+{\em Young\+\_\+in} & Young\textquotesingle{}s modulus of the material. \\
+\hline
+{\em Poisson\+\_\+in} & Poisson\textquotesingle{}s ratio of the material. \\
+\hline
+{\em zet\+GPcoord\+\_\+in} & Natural coordinates of the Gauss integration points along the thickness direction of the element. For composites there is a slight variation on how this vector is defined because the zet-\/coordinate for each ply should be located at the midpoint of the ply and the associated weight, when multiplied by the determinant of the Jacobian, must reflect the thickness of the ply. The number of integration points along the thickness direction is equal to the number of plies on the laminate. \\
+\hline
+{\em zet\+GPweight\+\_\+in} & Weights of the Gauss integration points along the thickness direction of the element. As said in "{}zet\+GPcoord\+\_\+in"{}, the weight of the integration point must reflect the ply thickness when multiplied by the determinant of the Jacobian. The size of this vector must be the same as the size of "{}zet\+GPcoord\+\_\+in"{}. \\
+\hline
+{\em ply\+\_\+centre\+\_\+coord\+\_\+parametric\+\_\+in} & Parametric zet-\/coordinate of the centre of the ply along the thickness direction. \\
+\hline
+{\em ply\+\_\+thickness\+\_\+parametric\+\_\+in} & Vector with the thickness of each ply in the laminate. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classNonlinearMRESS_aaf60f1d69ccf7a474b29a7089513f218}\label{classNonlinearMRESS_aaf60f1d69ccf7a474b29a7089513f218} 
+\index{NonlinearMRESS@{NonlinearMRESS}!NonlinearMRESS@{NonlinearMRESS}}
+\index{NonlinearMRESS@{NonlinearMRESS}!NonlinearMRESS@{NonlinearMRESS}}
+\doxysubsubsection{\texorpdfstring{NonlinearMRESS()}{NonlinearMRESS()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily Nonlinear\+MRESS\+::\+Nonlinear\+MRESS (\begin{DoxyParamCaption}\item[{string}]{path\+\_\+in,  }\item[{vector$<$ vector$<$ double $>$ $>$ \&}]{xyz\+\_\+in,  }\item[{vector$<$ double $>$}]{DMatrix\+\_\+in,  }\item[{double}]{Young\+\_\+in,  }\item[{double}]{Poisson\+\_\+in,  }\item[{vector$<$ double $>$ \&}]{zet\+GPcoord\+\_\+in,  }\item[{vector$<$ double $>$ \&}]{Displacements\+\_\+in,  }\item[{double}]{afor\+\_\+in,  }\item[{double}]{wkaa\+\_\+in,  }\item[{vector$<$ double $>$ \&}]{rkad\+Tot\+\_\+in,  }\item[{vector$<$ double $>$ \&}]{ply\+\_\+centre\+\_\+coord\+\_\+parametric\+\_\+in,  }\item[{vector$<$ double $>$ \&}]{ply\+\_\+thickness\+\_\+parametric\+\_\+in }\end{DoxyParamCaption})}
+
+
+
+Constructor for a new Nonlinear 3D solid-\/shell MRESS object to be used with composite materials. This constructor can be used for the strains and stresses of the composite laminate. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em path\+\_\+in} & String with the full path to the license file. \\
+\hline
+{\em xyz\+\_\+in} & Nodal coordinates of the eight 3D solid-\/shell element nodes, stored in xyz\+\_\+in\mbox{[}0\+:7\mbox{]}\mbox{[}0\+:2\mbox{]}, where each row corresponds to a node of the element and each column corresponds to the x,y, and z coordinates. \\
+\hline
+{\em DMatrix\+\_\+in} & Full 3D constitutive matrix for composites (\mbox{[}D\mbox{]}=transpose(\mbox{[}\+C\mbox{]})\texorpdfstring{$\ast$}{*}\mbox{[}Q\mbox{]}\texorpdfstring{$\ast$}{*}\mbox{[}C\mbox{]}), stored in vector form with size = 36. \mbox{[}Q\mbox{]}=\{\mbox{[}Q11 Q12 Q13 0 0 0\mbox{]} \mbox{[}Q21 Q22 Q23 0 0 0\mbox{]} \mbox{[}Q31 Q32 Q33 0 0 0\mbox{]} \mbox{[}0 0 0 Q44 0 0\mbox{]} \mbox{[}0 0 0 0 Q55 0\mbox{]} \mbox{[}0 0 0 0 0 Q66\mbox{]}\} is known as the stiffness of the lamina or ply and \mbox{[}C\mbox{]} is the transformation matrix for the stresses from the global into the local lamina coordinate system. The components of \mbox{[}Q\mbox{]} are \+: ~\newline
+ Q11 = E\+\_\+x/(1.\+0-\/pois\+\_\+xy\texorpdfstring{$\ast$}{*}pois\+\_\+yx); ~\newline
+ Q22 = E\+\_\+y/(1.\+0-\/pois\+\_\+xy\texorpdfstring{$\ast$}{*}pois\+\_\+yx); ~\newline
+ Q33 = Q22; ~\newline
+ Q12 = E\+\_\+x\texorpdfstring{$\ast$}{*}pois\+\_\+yx/(1.\+0-\/pois\+\_\+xy\texorpdfstring{$\ast$}{*}pois\+\_\+yx); ~\newline
+ Q13 = Q12; ~\newline
+ Q21 = E\+\_\+y\texorpdfstring{$\ast$}{*}pois\+\_\+xy/(1.\+0-\/pois\+\_\+xy\texorpdfstring{$\ast$}{*}pois\+\_\+yx); ~\newline
+ Q23 = Q21; ~\newline
+ Q31 = Q21; ~\newline
+ Q32 = Q31; ~\newline
+ Q44 = g\+\_\+xy; ~\newline
+ Q55 = (5.\+0\texorpdfstring{$\ast$}{*}\+E\+\_\+x)\texorpdfstring{$\ast$}{*}(1.\+0/(12.\+0\texorpdfstring{$\ast$}{*}(1.\+0+pois\+\_\+xy))); ~\newline
+ Q66 = Q55; ~\newline
+ \mbox{[}Q\mbox{]} is organised in vector form as follows\+: ~\newline
+ \mbox{[}Q\mbox{]}\mbox{[}0\mbox{]} = Q11; ~\newline
+ \mbox{[}Q\mbox{]}\mbox{[}1\mbox{]} = Q12; ~\newline
+ \mbox{[}Q\mbox{]}\mbox{[}2\mbox{]} = Q13; ~\newline
+ \mbox{[}Q\mbox{]}\mbox{[}6\mbox{]} = Q21; ~\newline
+ \mbox{[}Q\mbox{]}\mbox{[}7\mbox{]} = Q22; ~\newline
+ \mbox{[}Q\mbox{]}\mbox{[}8\mbox{]} = Q23; ~\newline
+ \mbox{[}Q\mbox{]}\mbox{[}12\mbox{]} = Q31; ~\newline
+ \mbox{[}Q\mbox{]}\mbox{[}13\mbox{]} = Q32; ~\newline
+ \mbox{[}Q\mbox{]}\mbox{[}14\mbox{]} = Q33; ~\newline
+ \mbox{[}Q\mbox{]}\mbox{[}21\mbox{]} = Q44; ~\newline
+ \mbox{[}Q\mbox{]}\mbox{[}28\mbox{]} = Q55; ~\newline
+ \mbox{[}Q\mbox{]}\mbox{[}35\mbox{]} = Q66; ~\newline
+ The transformation matrix \mbox{[}C\mbox{]} should be defined as follows\+: ~\newline
+ lx = c; ~\newline
+ mx = s; ~\newline
+ nx = 0.\+0; ~\newline
+ ly = -\/s; ~\newline
+ my = c; ~\newline
+ ny = 0.\+0; ~\newline
+ lz = 0.\+0; ~\newline
+ mz = 0.\+0; ~\newline
+ nz = 1.\+0; ~\newline
+ \mbox{[}C\mbox{]}\mbox{[}0\mbox{]} = lx\texorpdfstring{$\ast$}{*}lx; ~\newline
+ \mbox{[}C\mbox{]}\mbox{[}1\mbox{]} = mx\texorpdfstring{$\ast$}{*}mx; ~\newline
+ \mbox{[}C\mbox{]}\mbox{[}2\mbox{]} = nx\texorpdfstring{$\ast$}{*}nx; ~\newline
+ \mbox{[}C\mbox{]}\mbox{[}3\mbox{]} = lx\texorpdfstring{$\ast$}{*}mx; ~\newline
+ \mbox{[}C\mbox{]}\mbox{[}4\mbox{]} = lx\texorpdfstring{$\ast$}{*}nx; ~\newline
+ \mbox{[}C\mbox{]}\mbox{[}5\mbox{]} = mx\texorpdfstring{$\ast$}{*}nx; ~\newline
+ \mbox{[}C\mbox{]}\mbox{[}6+0\mbox{]} = ly\texorpdfstring{$\ast$}{*}ly; ~\newline
+ \mbox{[}C\mbox{]}\mbox{[}6+1\mbox{]} = my\texorpdfstring{$\ast$}{*}my; ~\newline
+ \mbox{[}C\mbox{]}\mbox{[}6+2\mbox{]} = ny\texorpdfstring{$\ast$}{*}ny; ~\newline
+ \mbox{[}C\mbox{]}\mbox{[}6+3\mbox{]} = ly\texorpdfstring{$\ast$}{*}my; ~\newline
+ \mbox{[}C\mbox{]}\mbox{[}6+4\mbox{]} = ly\texorpdfstring{$\ast$}{*}ny; ~\newline
+ \mbox{[}C\mbox{]}\mbox{[}6+5\mbox{]} = my\texorpdfstring{$\ast$}{*}ny; ~\newline
+ \mbox{[}C\mbox{]}\mbox{[}12+0\mbox{]} = lz\texorpdfstring{$\ast$}{*}lz; ~\newline
+ \mbox{[}C\mbox{]}\mbox{[}12+1\mbox{]} = mz\texorpdfstring{$\ast$}{*}mz; ~\newline
+ \mbox{[}C\mbox{]}\mbox{[}12+2\mbox{]} = nz\texorpdfstring{$\ast$}{*}nz; ~\newline
+ \mbox{[}C\mbox{]}\mbox{[}12+3\mbox{]} = lz\texorpdfstring{$\ast$}{*}mz; ~\newline
+ \mbox{[}C\mbox{]}\mbox{[}12+4\mbox{]} = lz\texorpdfstring{$\ast$}{*}nz; ~\newline
+ \mbox{[}C\mbox{]}\mbox{[}12+5\mbox{]} = mz\texorpdfstring{$\ast$}{*}nz; ~\newline
+ \mbox{[}C\mbox{]}\mbox{[}18+0\mbox{]} = 2.\+0\texorpdfstring{$\ast$}{*}lx\texorpdfstring{$\ast$}{*}ly; ~\newline
+ \mbox{[}C\mbox{]}\mbox{[}18+1\mbox{]} = 2.\+0\texorpdfstring{$\ast$}{*}mx\texorpdfstring{$\ast$}{*}my; ~\newline
+ \mbox{[}C\mbox{]}\mbox{[}18+2\mbox{]} = 2.\+0\texorpdfstring{$\ast$}{*}nx\texorpdfstring{$\ast$}{*}ny; ~\newline
+ \mbox{[}C\mbox{]}\mbox{[}18+3\mbox{]} = lx\texorpdfstring{$\ast$}{*}my+ly\texorpdfstring{$\ast$}{*}mx; ~\newline
+ \mbox{[}C\mbox{]}\mbox{[}18+4\mbox{]} = lx\texorpdfstring{$\ast$}{*}ny+ly\texorpdfstring{$\ast$}{*}nx; ~\newline
+ \mbox{[}C\mbox{]}\mbox{[}18+5\mbox{]} = mx\texorpdfstring{$\ast$}{*}ny+my\texorpdfstring{$\ast$}{*}nx; ~\newline
+ \mbox{[}C\mbox{]}\mbox{[}24+0\mbox{]} = 2.\+0\texorpdfstring{$\ast$}{*}lx\texorpdfstring{$\ast$}{*}lz; ~\newline
+ \mbox{[}C\mbox{]}\mbox{[}24+1\mbox{]} = 2.\+0\texorpdfstring{$\ast$}{*}mx\texorpdfstring{$\ast$}{*}mz; ~\newline
+ \mbox{[}C\mbox{]}\mbox{[}24+2\mbox{]} = 2.\+0\texorpdfstring{$\ast$}{*}nx\texorpdfstring{$\ast$}{*}nz; ~\newline
+ \mbox{[}C\mbox{]}\mbox{[}24+3\mbox{]} = lx\texorpdfstring{$\ast$}{*}mz+lz\texorpdfstring{$\ast$}{*}mx; ~\newline
+ \mbox{[}C\mbox{]}\mbox{[}24+4\mbox{]} = lx\texorpdfstring{$\ast$}{*}nz+lz\texorpdfstring{$\ast$}{*}nx; ~\newline
+ \mbox{[}C\mbox{]}\mbox{[}24+5\mbox{]} = mx\texorpdfstring{$\ast$}{*}nz+mz\texorpdfstring{$\ast$}{*}nx; ~\newline
+ \mbox{[}C\mbox{]}\mbox{[}30+0\mbox{]} = 2.\+0\texorpdfstring{$\ast$}{*}ly\texorpdfstring{$\ast$}{*}lz; ~\newline
+ \mbox{[}C\mbox{]}\mbox{[}30+1\mbox{]} = 2.\+0\texorpdfstring{$\ast$}{*}my\texorpdfstring{$\ast$}{*}mz; ~\newline
+ \mbox{[}C\mbox{]}\mbox{[}30+2\mbox{]} = 2.\+0\texorpdfstring{$\ast$}{*}ny\texorpdfstring{$\ast$}{*}nz; ~\newline
+ \mbox{[}C\mbox{]}\mbox{[}30+3\mbox{]} = ly\texorpdfstring{$\ast$}{*}mz+lz\texorpdfstring{$\ast$}{*}my; ~\newline
+ \mbox{[}C\mbox{]}\mbox{[}30+4\mbox{]} = ly\texorpdfstring{$\ast$}{*}nz+lz\texorpdfstring{$\ast$}{*}ny; ~\newline
+ \mbox{[}C\mbox{]}\mbox{[}30+5\mbox{]} = my\texorpdfstring{$\ast$}{*}nz+mz\texorpdfstring{$\ast$}{*}ny; ~\newline
+ \mbox{[}D\mbox{]}=transpose(\mbox{[}\+C\mbox{]})\texorpdfstring{$\ast$}{*}\mbox{[}Q\mbox{]}\texorpdfstring{$\ast$}{*}\mbox{[}C\mbox{]} ~\newline
+ The "{}\+DMatrix\+\_\+in"{} vector must contain the 6x6 full 3D constitutive matrix for all integration points along the thickness direction of the shell element. The procedure to construct this vector is the following\+: ~\newline
+
+\begin{DoxyEnumerate}
+\item Loop in the integration points along thickness direction\+: for (int izet = 0; izet \texorpdfstring{$<$}{<} zet\+GPCoord\+\_\+in.\+size(); ++izet) \{ ~\newline
+
+\item Insert the 6x6 \mbox{[}D\mbox{]}-\/matrix, stored in vector form ("{}\mbox{[}\+D\mbox{]}\mbox{[}0\+:35\mbox{]}"{}), into the "{}\+DMatrix\+\_\+in"{} vector\+: ~\newline
+ 2.\+1 for (int i = 0; i \texorpdfstring{$<$}{<} 36; ++i) \{ DMatrix\+\_\+in.\+push\+\_\+back(\mbox{[}\+D\mbox{]}\mbox{[}i\mbox{]}); \} 
+\end{DoxyEnumerate}\\
+\hline
+{\em Young\+\_\+in} & Young\textquotesingle{}s modulus of the material. \\
+\hline
+{\em Poisson\+\_\+in} & Poisson\textquotesingle{}s ratio of the material. \\
+\hline
+{\em zet\+GPcoord\+\_\+in} & Natural coordinates of the Gauss integration points along the thickness direction of the element. For composites there is a slight variation on how this vector is defined because the zet-\/coordinate for each ply should be located at the midpoint of the ply and the associated weight, when multiplied by the determinant of the Jacobian, must reflect the thickness of the ply. The number of integration points along the thickness direction is equal to the number of plies on the laminate. \\
+\hline
+{\em Displacements\+\_\+in} & Displacement vector for the element. The 3D solid-\/shell MRESS has 8 nodes and each node has 3 degrees of freedom (translations only). The size of this vector is 8x3 = 24. \\
+\hline
+{\em afor\+\_\+in} & Internal force scalar associated to the EAS-\/alpha degree of freedom. \\
+\hline
+{\em wkaa\+\_\+in} & Stiffness scalar associated to the EAS-\/alpha degree of freedom. \\
+\hline
+{\em rkad\+Tot\+\_\+in} & Stiffness row associated to the EAS-\/alpha degree of freedom such that "{}afor += rkad\+Tot\+\_\+in \texorpdfstring{$\ast$}{*} Displacement\+\_\+in"{}. \\
+\hline
+{\em ply\+\_\+centre\+\_\+coord\+\_\+parametric\+\_\+in} & Parametric zet-\/coordinate of the centre of the ply along the thickness direction. \\
+\hline
+{\em ply\+\_\+thickness\+\_\+parametric\+\_\+in} & Vector with the thickness of each ply in the laminate. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classNonlinearMRESS_ae761c047f9da1aa241c3d78fa99a3ba5}\label{classNonlinearMRESS_ae761c047f9da1aa241c3d78fa99a3ba5} 
+\index{NonlinearMRESS@{NonlinearMRESS}!get\_LocalAxes@{get\_LocalAxes}}
+\index{get\_LocalAxes@{get\_LocalAxes}!NonlinearMRESS@{NonlinearMRESS}}
+\doxysubsubsection{\texorpdfstring{get\_LocalAxes()}{get\_LocalAxes()}}
+{\footnotesize\ttfamily vector$<$ double $>$ Nonlinear\+MRESS\+::get\+\_\+\+Local\+Axes (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the local axes at all integration points (or plies) of the element. The return is a vector with the axes at all GPs which are stored in the same order as explained in the setter -\/ "{}set\+\_\+\+Local\+Axes"{}. 
+
+\begin{DoxyReturn}{Returns}
+vector$<$double$>$ The structure of the return vector "{}axesgp\+\_\+"{} is the same as the structure of the "{}axesgp\+\_\+in"{} vector defined in the setter "{}set\+\_\+\+Local\+Axes(vector$<$double$>$ axesgp\+\_\+in) \{ axesgp\+\_\+ = axesgp\+\_\+in; \}"{} 
+\end{DoxyReturn}
+\Hypertarget{classNonlinearMRESS_a39dd8bdec1d91d46031ed4054a3bcb54}\label{classNonlinearMRESS_a39dd8bdec1d91d46031ed4054a3bcb54} 
+\index{NonlinearMRESS@{NonlinearMRESS}!get\_Stiffness\_Composites\_MRESS@{get\_Stiffness\_Composites\_MRESS}}
+\index{get\_Stiffness\_Composites\_MRESS@{get\_Stiffness\_Composites\_MRESS}!NonlinearMRESS@{NonlinearMRESS}}
+\doxysubsubsection{\texorpdfstring{get\_Stiffness\_Composites\_MRESS()}{get\_Stiffness\_Composites\_MRESS()}}
+{\footnotesize\ttfamily vector$<$ double $>$ Nonlinear\+MRESS\+::get\+\_\+\+Stiffness\+\_\+\+Composites\+\_\+\+MRESS (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Calculates and gets the linear stiffness matrix "{}\+Stiffness\+\_\+"{} of the MRESS element for composite materials. It includes the hourglass stabilization matrix. 
+
+\begin{DoxyReturn}{Returns}
+vector$<$double$>$ The return is the stiffness matrix "{}\+Stiffness\+\_\+"{} in vector form (of size = 576). The first elements in the output vector (Stiffness\+\_\+\mbox{[}0\+:23\mbox{]}) correspond to the first 24 elements in the first row of the 24 x 24 stiffness ~\newline
+ (stif\mbox{[}0\mbox{]}\mbox{[}0\+:23\mbox{]}), the next 24 elements in the output vector (Stiffness\+\_\+\mbox{[}24\+:47\mbox{]}) correspond to stif\mbox{[}1\mbox{]}\mbox{[}0\+:23\mbox{]}, and so on. 
+\end{DoxyReturn}
+\Hypertarget{classNonlinearMRESS_a4c9376c728d0206314b50915c98b462e}\label{classNonlinearMRESS_a4c9376c728d0206314b50915c98b462e} 
+\index{NonlinearMRESS@{NonlinearMRESS}!get\_StiffnessMRESS@{get\_StiffnessMRESS}}
+\index{get\_StiffnessMRESS@{get\_StiffnessMRESS}!NonlinearMRESS@{NonlinearMRESS}}
+\doxysubsubsection{\texorpdfstring{get\_StiffnessMRESS()}{get\_StiffnessMRESS()}}
+{\footnotesize\ttfamily vector$<$ double $>$ Nonlinear\+MRESS\+::get\+\_\+\+Stiffness\+MRESS (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Calculates and gets the linear stiffness matrix "{}\+Stiffness\+\_\+"{} of the MRESS element. It includes the hourglass stabilization matrix. 
+
+\begin{DoxyReturn}{Returns}
+vector$<$double$>$ The return is the stiffness matrix "{}\+Stiffness\+\_\+"{} in vector form (of size = 576). The first elements in the output vector (Stiffness\+\_\+\mbox{[}0\+:23\mbox{]}) correspond to the first 24 elements in the first row of the 24 x 24 stiffness ~\newline
+ (stif\mbox{[}0\mbox{]}\mbox{[}0\+:23\mbox{]}), the next 24 elements in the output vector (Stiffness\+\_\+\mbox{[}24\+:47\mbox{]}) correspond to stif\mbox{[}1\mbox{]}\mbox{[}0\+:23\mbox{]}, and so on. 
+\end{DoxyReturn}
+\Hypertarget{classNonlinearMRESS_a7a04b0151d374bb1dfc5f55fd812bb23}\label{classNonlinearMRESS_a7a04b0151d374bb1dfc5f55fd812bb23} 
+\index{NonlinearMRESS@{NonlinearMRESS}!set\_LocalAxes@{set\_LocalAxes}}
+\index{set\_LocalAxes@{set\_LocalAxes}!NonlinearMRESS@{NonlinearMRESS}}
+\doxysubsubsection{\texorpdfstring{set\_LocalAxes()}{set\_LocalAxes()}}
+{\footnotesize\ttfamily void Nonlinear\+MRESS\+::set\+\_\+\+Local\+Axes (\begin{DoxyParamCaption}\item[{vector$<$ double $>$}]{axesgp\+\_\+in }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Set the local axes at each integration point (or ply) of the element. If the local axes are not setted then the API will calculate the local axes. ~\newline
+ For composites, the local axes must be setted so to account for the orientation of each ply. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em axesgp\+\_\+in} & the structure for "{}axesgp\+\_\+in"{} must be the following\+: ~\newline
+ Loop in the integration points (or plies if composites) along thickness direction\+: for (int izet = 0; izet \texorpdfstring{$<$}{<} zet\+GPCoord\+\_\+in.\+size(); ++izet) \{ ~\newline
+ axesgp\mbox{[}0\+:2\mbox{]} = x-\/local vector ~\newline
+ axesgp\mbox{[}3\+:5\mbox{]} = y-\/local vector ~\newline
+ axesgp\mbox{[}6\+:8\mbox{]} = z-\/local vector ~\newline
+ for (int i = 0; i \texorpdfstring{$<$}{<} axesgp.\+size(); ++i) \{ axesgp\+\_\+in.\+push\+\_\+back(axesgp\mbox{[}i\mbox{]}); \} \} \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/mestrrc2/\+Documents/\+Mechin\+Motion\+Ltd/\+APIs/\+Nonlinear\+MRESS/Nonlinear\+MRESS.\+h\end{DoxyCompactItemize}
