@@ -63,10 +63,16 @@ void {\bfseries Hourglass\+\_\+\+Forces\+\_\+\+Intermediate} ()
 \Hypertarget{classNonlinearShellMCYSE_a1107fac85d92b87059dab0907ac002bf}\label{classNonlinearShellMCYSE_a1107fac85d92b87059dab0907ac002bf} 
 void {\bfseries Calculate\+\_\+\+Internal\+\_\+\+Forces\+\_\+\+Explicit} ()
 \begin{DoxyCompactList}\small\item\em Calculates the internal force vector "{}\+Force\+\_\+\+Internal\+\_\+"{} for the MCYSE shell element. \end{DoxyCompactList}\item 
-vector$<$ double $>$ \mbox{\hyperlink{classNonlinearShellMCYSE_ad96896269f324176d4e7084e519035d6}{Get\+\_\+\+Internal\+\_\+\+Forces\+\_\+\+Explicit}} ()
+vector$<$ double $>$ \mbox{\hyperlink{classNonlinearShellMCYSE_a65d19fda7af8e840ff585ce16ab1ed4f}{Get\+\_\+\+Internal\+\_\+\+Forces}} ()
 \begin{DoxyCompactList}\small\item\em Gets the internal force vector "{}\+Force\+\_\+\+Internal\+\_\+"{} of the MCYSE shell element. The method "{}\+Calculate\+\_\+\+Internal\+\_\+\+Forces\+\_\+\+Explicit()"{} must be used before calling this getter. \end{DoxyCompactList}\item 
 \Hypertarget{classNonlinearShellMCYSE_a73c50cbeb43150e0635556bea0435ce0}\label{classNonlinearShellMCYSE_a73c50cbeb43150e0635556bea0435ce0} 
 vector$<$ double $>$ {\bfseries Get\+\_\+stresses\+\_\+hourglass} ()
+\item 
+\Hypertarget{classNonlinearShellMCYSE_a061aae932dcc58c4798b941ac5f51882}\label{classNonlinearShellMCYSE_a061aae932dcc58c4798b941ac5f51882} 
+void {\bfseries Calculate\+\_\+\+Stiffness\+\_\+\+Internal\+F\+\_\+\+MCYSE} ()
+\item 
+\Hypertarget{classNonlinearShellMCYSE_a274b1ef313da80028acee5cf693f8026}\label{classNonlinearShellMCYSE_a274b1ef313da80028acee5cf693f8026} 
+void {\bfseries set\+\_\+\+Hourglass\+Total} (vector$<$ double $>$ Fhourg\+\_\+in)
 \end{DoxyCompactItemize}
 \doxysubsubsection*{Static Public Attributes}
 \begin{DoxyCompactItemize}
@@ -261,11 +267,11 @@ Constructor for a new Nonlinear Shell MCYSE object. This constructor can be used
 
 
 \doxysubsection{Member Function Documentation}
-\Hypertarget{classNonlinearShellMCYSE_ad96896269f324176d4e7084e519035d6}\label{classNonlinearShellMCYSE_ad96896269f324176d4e7084e519035d6} 
-\index{NonlinearShellMCYSE@{NonlinearShellMCYSE}!Get\_Internal\_Forces\_Explicit@{Get\_Internal\_Forces\_Explicit}}
-\index{Get\_Internal\_Forces\_Explicit@{Get\_Internal\_Forces\_Explicit}!NonlinearShellMCYSE@{NonlinearShellMCYSE}}
-\doxysubsubsection{\texorpdfstring{Get\_Internal\_Forces\_Explicit()}{Get\_Internal\_Forces\_Explicit()}}
-{\footnotesize\ttfamily vector$<$ double $>$ Nonlinear\+Shell\+MCYSE\+::\+Get\+\_\+\+Internal\+\_\+\+Forces\+\_\+\+Explicit (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+\Hypertarget{classNonlinearShellMCYSE_a65d19fda7af8e840ff585ce16ab1ed4f}\label{classNonlinearShellMCYSE_a65d19fda7af8e840ff585ce16ab1ed4f} 
+\index{NonlinearShellMCYSE@{NonlinearShellMCYSE}!Get\_Internal\_Forces@{Get\_Internal\_Forces}}
+\index{Get\_Internal\_Forces@{Get\_Internal\_Forces}!NonlinearShellMCYSE@{NonlinearShellMCYSE}}
+\doxysubsubsection{\texorpdfstring{Get\_Internal\_Forces()}{Get\_Internal\_Forces()}}
+{\footnotesize\ttfamily vector$<$ double $>$ Nonlinear\+Shell\+MCYSE\+::\+Get\+\_\+\+Internal\+\_\+\+Forces (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -292,7 +298,7 @@ vector$<$double$>$ ~\newline
 \index{NonlinearShellMCYSE@{NonlinearShellMCYSE}!get\_StiffnessMCYSE@{get\_StiffnessMCYSE}}
 \index{get\_StiffnessMCYSE@{get\_StiffnessMCYSE}!NonlinearShellMCYSE@{NonlinearShellMCYSE}}
 \doxysubsubsection{\texorpdfstring{get\_StiffnessMCYSE()}{get\_StiffnessMCYSE()}}
-{\footnotesize\ttfamily vector$<$ double $>$ Nonlinear\+Shell\+MCYSE\+::get\+\_\+\+Stiffness\+MCYSE (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily vector$<$ double $>$ Nonlinear\+Shell\+MCYSE\+::get\+\_\+\+Stiffness\+MCYSE (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 

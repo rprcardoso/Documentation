@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.4.30)  3 JAN 2026 21:55
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.4.30)  12 JAN 2026 20:23
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -820,6 +820,14 @@ Package hyperref Info: Option `bookmarksnumbered' set `true' on input line 191.
 Package hyperref Info: Option `unicode' set `true' on input line 191.
 LaTeX Font Info:    Font shape `T1/phv/m/n' will be
 (Font)              scaled to size 12.9599pt on input line 196.
+LaTeX Font Info:    Trying to load font information for TS1+phv on input line 1
+96.
+
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/ts1phv.fd
+File: ts1phv.fd 2020/03/25 scalable font definitions for TS1/phv.
+)
+LaTeX Font Info:    Font shape `TS1/phv/m/n' will be
+(Font)              scaled to size 12.9599pt on input line 196.
 LaTeX Font Info:    Font shape `T1/phv/m/n' will be
 (Font)              scaled to size 10.79993pt on input line 198.
  [1
@@ -834,10 +842,11 @@ st/fonts/enc/dvips/base/8r.enc}] [2
 
 LaTeX Font Info:    Font shape `T1/phv/b/n' will be
 (Font)              scaled to size 8.99994pt on input line 204.
+LaTeX Font Info:    Font shape `TS1/phv/b/n' will be
+(Font)              scaled to size 8.99994pt on input line 204.
 LaTeX Font Info:    Trying to load font information for U+msa on input line 204
 .
-
-(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
+ (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
 LaTeX Font Info:    Trying to load font information for U+msb on input line 204
@@ -866,7 +875,7 @@ LaTeX Font Info:    Font shape `T1/phv/b/n' will be
 (Font)              scaled to size 6.29996pt on input line 204.
  [1]
 Underfull \hbox (badness 10000) in paragraph at lines 204--204
- [][] [][]\T1/phv/m/n/10 5.2 /home/mestrrc2/[]Documents/[]Mechin[]Motion[]Ltd/[
+ [][] [][]\T1/phv/m/n/10 5.3 /home/mestrrc2/[]Documents/[]Mechin[]Motion[]Ltd/[
 ]APIs/[]Nonlinear[]Shell[]MITC4/[]Nonlinear[]Shell[]MITC4.h 
  []
 
@@ -879,6 +888,8 @@ LaTeX Font Info:    Font shape `T1/phv/m/n' will be
 LaTeX Font Info:    Font shape `T1/phv/b/n' will be
 (Font)              scaled to size 18.66588pt on input line 1.
 LaTeX Font Info:    Font shape `T1/phv/b/n' will be
+(Font)              scaled to size 22.39185pt on input line 1.
+LaTeX Font Info:    Font shape `TS1/phv/b/n' will be
 (Font)              scaled to size 22.39185pt on input line 1.
 LaTeX Font Info:    Font shape `T1/phv/b/n' will be
 (Font)              scaled to size 12.9599pt on input line 3.
@@ -897,13 +908,7 @@ Chapter 3.
 
 ]
 Chapter 4.
-(./classNonlinearShellMCYSE.tex
-LaTeX Font Info:    Trying to load font information for TS1+phv on input line 6
-.
-
-(/usr/share/texlive/texmf-dist/tex/latex/psnfss/ts1phv.fd
-File: ts1phv.fd 2020/03/25 scalable font definitions for TS1/phv.
-)
+(./classNonlinearMRESS.tex
 LaTeX Font Info:    Font shape `TS1/phv/m/n' will be
 (Font)              scaled to size 8.99994pt on input line 6.
 LaTeX Font Info:    Font shape `T1/phv/m/n' will be
@@ -913,10 +918,39 @@ LaTeX Font Info:    Font shape `T1/phv/m/it' in size <9> not available
 LaTeX Font Info:    Font shape `T1/phv/m/sl' will be
 (Font)              scaled to size 8.09995pt on input line 7.
 LaTeX Font Info:    Font shape `T1/phv/m/it' in size <7> not available
-(Font)              Font shape `T1/phv/m/sl' tried instead on input line 8.
+(Font)              Font shape `T1/phv/m/sl' tried instead on input line 18.
 LaTeX Font Info:    Font shape `T1/phv/m/sl' will be
-(Font)              scaled to size 6.29996pt on input line 8.
+(Font)              scaled to size 6.29996pt on input line 18.
+ [7]
+LaTeX Font Info:    Font shape `T1/phv/b/n' will be
+(Font)              scaled to size 10.79993pt on input line 57.
+LaTeX Font Info:    Font shape `T1/phv/b/n' will be
+(Font)              scaled to size 7.19995pt on input line 61.
+LaTeX Font Info:    Font shape `T1/pcr/m/it' in size <8> not available
+(Font)              Font shape `T1/pcr/m/sl' tried instead on input line 62.
+LaTeX Font Info:    Font shape `T1/pcr/m/it' in size <7> not available
+(Font)              Font shape `T1/pcr/m/sl' tried instead on input line 62.
+ [8] [9] [10] [11] [12] [13] [14]
+Underfull \hbox (badness 10000) detected at line 384
+[][][]
+ []
 
+
+Underfull \hbox (badness 10000) detected at line 397
+[][][]
+ []
+
+[15]
+Underfull \hbox (badness 10000) detected at line 411
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 425
+[][][]
+ []
+
+) (./classNonlinearShellMCYSE.tex [16]
 Underfull \hbox (badness 10000) in paragraph at lines 7--9
 
  []
@@ -935,16 +969,7 @@ LaTeX Font Info:    Font shape `TS1/phv/m/it' in size <9> not available
 (Font)              Font shape `TS1/phv/m/sl' tried instead on input line 35.
 LaTeX Font Info:    Font shape `TS1/phv/m/sl' will be
 (Font)              scaled to size 8.09995pt on input line 35.
-[7]
-LaTeX Font Info:    Font shape `T1/phv/b/n' will be
-(Font)              scaled to size 10.79993pt on input line 79.
-LaTeX Font Info:    Font shape `T1/phv/b/n' will be
-(Font)              scaled to size 7.19995pt on input line 83.
-LaTeX Font Info:    Font shape `T1/pcr/m/it' in size <8> not available
-(Font)              Font shape `T1/pcr/m/sl' tried instead on input line 84.
-LaTeX Font Info:    Font shape `T1/pcr/m/it' in size <7> not available
-(Font)              Font shape `T1/pcr/m/sl' tried instead on input line 84.
-
+[17]
 Underfull \hbox (badness 10000) in paragraph at lines 88--90
 
  []
@@ -954,7 +979,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 94--95
 
  []
 
-[8]
+
 Underfull \hbox (badness 10000) in paragraph at lines 96--97
 
  []
@@ -969,7 +994,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 100--101
 
  []
 
-[9]
+[18] [19]
 Underfull \hbox (badness 10000) in paragraph at lines 149--151
 
  []
@@ -994,7 +1019,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 161--162
 
  []
 
-[10]
+[20]
 Underfull \hbox (badness 10000) in paragraph at lines 204--206
 
  []
@@ -1009,7 +1034,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 212--213
 
  []
 
-[11]
+
 Underfull \hbox (badness 10000) in paragraph at lines 214--215
 
  []
@@ -1019,7 +1044,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 216--217
 
  []
 
-[12]
+[21] [22]
 Underfull \hbox (badness 10000) detected at line 274
 [][][]
  []
@@ -1034,12 +1059,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 288--289
 
  []
 
-[13]
+
 Underfull \hbox (badness 10000) detected at line 302
 [][][]
  []
 
-
+[23]
 Underfull \hbox (badness 10000) detected at line 316
 [][][]
  []
@@ -1055,12 +1080,12 @@ Underfull \hbox (badness 1845) in paragraph at lines 333--337
 ]$zet1, EGxx$[]$zet2, EGyy$[]$zet2, EGxy$[]$zet2,
  []
 
-[14]
+
 Underfull \hbox (badness 10000) detected at line 348
 [][][]
  []
 
-
+[24]
 Underfull \hbox (badness 10000) detected at line 364
 [][][]
  []
@@ -1071,7 +1096,7 @@ Underfull \hbox (badness 1845) in paragraph at lines 365--369
 ]$zet1, SGxx$[]$zet2, SGyy$[]$zet2, SGxy$[]$zet2,
  []
 
-) (./classNonlinearShellMITC4.tex [15]
+) (./classNonlinearShellMITC4.tex
 Underfull \hbox (badness 10000) in paragraph at lines 7--9
 
  []
@@ -1081,7 +1106,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 11--13
 
  []
 
-[16]
+[25] [26]
 Underfull \hbox (badness 10000) in paragraph at lines 78--80
 
  []
@@ -1106,7 +1131,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 90--91
 
  []
 
-[17] [18]
+[27] [28]
 Underfull \hbox (badness 10000) in paragraph at lines 143--145
 
  []
@@ -1131,17 +1156,17 @@ Underfull \hbox (badness 10000) in paragraph at lines 155--156
 
  []
 
-[19]
+[29]
 Underfull \hbox (badness 10000) detected at line 205
 [][][]
  []
 
-[20]
+
 Underfull \hbox (badness 10000) detected at line 218
 [][][]
  []
 
-[21]
+[30]
 Underfull \hbox (badness 10000) detected at line 276
 [][][]
  []
@@ -1151,7 +1176,7 @@ Underfull \hbox (badness 10000) detected at line 289
 [][][]
  []
 
-
+[31]
 Underfull \hbox (badness 10000) detected at line 302
 [][][]
  []
@@ -1161,7 +1186,7 @@ Underfull \hbox (badness 10000) detected at line 316
 [][][]
  []
 
-[22]
+
 Underfull \hbox (badness 10000) detected at line 330
 [][][]
  []
@@ -1171,7 +1196,7 @@ Underfull \hbox (badness 10000) detected at line 347
 [][][]
  []
 
-[23]
+[32]
 Underfull \hbox (badness 10000) detected at line 364
 [][][]
  []
@@ -1181,19 +1206,20 @@ Underfull \hbox (badness 10000) detected at line 381
 [][][]
  []
 
-[24]) [25] [26
-
-]
+[33]) [34]
 Chapter 5.
-(./NonlinearShellMCYSE_8h_source.tex [27] [28] [29])
+(./NonlinearMRESS_8h_source.tex [35
+
+] [36] [37] [38])
+(./NonlinearShellMCYSE_8h_source.tex [39] [40] [41])
 (./NonlinearShellMITC4_8h.tex <./NonlinearShellMITC4_8h__incl.pdf>
-<NonlinearShellMITC4_8h__incl.pdf, id=530, 374.39874pt x 176.66pt>
+<NonlinearShellMITC4_8h__incl.pdf, id=704, 374.39874pt x 176.66pt>
 File: NonlinearShellMITC4_8h__incl.pdf Graphic file (type pdf)
 <use NonlinearShellMITC4_8h__incl.pdf>
 Package pdftex.def Info: NonlinearShellMITC4_8h__incl.pdf  used on input line 1
 1.
 (pdftex.def)             Requested size: 350.0pt x 165.15738pt.
- [30]
+ [42]
 Underfull \hbox (badness 10000) detected at line 22
 [][][]
  []
@@ -1213,7 +1239,7 @@ Underfull \hbox (badness 10000) detected at line 31
 [][][]
  []
 
-) (./NonlinearShellMITC4_8h_source.tex [31] [32] [33]) [34]
+) (./NonlinearShellMITC4_8h_source.tex [43] [44] [45]) [46]
 No file refman.ind.
 (./refman.aux)
  ***********
@@ -1221,14 +1247,14 @@ LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-22>
  ***********
 Package rerunfilecheck Info: File `refman.out' has not changed.
-(rerunfilecheck)             Checksum: F931A67D4F572E34B0A5316BD8E81CC3;10045.
+(rerunfilecheck)             Checksum: 3D503B02E780DC3B9A3130D33925B60A;13176.
  ) 
 Here is how much of TeX's memory you used:
- 18132 strings out of 476106
- 291335 string characters out of 5793933
- 1959975 words of memory out of 5000000
- 39616 multiletter control sequences out of 15000+600000
- 615046 words of font info for 113 fonts, out of 8000000 for 9000
+ 18249 strings out of 476106
+ 294715 string characters out of 5793933
+ 1972975 words of memory out of 5000000
+ 39668 multiletter control sequences out of 15000+600000
+ 615983 words of font info for 116 fonts, out of 8000000 for 9000
  59 hyphenation exceptions out of 8191
  101i,16n,117p,909b,756s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></us
@@ -1245,10 +1271,10 @@ er/ucrb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb
 mf-dist/fonts/type1/urw/helvetic/uhvb8ac.pfb></usr/share/texlive/texmf-dist/fon
 ts/type1/urw/helvetic/uhvr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw
 /helvetic/uhvro8a.pfb>
-Output written on refman.pdf (38 pages, 227096 bytes).
+Output written on refman.pdf (50 pages, 258570 bytes).
 PDF statistics:
- 692 PDF objects out of 1000 (max. 8388607)
- 611 compressed objects within 7 object streams
- 185 named destinations out of 1000 (max. 500000)
- 358 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 879 PDF objects out of 1000 (max. 8388607)
+ 785 compressed objects within 8 object streams
+ 245 named destinations out of 1000 (max. 500000)
+ 462 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -68,7 +68,7 @@
 \DoxyCodeLine{00189\ }
 \DoxyCodeLine{00190\ \ \ \ \ \textcolor{comment}{//\ get\ the\ linear\ Stiffness\ Matrix}}
 \DoxyCodeLine{00198\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classNonlinearShellMCYSE_a7441086666291b95a0fd6fbc8996eefc}{Calculate\_StiffnessMCYSE}}();}
-\DoxyCodeLine{00208\ \ \ \ \ vector<double>\ \mbox{\hyperlink{classNonlinearShellMCYSE_a4cd576269a0f76693e8b9d5d0ee9b73e}{get\_StiffnessMCYSE}}();}
+\DoxyCodeLine{00208\ \ \ \ \ vector<double>\ \mbox{\hyperlink{classNonlinearShellMCYSE_a4cd576269a0f76693e8b9d5d0ee9b73e}{get\_StiffnessMCYSE}}()\ \{\ \textcolor{keywordflow}{return}\ Stiffness\_;\ \};}
 \DoxyCodeLine{00209\ }
 \DoxyCodeLine{00210\ }
 \DoxyCodeLine{00211\ \ \ \ \ \textcolor{comment}{//\ setter\ for\ local\ axes\ at\ the\ single\ in-\/plane\ GP\ at\ the\ centre\ of\ the\ element}}
@@ -105,174 +105,186 @@
 \DoxyCodeLine{00297\ }
 \DoxyCodeLine{00298\ \ \ \ \ \textcolor{comment}{//\ Internal\ force\ vector\ for\ Explicit}}
 \DoxyCodeLine{00303\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classNonlinearShellMCYSE_a1107fac85d92b87059dab0907ac002bf}{Calculate\_Internal\_Forces\_Explicit}}();}
-\DoxyCodeLine{00311\ \ \ \ \ vector<double>\ \mbox{\hyperlink{classNonlinearShellMCYSE_ad96896269f324176d4e7084e519035d6}{Get\_Internal\_Forces\_Explicit}}()\ \{\ \textcolor{keywordflow}{return}\ Force\_Internal\_;\ \}}
+\DoxyCodeLine{00311\ \ \ \ \ vector<double>\ \mbox{\hyperlink{classNonlinearShellMCYSE_a65d19fda7af8e840ff585ce16ab1ed4f}{Get\_Internal\_Forces}}()\ \{\ \textcolor{keywordflow}{return}\ Force\_Internal\_;\ \}}
 \DoxyCodeLine{00312\ }
 \DoxyCodeLine{00313\ \ \ \ \ \textcolor{comment}{//\ getter\ for\ the\ hourglass\ stresses}}
 \DoxyCodeLine{00314\ \ \ \ \ vector<double>\ Get\_stresses\_hourglass()\ \{\ \textcolor{keywordflow}{return}\ stresses\_hourglass\_;\ \}}
 \DoxyCodeLine{00315\ }
-\DoxyCodeLine{00316\ }
-\DoxyCodeLine{00317\ \textcolor{keyword}{private}:}
-\DoxyCodeLine{00318\ }
-\DoxyCodeLine{00319\ \ \ \ \ \textcolor{keywordtype}{int}\ igaus\_;}
-\DoxyCodeLine{00320\ \ \ \ \ \textcolor{keywordtype}{double}\ zet\_;}
-\DoxyCodeLine{00321\ \ \ \ \ \textcolor{keywordtype}{double}\ zet\_weight\_;}
-\DoxyCodeLine{00322\ \ \ \ \ \textcolor{keywordtype}{double}\ determinant\_;\ \textcolor{comment}{//\ determinant\ of\ the\ Jacobian}}
+\DoxyCodeLine{00316\ \ \ \ \ \textcolor{comment}{//\ stifness\ and\ internal\ forces}}
+\DoxyCodeLine{00317\ \ \ \ \ \textcolor{keywordtype}{void}\ Calculate\_Stiffness\_InternalF\_MCYSE();}
+\DoxyCodeLine{00318\ \ \ \ }
+\DoxyCodeLine{00319\ \ \ \ \ \textcolor{comment}{//\ set\ total\ hourglass\ forces}}
+\DoxyCodeLine{00320\ \ \ \ \ \textcolor{keywordtype}{void}\ set\_HourglassTotal(vector<double>\ Fhourg\_in)\ \{\ Force\_Hourglass\_T\_\ =\ Fhourg\_in;\ \}}
+\DoxyCodeLine{00321\ }
+\DoxyCodeLine{00322\ }
 \DoxyCodeLine{00323\ }
-\DoxyCodeLine{00324\ \ \ \ \ vector<vector<double>>\ xyz\_;\ \textcolor{comment}{//\ coordinates\ for\ the\ 4-\/nodes\ of\ the\ shell}}
-\DoxyCodeLine{00325\ \ \ \ \ vector<vector<double>>\ vnor\_;\ \textcolor{comment}{//\ normal\ vector\ at\ each\ node}}
-\DoxyCodeLine{00326\ \ \ \ \ vector<double>\ thick\_;\ \textcolor{comment}{//\ thickness\ at\ each\ node}}
-\DoxyCodeLine{00327\ \ \ \ \ vector<vector<double>>\ xlocal\_;\ \textcolor{comment}{//\ x-\/local\ nodal\ csys\ at\ each\ node}}
-\DoxyCodeLine{00328\ \ \ \ \ vector<vector<double>>\ ylocal\_;\ \textcolor{comment}{//\ y-\/local\ nodal\ csys\ at\ each\ node}}
-\DoxyCodeLine{00329\ \ \ \ \ vector<double>\ zetGPcoord\_;\ \textcolor{comment}{//\ zet\ coordinate\ of\ GP}}
-\DoxyCodeLine{00330\ \ \ \ \ vector<double>\ zetGPweigth\_;\ \textcolor{comment}{//\ GP\ weight\ along\ zet}}
+\DoxyCodeLine{00324\ }
+\DoxyCodeLine{00325\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00326\ }
+\DoxyCodeLine{00327\ \ \ \ \ \textcolor{keywordtype}{int}\ igaus\_;}
+\DoxyCodeLine{00328\ \ \ \ \ \textcolor{keywordtype}{double}\ zet\_;}
+\DoxyCodeLine{00329\ \ \ \ \ \textcolor{keywordtype}{double}\ zet\_weight\_;}
+\DoxyCodeLine{00330\ \ \ \ \ \textcolor{keywordtype}{double}\ determinant\_;\ \textcolor{comment}{//\ determinant\ of\ the\ Jacobian}}
 \DoxyCodeLine{00331\ }
-\DoxyCodeLine{00332\ \ \ \ \ vector<double>\ axesgp\_all\_;\ \textcolor{comment}{//\ local\ axes\ at\ all\ in-\/plane\ GPs.\ The\ local\ axes\ are\ defined}}
-\DoxyCodeLine{00333\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ for\ in-\/plane\ GPs\ only\ (zet\ =\ 0)}}
-\DoxyCodeLine{00334\ \ \ \ \ vector<double>\ axesgp\_;\ \textcolor{comment}{//\ local\ axes\ at\ the\ GP}}
-\DoxyCodeLine{00335\ \ \ \ \ vector<double>\ axesgp\_all\_temp\_;}
-\DoxyCodeLine{00336\ }
-\DoxyCodeLine{00337\ }
-\DoxyCodeLine{00338\ \ \ \ \ \textcolor{comment}{//\ "{}BMat\_"{}\ is\ in\ vector\ form.\ It\ is\ calculated\ and\ stored\ row-\/wise\ as\ follows:}}
-\DoxyCodeLine{00339\ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ BMat\_[0:23]\ \ \ =\ B[0,0:24]}}
-\DoxyCodeLine{00340\ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ BMat\_[24:47]\ \ =\ B[1,0:24]}}
-\DoxyCodeLine{00341\ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ BMat\_[48:71]\ \ =\ B[2,0:24]}}
-\DoxyCodeLine{00342\ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ BMat\_[72:95]\ \ =\ B[3,0:24]}}
-\DoxyCodeLine{00343\ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ BMat\_[96:119]\ =\ B[4,0:24]}}
-\DoxyCodeLine{00344\ \ \ \ \ vector<double>\ BMat\_;\ \textcolor{comment}{//\ final\ B-\/matrix\ in\ vector\ form}}
-\DoxyCodeLine{00345\ \ \ \ \ vector<double>\ BMatTransposed\_;\ \textcolor{comment}{//\ transposed\ B-\/matrix}}
-\DoxyCodeLine{00346\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ sizeR\_;\ \textcolor{comment}{//\ number\ of\ rows\ of\ the\ B-\/matrix}}
-\DoxyCodeLine{00347\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ sizeC\_;\ \textcolor{comment}{//\ number\ of\ columns\ of\ the\ B-\/matrix}}
-\DoxyCodeLine{00348\ }
-\DoxyCodeLine{00349\ \ \ \ \ \textcolor{comment}{//}}
-\DoxyCodeLine{00350\ \ \ \ \ \textcolor{comment}{//\ D-\/Matrix\ vector\ with\ the\ D-\/Matrix\ in\ vectorial\ form\ for\ all\ integration\ points.}}
-\DoxyCodeLine{00351\ \ \ \ \ \textcolor{comment}{//\ each\ integration\ point\ has\ 25\ (5x5)\ positions\ in\ the\ D-\/Matrix\ vector}}
-\DoxyCodeLine{00352\ \ \ \ \ vector<double>\ DMatrix\_;}
-\DoxyCodeLine{00353\ }
-\DoxyCodeLine{00354\ \ \ \ \ vector<vector<double>>\ forma;}
-\DoxyCodeLine{00355\ }
-\DoxyCodeLine{00356\ \ \ \ \ \textcolor{keywordtype}{double}\ qx,qy,qz,ex,ey,ez;}
-\DoxyCodeLine{00357\ \ \ \ \ \textcolor{keywordtype}{double}\ rhx,rhy,rhz,v3x,v3y,v3z;}
-\DoxyCodeLine{00358\ \ \ \ \ \textcolor{keywordtype}{double}\ qv3x,qv3y,qv3z;}
-\DoxyCodeLine{00359\ \ \ \ \ \textcolor{keywordtype}{double}\ ev3x,ev3y,ev3z;}
-\DoxyCodeLine{00360\ \ \ \ \ \textcolor{keywordtype}{double}\ rhv3x,rhv3y,rhv3z;}
-\DoxyCodeLine{00361\ \ \ \ \ \textcolor{keywordtype}{double}\ rja,rje,rji,rjm,rjq,rju,rjya,rjye,rjyi;}
-\DoxyCodeLine{00362\ \ \ \ \ \textcolor{keywordtype}{double}\ rjpa1,rjpa10,rjpa16;}
+\DoxyCodeLine{00332\ \ \ \ \ vector<vector<double>>\ xyz\_;\ \textcolor{comment}{//\ coordinates\ for\ the\ 4-\/nodes\ of\ the\ shell}}
+\DoxyCodeLine{00333\ \ \ \ \ vector<vector<double>>\ vnor\_;\ \textcolor{comment}{//\ normal\ vector\ at\ each\ node}}
+\DoxyCodeLine{00334\ \ \ \ \ vector<double>\ thick\_;\ \textcolor{comment}{//\ thickness\ at\ each\ node}}
+\DoxyCodeLine{00335\ \ \ \ \ vector<vector<double>>\ xlocal\_;\ \textcolor{comment}{//\ x-\/local\ nodal\ csys\ at\ each\ node}}
+\DoxyCodeLine{00336\ \ \ \ \ vector<vector<double>>\ ylocal\_;\ \textcolor{comment}{//\ y-\/local\ nodal\ csys\ at\ each\ node}}
+\DoxyCodeLine{00337\ \ \ \ \ vector<double>\ zetGPcoord\_;\ \textcolor{comment}{//\ zet\ coordinate\ of\ GP}}
+\DoxyCodeLine{00338\ \ \ \ \ vector<double>\ zetGPweigth\_;\ \textcolor{comment}{//\ GP\ weight\ along\ zet}}
+\DoxyCodeLine{00339\ }
+\DoxyCodeLine{00340\ \ \ \ \ vector<double>\ axesgp\_all\_;\ \textcolor{comment}{//\ local\ axes\ at\ all\ in-\/plane\ GPs.\ The\ local\ axes\ are\ defined}}
+\DoxyCodeLine{00341\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ for\ in-\/plane\ GPs\ only\ (zet\ =\ 0)}}
+\DoxyCodeLine{00342\ \ \ \ \ vector<double>\ axesgp\_;\ \textcolor{comment}{//\ local\ axes\ at\ the\ GP}}
+\DoxyCodeLine{00343\ \ \ \ \ vector<double>\ axesgp\_all\_temp\_;}
+\DoxyCodeLine{00344\ }
+\DoxyCodeLine{00345\ }
+\DoxyCodeLine{00346\ \ \ \ \ \textcolor{comment}{//\ "{}BMat\_"{}\ is\ in\ vector\ form.\ It\ is\ calculated\ and\ stored\ row-\/wise\ as\ follows:}}
+\DoxyCodeLine{00347\ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ BMat\_[0:23]\ \ \ =\ B[0,0:24]}}
+\DoxyCodeLine{00348\ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ BMat\_[24:47]\ \ =\ B[1,0:24]}}
+\DoxyCodeLine{00349\ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ BMat\_[48:71]\ \ =\ B[2,0:24]}}
+\DoxyCodeLine{00350\ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ BMat\_[72:95]\ \ =\ B[3,0:24]}}
+\DoxyCodeLine{00351\ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ BMat\_[96:119]\ =\ B[4,0:24]}}
+\DoxyCodeLine{00352\ \ \ \ \ vector<double>\ BMat\_;\ \textcolor{comment}{//\ final\ B-\/matrix\ in\ vector\ form}}
+\DoxyCodeLine{00353\ \ \ \ \ vector<double>\ BMatTransposed\_;\ \textcolor{comment}{//\ transposed\ B-\/matrix}}
+\DoxyCodeLine{00354\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ sizeR\_;\ \textcolor{comment}{//\ number\ of\ rows\ of\ the\ B-\/matrix}}
+\DoxyCodeLine{00355\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ sizeC\_;\ \textcolor{comment}{//\ number\ of\ columns\ of\ the\ B-\/matrix}}
+\DoxyCodeLine{00356\ }
+\DoxyCodeLine{00357\ \ \ \ \ \textcolor{comment}{//}}
+\DoxyCodeLine{00358\ \ \ \ \ \textcolor{comment}{//\ D-\/Matrix\ vector\ with\ the\ D-\/Matrix\ in\ vectorial\ form\ for\ all\ integration\ points.}}
+\DoxyCodeLine{00359\ \ \ \ \ \textcolor{comment}{//\ each\ integration\ point\ has\ 25\ (5x5)\ positions\ in\ the\ D-\/Matrix\ vector}}
+\DoxyCodeLine{00360\ \ \ \ \ vector<double>\ DMatrix\_;}
+\DoxyCodeLine{00361\ }
+\DoxyCodeLine{00362\ \ \ \ \ vector<vector<double>>\ forma;}
 \DoxyCodeLine{00363\ }
-\DoxyCodeLine{00364\ \ \ \ \ \textcolor{keywordtype}{double}\ qsiixi;\ }
-\DoxyCodeLine{00365\ \ \ \ \ \textcolor{keywordtype}{double}\ qsiiyi;\ }
-\DoxyCodeLine{00366\ \ \ \ \ \textcolor{keywordtype}{double}\ etaixi;\ }
-\DoxyCodeLine{00367\ \ \ \ \ \textcolor{keywordtype}{double}\ etaiyi;\ }
-\DoxyCodeLine{00368\ \ \ \ \ \textcolor{keywordtype}{double}\ hjxj;\ }
-\DoxyCodeLine{00369\ \ \ \ \ \textcolor{keywordtype}{double}\ hjyj;}
-\DoxyCodeLine{00370\ }
-\DoxyCodeLine{00371\ \ \ \ \ vector<double>\ gamai;\ \ \ \ \ }
-\DoxyCodeLine{00372\ }
-\DoxyCodeLine{00373\ \ \ \ \ vector<vector<double>>\ xcord;}
-\DoxyCodeLine{00374\ }
-\DoxyCodeLine{00375\ \ \ \ \ vector<vector<double>>\ rjac;}
-\DoxyCodeLine{00376\ \ \ \ \ vector<vector<double>>\ raca;}
-\DoxyCodeLine{00377\ \ \ \ \ vector<vector<double>>\ racb;}
-\DoxyCodeLine{00378\ \ \ \ \ vector<vector<double>>\ racc;}
-\DoxyCodeLine{00379\ \ \ \ \ vector<vector<double>>\ racd;}
+\DoxyCodeLine{00364\ \ \ \ \ \textcolor{keywordtype}{double}\ qx,qy,qz,ex,ey,ez;}
+\DoxyCodeLine{00365\ \ \ \ \ \textcolor{keywordtype}{double}\ rhx,rhy,rhz,v3x,v3y,v3z;}
+\DoxyCodeLine{00366\ \ \ \ \ \textcolor{keywordtype}{double}\ qv3x,qv3y,qv3z;}
+\DoxyCodeLine{00367\ \ \ \ \ \textcolor{keywordtype}{double}\ ev3x,ev3y,ev3z;}
+\DoxyCodeLine{00368\ \ \ \ \ \textcolor{keywordtype}{double}\ rhv3x,rhv3y,rhv3z;}
+\DoxyCodeLine{00369\ \ \ \ \ \textcolor{keywordtype}{double}\ rja,rje,rji,rjm,rjq,rju,rjya,rjye,rjyi;}
+\DoxyCodeLine{00370\ \ \ \ \ \textcolor{keywordtype}{double}\ rjpa1,rjpa10,rjpa16;}
+\DoxyCodeLine{00371\ }
+\DoxyCodeLine{00372\ \ \ \ \ \textcolor{keywordtype}{double}\ qsiixi;\ }
+\DoxyCodeLine{00373\ \ \ \ \ \textcolor{keywordtype}{double}\ qsiiyi;\ }
+\DoxyCodeLine{00374\ \ \ \ \ \textcolor{keywordtype}{double}\ etaixi;\ }
+\DoxyCodeLine{00375\ \ \ \ \ \textcolor{keywordtype}{double}\ etaiyi;\ }
+\DoxyCodeLine{00376\ \ \ \ \ \textcolor{keywordtype}{double}\ hjxj;\ }
+\DoxyCodeLine{00377\ \ \ \ \ \textcolor{keywordtype}{double}\ hjyj;}
+\DoxyCodeLine{00378\ }
+\DoxyCodeLine{00379\ \ \ \ \ vector<double>\ gamai;\ \ \ \ \ }
 \DoxyCodeLine{00380\ }
-\DoxyCodeLine{00381\ \ \ \ \ \textcolor{keywordtype}{double}\ rjaco1;\ }
-\DoxyCodeLine{00382\ \ \ \ \ \textcolor{keywordtype}{double}\ rjaco2;\ }
-\DoxyCodeLine{00383\ \ \ \ \ \textcolor{keywordtype}{double}\ rjaco3;\ }
-\DoxyCodeLine{00384\ }
-\DoxyCodeLine{00385\ }
-\DoxyCodeLine{00386\ \ \ \ \ vector<vector<double>>\ rcl;}
-\DoxyCodeLine{00387\ \ \ \ \ vector<vector<double>>\ rot;}
+\DoxyCodeLine{00381\ \ \ \ \ vector<vector<double>>\ xcord;}
+\DoxyCodeLine{00382\ }
+\DoxyCodeLine{00383\ \ \ \ \ vector<vector<double>>\ rjac;}
+\DoxyCodeLine{00384\ \ \ \ \ vector<vector<double>>\ raca;}
+\DoxyCodeLine{00385\ \ \ \ \ vector<vector<double>>\ racb;}
+\DoxyCodeLine{00386\ \ \ \ \ vector<vector<double>>\ racc;}
+\DoxyCodeLine{00387\ \ \ \ \ vector<vector<double>>\ racd;}
 \DoxyCodeLine{00388\ }
-\DoxyCodeLine{00389\ \ \ \ \ vector<vector<double>>\ rott;}
-\DoxyCodeLine{00390\ }
-\DoxyCodeLine{00391\ }
-\DoxyCodeLine{00392\ \ \ \ \ vector<vector<double>>\ rlna;}
+\DoxyCodeLine{00389\ \ \ \ \ \textcolor{keywordtype}{double}\ rjaco1;\ }
+\DoxyCodeLine{00390\ \ \ \ \ \textcolor{keywordtype}{double}\ rjaco2;\ }
+\DoxyCodeLine{00391\ \ \ \ \ \textcolor{keywordtype}{double}\ rjaco3;\ }
+\DoxyCodeLine{00392\ }
 \DoxyCodeLine{00393\ }
-\DoxyCodeLine{00394\ }
-\DoxyCodeLine{00395\ \ \ \ \ vector<double>\ b1a,b1b,b1c;}
-\DoxyCodeLine{00396\ \ \ \ \ vector<double>\ b2a,b2b,b2c;}
-\DoxyCodeLine{00397\ \ \ \ \ vector<double>\ b1aa,b2aa,b1bb,b2bb,b1ac,b2ac,b1bd,b2bd;}
+\DoxyCodeLine{00394\ \ \ \ \ vector<vector<double>>\ rcl;}
+\DoxyCodeLine{00395\ \ \ \ \ vector<vector<double>>\ rot;}
+\DoxyCodeLine{00396\ }
+\DoxyCodeLine{00397\ \ \ \ \ vector<vector<double>>\ rott;}
 \DoxyCodeLine{00398\ }
 \DoxyCodeLine{00399\ }
-\DoxyCodeLine{00400\ \ \ \ \ vector<vector<double>>\ stiffness;\ \textcolor{comment}{//\ linear\ Stiffness\ Matrix\ in\ matrix\ form}}
+\DoxyCodeLine{00400\ \ \ \ \ vector<vector<double>>\ rlna;}
 \DoxyCodeLine{00401\ }
-\DoxyCodeLine{00402\ \ \ \ \ vector<double>\ Stiffness\_;\ \textcolor{comment}{//\ linear\ Stiffness\ in\ vector\ form}}
-\DoxyCodeLine{00403\ }
-\DoxyCodeLine{00404\ \ \ \ \ vector<vector<double>>\ tpp;}
-\DoxyCodeLine{00405\ }
+\DoxyCodeLine{00402\ }
+\DoxyCodeLine{00403\ \ \ \ \ vector<double>\ b1a,b1b,b1c;}
+\DoxyCodeLine{00404\ \ \ \ \ vector<double>\ b2a,b2b,b2c;}
+\DoxyCodeLine{00405\ \ \ \ \ vector<double>\ b1aa,b2aa,b1bb,b2bb,b1ac,b2ac,b1bd,b2bd;}
 \DoxyCodeLine{00406\ }
 \DoxyCodeLine{00407\ }
-\DoxyCodeLine{00408\ \ \ \ \ \textcolor{keywordtype}{void}\ StrainTransformMCYSE(vector<vector<double>>\ \&rocnat,\ vector<double>\ \&ratsgn);}
+\DoxyCodeLine{00408\ \ \ \ \ vector<vector<double>>\ stiffness;\ \textcolor{comment}{//\ linear\ Stiffness\ Matrix\ in\ matrix\ form}}
 \DoxyCodeLine{00409\ }
-\DoxyCodeLine{00410\ \ \ \ \ \textcolor{comment}{//\ cross-\/product}}
-\DoxyCodeLine{00411\ \ \ \ \ vector<double>\ prodve(vector<double>\ vec1,\ vector<double>\ vec2,\ \textcolor{keywordtype}{int}\ khoice);}
-\DoxyCodeLine{00412\ }
-\DoxyCodeLine{00413\ \ \ \ \ \textcolor{comment}{//\ determinant}}
-\DoxyCodeLine{00414\ \ \ \ \ \textcolor{keywordtype}{double}\ determinant(vector<vector<double>>\ \&jacobian);}
+\DoxyCodeLine{00410\ \ \ \ \ vector<double>\ Stiffness\_;\ \textcolor{comment}{//\ linear\ Stiffness\ in\ vector\ form}}
+\DoxyCodeLine{00411\ }
+\DoxyCodeLine{00412\ \ \ \ \ vector<vector<double>>\ tpp;}
+\DoxyCodeLine{00413\ }
+\DoxyCodeLine{00414\ }
 \DoxyCodeLine{00415\ }
-\DoxyCodeLine{00416\ \ \ \ \ \textcolor{comment}{//\ norm\ of\ a\ vector}}
-\DoxyCodeLine{00417\ \ \ \ \ \textcolor{keywordtype}{double}\ norm\_vector(vector<double>\ v\_in);}
-\DoxyCodeLine{00418\ }
-\DoxyCodeLine{00419\ \ \ \ \ \textcolor{comment}{//\ calculates\ the\ local\ axes\ at\ the\ single\ in-\/plane\ Gauss\ point\ at\ the\ centre\ of\ the\ element.}}
-\DoxyCodeLine{00420\ \ \ \ \ \textcolor{comment}{//\ The\ local\ axes\ are\ located\ at\ the\ mid-\/surface\ (zet\ =\ 0.0)\ of\ the\ shell\ so\ that\ for}}
-\DoxyCodeLine{00421\ \ \ \ \ \textcolor{comment}{//\ non-\/zero\ zet\ coordinate\ the\ local\ axes\ are\ the\ same\ as\ at\ zet\ =\ 0.0.}}
-\DoxyCodeLine{00422\ \ \ \ \ \textcolor{keywordtype}{void}\ Calculate\_Local\_Axes\_GP();}
+\DoxyCodeLine{00416\ \ \ \ \ \textcolor{keywordtype}{void}\ StrainTransformMCYSE(vector<vector<double>>\ \&rocnat,\ vector<double>\ \&ratsgn);}
+\DoxyCodeLine{00417\ }
+\DoxyCodeLine{00418\ \ \ \ \ \textcolor{comment}{//\ cross-\/product}}
+\DoxyCodeLine{00419\ \ \ \ \ vector<double>\ prodve(vector<double>\ vec1,\ vector<double>\ vec2,\ \textcolor{keywordtype}{int}\ khoice);}
+\DoxyCodeLine{00420\ }
+\DoxyCodeLine{00421\ \ \ \ \ \textcolor{comment}{//\ determinant}}
+\DoxyCodeLine{00422\ \ \ \ \ \textcolor{keywordtype}{double}\ determinant(vector<vector<double>>\ \&jacobian);}
 \DoxyCodeLine{00423\ }
-\DoxyCodeLine{00424\ \ \ \ \ \textcolor{comment}{//\ B-\/matrix\ in\ the\ convective\ csys}}
-\DoxyCodeLine{00425\ \ \ \ \ \textcolor{comment}{//void\ BCovMITC4(int\ ig,\ double\ zet,\ vector<vector<double>>\ \&jacob,\ vector<double>\ \&bcovar);}}
+\DoxyCodeLine{00424\ \ \ \ \ \textcolor{comment}{//\ norm\ of\ a\ vector}}
+\DoxyCodeLine{00425\ \ \ \ \ \textcolor{keywordtype}{double}\ norm\_vector(vector<double>\ v\_in);}
 \DoxyCodeLine{00426\ }
-\DoxyCodeLine{00427\ \ \ \ \ \textcolor{comment}{//\ method\ to\ be\ called\ for\ the\ calculation\ of\ the\ Linear\ Stiffness}}
-\DoxyCodeLine{00428\ \ \ \ \ \textcolor{keywordtype}{void}\ StiffnessMCYSE();}
-\DoxyCodeLine{00429\ }
-\DoxyCodeLine{00430\ \ \ \ \ \textcolor{comment}{//\ stabilisation\ (hourglass)\ stiffness\ matrix}}
-\DoxyCodeLine{00431\ \ \ \ \ \textcolor{keywordtype}{void}\ StiffnessMCYSE\_Hourglass();}
-\DoxyCodeLine{00432\ }
-\DoxyCodeLine{00433\ \ \ \ \ \textcolor{comment}{//\ displacements\ vector}}
-\DoxyCodeLine{00434\ \ \ \ \ vector<double>\ Displacements\_;}
-\DoxyCodeLine{00435\ }
-\DoxyCodeLine{00436\ \ \ \ \ \textcolor{comment}{//\ Strains}}
-\DoxyCodeLine{00437\ \ \ \ \ vector<double>\ Strains\_;}
-\DoxyCodeLine{00438\ \ \ \ \ vector<double>\ Strains\_Global\_;}
-\DoxyCodeLine{00439\ }
-\DoxyCodeLine{00440\ \ \ \ \ \textcolor{comment}{//\ Strains}}
-\DoxyCodeLine{00441\ \ \ \ \ \textcolor{keywordtype}{void}\ StrainsMCYSE();}
+\DoxyCodeLine{00427\ \ \ \ \ \textcolor{comment}{//\ calculates\ the\ local\ axes\ at\ the\ single\ in-\/plane\ Gauss\ point\ at\ the\ centre\ of\ the\ element.}}
+\DoxyCodeLine{00428\ \ \ \ \ \textcolor{comment}{//\ The\ local\ axes\ are\ located\ at\ the\ mid-\/surface\ (zet\ =\ 0.0)\ of\ the\ shell\ so\ that\ for}}
+\DoxyCodeLine{00429\ \ \ \ \ \textcolor{comment}{//\ non-\/zero\ zet\ coordinate\ the\ local\ axes\ are\ the\ same\ as\ at\ zet\ =\ 0.0.}}
+\DoxyCodeLine{00430\ \ \ \ \ \textcolor{keywordtype}{void}\ Calculate\_Local\_Axes\_GP();}
+\DoxyCodeLine{00431\ }
+\DoxyCodeLine{00432\ \ \ \ \ \textcolor{comment}{//\ B-\/matrix\ in\ the\ convective\ csys}}
+\DoxyCodeLine{00433\ \ \ \ \ \textcolor{comment}{//void\ BCovMITC4(int\ ig,\ double\ zet,\ vector<vector<double>>\ \&jacob,\ vector<double>\ \&bcovar);}}
+\DoxyCodeLine{00434\ }
+\DoxyCodeLine{00435\ \ \ \ \ \textcolor{comment}{//\ method\ to\ be\ called\ for\ the\ calculation\ of\ the\ Linear\ Stiffness}}
+\DoxyCodeLine{00436\ \ \ \ \ \textcolor{keywordtype}{void}\ StiffnessMCYSE();}
+\DoxyCodeLine{00437\ }
+\DoxyCodeLine{00438\ \ \ \ \ \textcolor{comment}{//\ stabilisation\ (hourglass)\ stiffness\ matrix}}
+\DoxyCodeLine{00439\ \ \ \ \ \textcolor{keywordtype}{void}\ StiffnessMCYSE\_Hourglass();}
+\DoxyCodeLine{00440\ \ \ \ \ \textcolor{comment}{//\ stabilisation\ (hourglass)\ stiffness\ matrix\ \&\ internal\ forces\ (hourglass)}}
+\DoxyCodeLine{00441\ \ \ \ \ \textcolor{keywordtype}{void}\ Stiffness\_InternalF\_MCYSE\_Hourglass();}
 \DoxyCodeLine{00442\ }
-\DoxyCodeLine{00443\ \ \ \ \ \textcolor{comment}{//\ Stresses}}
-\DoxyCodeLine{00444\ \ \ \ \ \textcolor{comment}{//}}
-\DoxyCodeLine{00445\ \ \ \ \ \textcolor{comment}{//\ the\ stresses\ at\ the\ integration\ points\ must\ be\ given\ as\ input\ during\ class\ constructor}}
-\DoxyCodeLine{00446\ \ \ \ \ \textcolor{comment}{//\ the\ stresses\ are\ required\ for\ the\ internal\ force\ vector\ and\ initial\ stress\ stiffness\ matrix\ calculations}}
-\DoxyCodeLine{00447\ \ \ \ \ \textcolor{comment}{//\ the\ format\ of\ the\ stresses\ input\ is\ the\ following:}}
-\DoxyCodeLine{00448\ \ \ \ \ \textcolor{comment}{//\ Sxx,\ Syy,\ Sxy,\ Sxz,\ Syz,\ that\ is,\ 5\ stress\ components\ per\ integration\ point\ along\ the\ thickness\ direction}}
-\DoxyCodeLine{00449\ \ \ \ \ \textcolor{comment}{//\ the\ order\ of\ the\ integration\ points\ in\ the\ "{}stresses\_"{}\ vector\ is\ from\ the\ bottom-\/up\ direction,}}
-\DoxyCodeLine{00450\ \ \ \ \ \textcolor{comment}{//\ from\ zet\ -\/1.0\ to\ +1.0.\ For\ example,\ for\ 2\ integration\ points\ along\ thickness,\ zet1\ =\ -\/1.0/sqrt(3.0)}}
-\DoxyCodeLine{00451\ \ \ \ \ \textcolor{comment}{//\ and\ zet2\ =\ +1.0/sqrt(3.0),\ we\ get:\ stresses\_[Sxx\_zet1,\ Syy\_zet1,\ Sxy\_zet1,\ Sxz\_zet1,\ Syz\_zet1,}}
-\DoxyCodeLine{00452\ \ \ \ \ \textcolor{comment}{//\ Sxx\_zet2,\ Syy\_zet2,\ Sxy\_zet2,\ Sxz\_zet2,\ Syz\_zet2]}}
-\DoxyCodeLine{00453\ \ \ \ \ vector<double>\ stresses\_;\ \textcolor{comment}{//\ stresses\ at\ the\ integration\ points}}
-\DoxyCodeLine{00454\ \ \ \ \ vector<double>\ stresses\_Global;\ \textcolor{comment}{//\ stresses\ at\ the\ integration\ point\ at\ the\ Global\ csys}}
-\DoxyCodeLine{00455\ }
-\DoxyCodeLine{00456\ \ \ \ \ \textcolor{keywordtype}{void}\ StressesMCYSE();}
-\DoxyCodeLine{00457\ }
-\DoxyCodeLine{00458\ \ \ \ \ \textcolor{keywordtype}{void}\ Strains\_Transform();}
-\DoxyCodeLine{00459\ }
-\DoxyCodeLine{00460\ \ \ \ \ \textcolor{keywordtype}{void}\ Stresses\_Transform();}
-\DoxyCodeLine{00461\ }
-\DoxyCodeLine{00462\ \ \ \ \ vector<double>\ Mat\_Transpose(\textcolor{keywordtype}{size\_t}\ sizeA\_R,\ \textcolor{keywordtype}{size\_t}\ sizeA\_C,\ vector<double>\ A);}
-\DoxyCodeLine{00463\ }
-\DoxyCodeLine{00464\ \ \ \ \ vector<double>\ Mat\_Mult(\textcolor{keywordtype}{size\_t}\ sizeR,\ \textcolor{keywordtype}{size\_t}\ sizeC,\ \textcolor{keywordtype}{size\_t}\ sizeCommon,\ vector<double>\ B,\ vector<double>\ C);}
-\DoxyCodeLine{00465\ }
-\DoxyCodeLine{00466\ \ \ \ \ \textcolor{comment}{//}}
-\DoxyCodeLine{00467\ \ \ \ \ vector<vector<double>>\ rnstrain(vector<vector<double>>\ fk);}
+\DoxyCodeLine{00443\ }
+\DoxyCodeLine{00444\ \ \ \ \ \textcolor{comment}{//\ displacements\ vector}}
+\DoxyCodeLine{00445\ \ \ \ \ vector<double>\ Displacements\_;}
+\DoxyCodeLine{00446\ }
+\DoxyCodeLine{00447\ \ \ \ \ \textcolor{comment}{//\ Strains}}
+\DoxyCodeLine{00448\ \ \ \ \ vector<double>\ Strains\_;}
+\DoxyCodeLine{00449\ \ \ \ \ vector<double>\ Strains\_Global\_;}
+\DoxyCodeLine{00450\ }
+\DoxyCodeLine{00451\ \ \ \ \ \textcolor{comment}{//\ Strains}}
+\DoxyCodeLine{00452\ \ \ \ \ \textcolor{keywordtype}{void}\ StrainsMCYSE();}
+\DoxyCodeLine{00453\ }
+\DoxyCodeLine{00454\ \ \ \ \ \textcolor{comment}{//\ Stresses}}
+\DoxyCodeLine{00455\ \ \ \ \ \textcolor{comment}{//}}
+\DoxyCodeLine{00456\ \ \ \ \ \textcolor{comment}{//\ the\ stresses\ at\ the\ integration\ points\ must\ be\ given\ as\ input\ during\ class\ constructor}}
+\DoxyCodeLine{00457\ \ \ \ \ \textcolor{comment}{//\ the\ stresses\ are\ required\ for\ the\ internal\ force\ vector\ and\ initial\ stress\ stiffness\ matrix\ calculations}}
+\DoxyCodeLine{00458\ \ \ \ \ \textcolor{comment}{//\ the\ format\ of\ the\ stresses\ input\ is\ the\ following:}}
+\DoxyCodeLine{00459\ \ \ \ \ \textcolor{comment}{//\ Sxx,\ Syy,\ Sxy,\ Sxz,\ Syz,\ that\ is,\ 5\ stress\ components\ per\ integration\ point\ along\ the\ thickness\ direction}}
+\DoxyCodeLine{00460\ \ \ \ \ \textcolor{comment}{//\ the\ order\ of\ the\ integration\ points\ in\ the\ "{}stresses\_"{}\ vector\ is\ from\ the\ bottom-\/up\ direction,}}
+\DoxyCodeLine{00461\ \ \ \ \ \textcolor{comment}{//\ from\ zet\ -\/1.0\ to\ +1.0.\ For\ example,\ for\ 2\ integration\ points\ along\ thickness,\ zet1\ =\ -\/1.0/sqrt(3.0)}}
+\DoxyCodeLine{00462\ \ \ \ \ \textcolor{comment}{//\ and\ zet2\ =\ +1.0/sqrt(3.0),\ we\ get:\ stresses\_[Sxx\_zet1,\ Syy\_zet1,\ Sxy\_zet1,\ Sxz\_zet1,\ Syz\_zet1,}}
+\DoxyCodeLine{00463\ \ \ \ \ \textcolor{comment}{//\ Sxx\_zet2,\ Syy\_zet2,\ Sxy\_zet2,\ Sxz\_zet2,\ Syz\_zet2]}}
+\DoxyCodeLine{00464\ \ \ \ \ vector<double>\ stresses\_;\ \textcolor{comment}{//\ stresses\ at\ the\ integration\ points}}
+\DoxyCodeLine{00465\ \ \ \ \ vector<double>\ stresses\_Global;\ \textcolor{comment}{//\ stresses\ at\ the\ integration\ point\ at\ the\ Global\ csys}}
+\DoxyCodeLine{00466\ }
+\DoxyCodeLine{00467\ \ \ \ \ \textcolor{keywordtype}{void}\ StressesMCYSE();}
 \DoxyCodeLine{00468\ }
-\DoxyCodeLine{00469\ \ \ \ \ \textcolor{comment}{//\ Internal\ Forces}}
-\DoxyCodeLine{00470\ \ \ \ \ vector<double>\ Force\_Hourglass\_;\ \textcolor{comment}{//\ hourglass}}
-\DoxyCodeLine{00471\ \ \ \ \ vector<double>\ Force\_Internal\_;}
+\DoxyCodeLine{00469\ \ \ \ \ \textcolor{keywordtype}{void}\ Strains\_Transform();}
+\DoxyCodeLine{00470\ }
+\DoxyCodeLine{00471\ \ \ \ \ \textcolor{keywordtype}{void}\ Stresses\_Transform();}
 \DoxyCodeLine{00472\ }
-\DoxyCodeLine{00473\ \ \ \ \ \textcolor{comment}{//\ hourglass\ stresses}}
-\DoxyCodeLine{00474\ \ \ \ \ vector<double>\ stresses\_hourglass\_;}
-\DoxyCodeLine{00475\ }
+\DoxyCodeLine{00473\ \ \ \ \ vector<double>\ Mat\_Transpose(\textcolor{keywordtype}{size\_t}\ sizeA\_R,\ \textcolor{keywordtype}{size\_t}\ sizeA\_C,\ vector<double>\ A);}
+\DoxyCodeLine{00474\ }
+\DoxyCodeLine{00475\ \ \ \ \ vector<double>\ Mat\_Mult(\textcolor{keywordtype}{size\_t}\ sizeR,\ \textcolor{keywordtype}{size\_t}\ sizeC,\ \textcolor{keywordtype}{size\_t}\ sizeCommon,\ vector<double>\ B,\ vector<double>\ C);}
 \DoxyCodeLine{00476\ }
-\DoxyCodeLine{00477\ \};}
-\DoxyCodeLine{00478\ }
+\DoxyCodeLine{00477\ \ \ \ \ \textcolor{comment}{//}}
+\DoxyCodeLine{00478\ \ \ \ \ vector<vector<double>>\ rnstrain(vector<vector<double>>\ fk);}
 \DoxyCodeLine{00479\ }
+\DoxyCodeLine{00480\ \ \ \ \ \textcolor{comment}{//\ Internal\ Forces}}
+\DoxyCodeLine{00481\ \ \ \ \ vector<double>\ Force\_Hourglass\_;\ \textcolor{comment}{//\ hourglass\ incremental}}
+\DoxyCodeLine{00482\ \ \ \ \ vector<double>\ Force\_Hourglass\_T\_;\ \textcolor{comment}{//\ hourglass\ total}}
+\DoxyCodeLine{00483\ \ \ \ \ vector<double>\ Force\_Internal\_;}
+\DoxyCodeLine{00484\ }
+\DoxyCodeLine{00485\ \ \ \ \ \textcolor{comment}{//\ hourglass\ stresses}}
+\DoxyCodeLine{00486\ \ \ \ \ vector<double>\ stresses\_hourglass\_;}
+\DoxyCodeLine{00487\ }
+\DoxyCodeLine{00488\ }
+\DoxyCodeLine{00489\ \};}
+\DoxyCodeLine{00490\ }
+\DoxyCodeLine{00491\ }
 
 \end{DoxyCode}

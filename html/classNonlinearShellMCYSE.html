@@ -151,12 +151,18 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>Hourglass_Forces_Inte
 void&#160;</td><td class="memItemRight" valign="bottom"><b>Calculate_Internal_Forces_Explicit</b> ()</td></tr>
 <tr class="memdesc:a1107fac85d92b87059dab0907ac002bf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculates the internal force vector "Force_Internal_" for the MCYSE shell element. <br /></td></tr>
 <tr class="separator:a1107fac85d92b87059dab0907ac002bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad96896269f324176d4e7084e519035d6" id="r_ad96896269f324176d4e7084e519035d6"><td class="memItemLeft" align="right" valign="top">vector&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNonlinearShellMCYSE.html#ad96896269f324176d4e7084e519035d6">Get_Internal_Forces_Explicit</a> ()</td></tr>
-<tr class="memdesc:ad96896269f324176d4e7084e519035d6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the internal force vector "Force_Internal_" of the MCYSE shell element. The method "Calculate_Internal_Forces_Explicit()" must be used before calling this getter.  <br /></td></tr>
-<tr class="separator:ad96896269f324176d4e7084e519035d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a65d19fda7af8e840ff585ce16ab1ed4f" id="r_a65d19fda7af8e840ff585ce16ab1ed4f"><td class="memItemLeft" align="right" valign="top">vector&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNonlinearShellMCYSE.html#a65d19fda7af8e840ff585ce16ab1ed4f">Get_Internal_Forces</a> ()</td></tr>
+<tr class="memdesc:a65d19fda7af8e840ff585ce16ab1ed4f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the internal force vector "Force_Internal_" of the MCYSE shell element. The method "Calculate_Internal_Forces_Explicit()" must be used before calling this getter.  <br /></td></tr>
+<tr class="separator:a65d19fda7af8e840ff585ce16ab1ed4f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a73c50cbeb43150e0635556bea0435ce0" id="r_a73c50cbeb43150e0635556bea0435ce0"><td class="memItemLeft" align="right" valign="top"><a id="a73c50cbeb43150e0635556bea0435ce0" name="a73c50cbeb43150e0635556bea0435ce0"></a>
 vector&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>Get_stresses_hourglass</b> ()</td></tr>
 <tr class="separator:a73c50cbeb43150e0635556bea0435ce0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a061aae932dcc58c4798b941ac5f51882" id="r_a061aae932dcc58c4798b941ac5f51882"><td class="memItemLeft" align="right" valign="top"><a id="a061aae932dcc58c4798b941ac5f51882" name="a061aae932dcc58c4798b941ac5f51882"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>Calculate_Stiffness_InternalF_MCYSE</b> ()</td></tr>
+<tr class="separator:a061aae932dcc58c4798b941ac5f51882"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a274b1ef313da80028acee5cf693f8026" id="r_a274b1ef313da80028acee5cf693f8026"><td class="memItemLeft" align="right" valign="top"><a id="a274b1ef313da80028acee5cf693f8026" name="a274b1ef313da80028acee5cf693f8026"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>set_HourglassTotal</b> (vector&lt; double &gt; Fhourg_in)</td></tr>
+<tr class="separator:a274b1ef313da80028acee5cf693f8026"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-attribs" name="pub-static-attribs"></a>
 Static Public Attributes</h2></td></tr>
@@ -526,8 +532,8 @@ static string&#160;</td><td class="memItemRight" valign="bottom"><b>path</b> = &
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="ad96896269f324176d4e7084e519035d6" name="ad96896269f324176d4e7084e519035d6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad96896269f324176d4e7084e519035d6">&#9670;&#160;</a></span>Get_Internal_Forces_Explicit()</h2>
+<a id="a65d19fda7af8e840ff585ce16ab1ed4f" name="a65d19fda7af8e840ff585ce16ab1ed4f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a65d19fda7af8e840ff585ce16ab1ed4f">&#9670;&#160;</a></span>Get_Internal_Forces()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -536,7 +542,7 @@ static string&#160;</td><td class="memItemRight" valign="bottom"><b>path</b> = &
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">vector&lt; double &gt; NonlinearShellMCYSE::Get_Internal_Forces_Explicit </td>
+          <td class="memname">vector&lt; double &gt; NonlinearShellMCYSE::Get_Internal_Forces </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -588,6 +594,9 @@ static string&#160;</td><td class="memItemRight" valign="bottom"><b>path</b> = &
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">vector&lt; double &gt; NonlinearShellMCYSE::get_StiffnessMCYSE </td>
@@ -596,6 +605,11 @@ static string&#160;</td><td class="memItemRight" valign="bottom"><b>path</b> = &
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>Get the stiffness matrix "Stiffness_" in vector form. This is a getter only for the stiffness matrix, it does not calculate the stiffness matrix. <br  />

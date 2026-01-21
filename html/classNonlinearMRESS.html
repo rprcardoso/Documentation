@@ -79,7 +79,7 @@ $(function() {
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a281e13121cde89dcf26127c6602ff139" id="r_a281e13121cde89dcf26127c6602ff139"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNonlinearMRESS.html#a281e13121cde89dcf26127c6602ff139">NonlinearMRESS</a> (string path_in, vector&lt; vector&lt; double &gt; &gt; &amp;xyz_in, vector&lt; double &gt; &amp;stresses_in, vector&lt; double &gt; &amp;DMatrix_in, double Young_in, double Poisson_in, vector&lt; double &gt; &amp;zetGPcoord_in, vector&lt; double &gt; &amp;zetGPweight_in)</td></tr>
-<tr class="memdesc:a281e13121cde89dcf26127c6602ff139"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor for a new Nonlinear 3D solid-shell MRESS object. This constructor can be used for the stiffness matrix.  <br /></td></tr>
+<tr class="memdesc:a281e13121cde89dcf26127c6602ff139"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor for a new Nonlinear 3D solid-shell MRESS object. This constructor can be used for the stiffness matrix and/or the internal force vector.  <br /></td></tr>
 <tr class="separator:a281e13121cde89dcf26127c6602ff139"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a86a38e5a747f8efc7e952f9641eb086b" id="r_a86a38e5a747f8efc7e952f9641eb086b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNonlinearMRESS.html#a86a38e5a747f8efc7e952f9641eb086b">NonlinearMRESS</a> (string path_in, vector&lt; vector&lt; double &gt; &gt; &amp;xyz_in, vector&lt; double &gt; DMatrix_in, double Young_in, double Poisson_in, vector&lt; double &gt; &amp;zetGPcoord_in, vector&lt; double &gt; &amp;Displacements_in, double afor_in, double wkaa_in, vector&lt; double &gt; &amp;rkadTot_in)</td></tr>
 <tr class="memdesc:a86a38e5a747f8efc7e952f9641eb086b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor for a new Nonlinear 3D solid-shell MRESS object. This constructor can be used for the strains and stresses at the integration points of the element.  <br /></td></tr>
@@ -97,24 +97,49 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ae761c047f9da1aa241c3d78fa99a3ba5" id="r_ae761c047f9da1aa241c3d78fa99a3ba5"><td class="memItemLeft" align="right" valign="top">vector&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNonlinearMRESS.html#ae761c047f9da1aa241c3d78fa99a3ba5">get_LocalAxes</a> ()</td></tr>
 <tr class="memdesc:ae761c047f9da1aa241c3d78fa99a3ba5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the local axes at all integration points (or plies) of the element. The return is a vector with the axes at all GPs which are stored in the same order as explained in the setter - "set_LocalAxes".  <br /></td></tr>
 <tr class="separator:ae761c047f9da1aa241c3d78fa99a3ba5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3f62c3f6beb7f9d4d7f32f64325431f6" id="r_a3f62c3f6beb7f9d4d7f32f64325431f6"><td class="memItemLeft" align="right" valign="top"><a id="a3f62c3f6beb7f9d4d7f32f64325431f6" name="a3f62c3f6beb7f9d4d7f32f64325431f6"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>Calculate_Stifness_MRESS</b> ()</td></tr>
+<tr class="memdesc:a3f62c3f6beb7f9d4d7f32f64325431f6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculates the linear stiffness matrix "Stiffness_" of the MRESS element. It includes the hourglass stabilization matrix. <br /></td></tr>
+<tr class="separator:a3f62c3f6beb7f9d4d7f32f64325431f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4c9376c728d0206314b50915c98b462e" id="r_a4c9376c728d0206314b50915c98b462e"><td class="memItemLeft" align="right" valign="top">vector&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNonlinearMRESS.html#a4c9376c728d0206314b50915c98b462e">get_StiffnessMRESS</a> ()</td></tr>
-<tr class="memdesc:a4c9376c728d0206314b50915c98b462e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculates and gets the linear stiffness matrix "Stiffness_" of the MRESS element. It includes the hourglass stabilization matrix.  <br /></td></tr>
+<tr class="memdesc:a4c9376c728d0206314b50915c98b462e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter for the linear stiffness matrix "Stiffness_" of the MRESS element. It includes the hourglass stabilization matrix.  <br /></td></tr>
 <tr class="separator:a4c9376c728d0206314b50915c98b462e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2ac381fcc57f4147fdc1b602bfb51f33" id="r_a2ac381fcc57f4147fdc1b602bfb51f33"><td class="memItemLeft" align="right" valign="top"><a id="a2ac381fcc57f4147fdc1b602bfb51f33" name="a2ac381fcc57f4147fdc1b602bfb51f33"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>Calculate_Stifness_Composites_MRESS</b> ()</td></tr>
+<tr class="memdesc:a2ac381fcc57f4147fdc1b602bfb51f33"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculates the linear tangent stiffness matrix for composites. <br /></td></tr>
+<tr class="separator:a2ac381fcc57f4147fdc1b602bfb51f33"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a39dd8bdec1d91d46031ed4054a3bcb54" id="r_a39dd8bdec1d91d46031ed4054a3bcb54"><td class="memItemLeft" align="right" valign="top">vector&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNonlinearMRESS.html#a39dd8bdec1d91d46031ed4054a3bcb54">get_Stiffness_Composites_MRESS</a> ()</td></tr>
-<tr class="memdesc:a39dd8bdec1d91d46031ed4054a3bcb54"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculates and gets the linear stiffness matrix "Stiffness_" of the MRESS element for composite materials. It includes the hourglass stabilization matrix.  <br /></td></tr>
+<tr class="memdesc:a39dd8bdec1d91d46031ed4054a3bcb54"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter for the linear stiffness matrix "Stiffness_" of the MRESS element for composite materials. It includes the hourglass stabilization matrix.  <br /></td></tr>
 <tr class="separator:a39dd8bdec1d91d46031ed4054a3bcb54"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab187ca5e04173cf145156f740c5f011a" id="r_ab187ca5e04173cf145156f740c5f011a"><td class="memItemLeft" align="right" valign="top"><a id="ab187ca5e04173cf145156f740c5f011a" name="ab187ca5e04173cf145156f740c5f011a"></a>
-vector&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>get_Stiffness_Geo_MRESS</b> ()</td></tr>
+<tr class="memitem:a80fe655eea42c09d3e605061ac042f0b" id="r_a80fe655eea42c09d3e605061ac042f0b"><td class="memItemLeft" align="right" valign="top"><a id="a80fe655eea42c09d3e605061ac042f0b" name="a80fe655eea42c09d3e605061ac042f0b"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>calculate_StiffnessInitialStress</b> ()</td></tr>
+<tr class="memdesc:a80fe655eea42c09d3e605061ac042f0b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculates the Initial Stress Stiffness matrix (or geometric stiffness) for the MRESS element. This stiffness is fundamental for nonlinear continuum analysis. This must be called before the getter for the initial stresses stiffness. <br /></td></tr>
+<tr class="separator:a80fe655eea42c09d3e605061ac042f0b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab187ca5e04173cf145156f740c5f011a" id="r_ab187ca5e04173cf145156f740c5f011a"><td class="memItemLeft" align="right" valign="top">vector&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNonlinearMRESS.html#ab187ca5e04173cf145156f740c5f011a">get_Stiffness_Geo_MRESS</a> ()</td></tr>
+<tr class="memdesc:ab187ca5e04173cf145156f740c5f011a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter for the Initial Stress Stiffness matrix (or geometric stiffness) for the MRESS element. This stiffness is fundamental for nonlinear continuum analysis.  <br /></td></tr>
 <tr class="separator:ab187ca5e04173cf145156f740c5f011a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abca67b17215ffced172821271af606c9" id="r_abca67b17215ffced172821271af606c9"><td class="memItemLeft" align="right" valign="top"><a id="abca67b17215ffced172821271af606c9" name="abca67b17215ffced172821271af606c9"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>Calculate_Stiffness_Internal_Force</b> ()</td></tr>
+<tr class="memdesc:abca67b17215ffced172821271af606c9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculates the stiffness matrix and the internal force vector. The stiffness matrix includes the linear tangent + hourglass + initial stresses stiffness matrix. The internal forces include the constant field only, the hourglass contribution needs to be added outside this class. <br /></td></tr>
+<tr class="separator:abca67b17215ffced172821271af606c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5ad5da72d0cdc3d9df034496d20f0058" id="r_a5ad5da72d0cdc3d9df034496d20f0058"><td class="memItemLeft" align="right" valign="top">vector&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNonlinearMRESS.html#a5ad5da72d0cdc3d9df034496d20f0058">get_Internal_Forces</a> ()</td></tr>
+<tr class="memdesc:a5ad5da72d0cdc3d9df034496d20f0058"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the Internal Forces vector.  <br /></td></tr>
+<tr class="separator:a5ad5da72d0cdc3d9df034496d20f0058"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab574f6eae66895e769401b66f875eef5" id="r_ab574f6eae66895e769401b66f875eef5"><td class="memItemLeft" align="right" valign="top"><a id="ab574f6eae66895e769401b66f875eef5" name="ab574f6eae66895e769401b66f875eef5"></a>
 vector&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>get_StrainsMRESS</b> ()</td></tr>
 <tr class="separator:ab574f6eae66895e769401b66f875eef5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ade09195dc99a042a2a53301da480c618" id="r_ade09195dc99a042a2a53301da480c618"><td class="memItemLeft" align="right" valign="top">vector&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNonlinearMRESS.html#ade09195dc99a042a2a53301da480c618">get_StrainsMRESS_Forces_Hourglass</a> ()</td></tr>
+<tr class="memdesc:ade09195dc99a042a2a53301da480c618"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculates the strain tensor and the incremental hourglass force vector.  <br /></td></tr>
+<tr class="separator:ade09195dc99a042a2a53301da480c618"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a63d3519b448ecca54a63715bed51d31f" id="r_a63d3519b448ecca54a63715bed51d31f"><td class="memItemLeft" align="right" valign="top"><a id="a63d3519b448ecca54a63715bed51d31f" name="a63d3519b448ecca54a63715bed51d31f"></a>
 vector&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>get_StrainsMRESS_Global</b> ()</td></tr>
 <tr class="separator:a63d3519b448ecca54a63715bed51d31f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a79167d57a095dc12b54cc6cbcfacc1ee" id="r_a79167d57a095dc12b54cc6cbcfacc1ee"><td class="memItemLeft" align="right" valign="top"><a id="a79167d57a095dc12b54cc6cbcfacc1ee" name="a79167d57a095dc12b54cc6cbcfacc1ee"></a>
 vector&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>get_StressesMRESS</b> ()</td></tr>
 <tr class="separator:a79167d57a095dc12b54cc6cbcfacc1ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeec7feea4f2fd59fbd459525cbb1a0bb" id="r_aeec7feea4f2fd59fbd459525cbb1a0bb"><td class="memItemLeft" align="right" valign="top">vector&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNonlinearMRESS.html#aeec7feea4f2fd59fbd459525cbb1a0bb">get_Stresses_Force_Hourglass_MRESS</a> ()</td></tr>
+<tr class="memdesc:aeec7feea4f2fd59fbd459525cbb1a0bb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculates the linear elastic stress tensor and the incremental hourglass force vector.  <br /></td></tr>
+<tr class="separator:aeec7feea4f2fd59fbd459525cbb1a0bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af3d55f7e311bddc0cd07351067db6627" id="r_af3d55f7e311bddc0cd07351067db6627"><td class="memItemLeft" align="right" valign="top"><a id="af3d55f7e311bddc0cd07351067db6627" name="af3d55f7e311bddc0cd07351067db6627"></a>
 vector&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>get_StressesMRESS_Global</b> ()</td></tr>
 <tr class="separator:af3d55f7e311bddc0cd07351067db6627"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -136,6 +161,9 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>Calculate_Local_Axes_
 <tr class="memitem:aa5c278bce41a97cd1d53775547004656" id="r_aa5c278bce41a97cd1d53775547004656"><td class="memItemLeft" align="right" valign="top"><a id="aa5c278bce41a97cd1d53775547004656" name="aa5c278bce41a97cd1d53775547004656"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>Calculate_Local_Axes_Composites_GP</b> ()</td></tr>
 <tr class="separator:aa5c278bce41a97cd1d53775547004656"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af4c1d7e17739dbb0abeca038f24e2b63" id="r_af4c1d7e17739dbb0abeca038f24e2b63"><td class="memItemLeft" align="right" valign="top">vector&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNonlinearMRESS.html#af4c1d7e17739dbb0abeca038f24e2b63">get_Forces_Hourglass</a> ()</td></tr>
+<tr class="memdesc:af4c1d7e17739dbb0abeca038f24e2b63"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter for the incremental hourglass forces.  <br /></td></tr>
+<tr class="separator:af4c1d7e17739dbb0abeca038f24e2b63"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a281e13121cde89dcf26127c6602ff139" name="a281e13121cde89dcf26127c6602ff139"></a>
@@ -200,7 +228,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>Calculate_Local_Axes_
       </table>
 </div><div class="memdoc">
 
-<p>Constructor for a new Nonlinear 3D solid-shell MRESS object. This constructor can be used for the stiffness matrix. </p>
+<p>Constructor for a new Nonlinear 3D solid-shell MRESS object. This constructor can be used for the stiffness matrix and/or the internal force vector. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">path_in</td><td>String with the full path to the license file. </td></tr>
@@ -692,6 +720,62 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>Calculate_Local_Axes_
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="af4c1d7e17739dbb0abeca038f24e2b63" name="af4c1d7e17739dbb0abeca038f24e2b63"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af4c1d7e17739dbb0abeca038f24e2b63">&#9670;&#160;</a></span>get_Forces_Hourglass()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">vector&lt; double &gt; NonlinearMRESS::get_Forces_Hourglass </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Getter for the incremental hourglass forces. </p>
+<dl class="section return"><dt>Returns</dt><dd>vector&lt;double&gt; The return is the incremental hourglass force vector. </dd></dl>
+
+</div>
+</div>
+<a id="a5ad5da72d0cdc3d9df034496d20f0058" name="a5ad5da72d0cdc3d9df034496d20f0058"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5ad5da72d0cdc3d9df034496d20f0058">&#9670;&#160;</a></span>get_Internal_Forces()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">vector&lt; double &gt; NonlinearMRESS::get_Internal_Forces </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get the Internal Forces vector. </p>
+<dl class="section return"><dt>Returns</dt><dd>vector&lt;double&gt; The return is the "InternalForces_" vector with the constant field for the internal force vector. The hourglass internal forces for nonlinear analysis are updated outside of this API: the incremental hourglass forces are calculated at the intermediate configuration (at increment n+1/2) during stress calculations and are then updated in the current/final (at increment n+1) configuration with the hourglass forces at reference configuration (at increment n). </dd></dl>
+
+</div>
+</div>
 <a id="ae761c047f9da1aa241c3d78fa99a3ba5" name="ae761c047f9da1aa241c3d78fa99a3ba5"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ae761c047f9da1aa241c3d78fa99a3ba5">&#9670;&#160;</a></span>get_LocalAxes()</h2>
 
@@ -725,6 +809,9 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>Calculate_Local_Axes_
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">vector&lt; double &gt; NonlinearMRESS::get_Stiffness_Composites_MRESS </td>
@@ -733,11 +820,45 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>Calculate_Local_Axes_
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
-<p>Calculates and gets the linear stiffness matrix "Stiffness_" of the MRESS element for composite materials. It includes the hourglass stabilization matrix. </p>
+<p>Getter for the linear stiffness matrix "Stiffness_" of the MRESS element for composite materials. It includes the hourglass stabilization matrix. </p>
 <dl class="section return"><dt>Returns</dt><dd>vector&lt;double&gt; The return is the stiffness matrix "Stiffness_" in vector form (of size = 576). The first elements in the output vector (Stiffness_[0:23]) correspond to the first 24 elements in the first row of the 24 x 24 stiffness <br  />
  (stif[0][0:23]), the next 24 elements in the output vector (Stiffness_[24:47]) correspond to stif[1][0:23], and so on. </dd></dl>
+
+</div>
+</div>
+<a id="ab187ca5e04173cf145156f740c5f011a" name="ab187ca5e04173cf145156f740c5f011a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab187ca5e04173cf145156f740c5f011a">&#9670;&#160;</a></span>get_Stiffness_Geo_MRESS()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">vector&lt; double &gt; NonlinearMRESS::get_Stiffness_Geo_MRESS </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Getter for the Initial Stress Stiffness matrix (or geometric stiffness) for the MRESS element. This stiffness is fundamental for nonlinear continuum analysis. </p>
+<dl class="section return"><dt>Returns</dt><dd>vector&lt;double&gt; The return is the Initial Stress Stiffness matrix, "StiffnessInitialStress_", stored in vector form (of size = 576). The first elements in the output vector (StiffnessInitialStress_[0:23]) correspond to the first 24 elements in the first row of the 24 x 24 "StifInitialStress" <br  />
+ (StifInitialStress[0][0:23]), the next 24 elements in the output vector (StiffnessInitialStress_[24:47]) correspond to StifInitialStress[1][0:23], and so on. </dd></dl>
 
 </div>
 </div>
@@ -746,6 +867,9 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>Calculate_Local_Axes_
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">vector&lt; double &gt; NonlinearMRESS::get_StiffnessMRESS </td>
@@ -754,11 +878,56 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>Calculate_Local_Axes_
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
-<p>Calculates and gets the linear stiffness matrix "Stiffness_" of the MRESS element. It includes the hourglass stabilization matrix. </p>
+<p>Getter for the linear stiffness matrix "Stiffness_" of the MRESS element. It includes the hourglass stabilization matrix. </p>
 <dl class="section return"><dt>Returns</dt><dd>vector&lt;double&gt; The return is the stiffness matrix "Stiffness_" in vector form (of size = 576). The first elements in the output vector (Stiffness_[0:23]) correspond to the first 24 elements in the first row of the 24 x 24 stiffness <br  />
  (stif[0][0:23]), the next 24 elements in the output vector (Stiffness_[24:47]) correspond to stif[1][0:23], and so on. </dd></dl>
+
+</div>
+</div>
+<a id="ade09195dc99a042a2a53301da480c618" name="ade09195dc99a042a2a53301da480c618"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ade09195dc99a042a2a53301da480c618">&#9670;&#160;</a></span>get_StrainsMRESS_Forces_Hourglass()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">vector&lt; double &gt; NonlinearMRESS::get_StrainsMRESS_Forces_Hourglass </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Calculates the strain tensor and the incremental hourglass force vector. </p>
+<dl class="section return"><dt>Returns</dt><dd>vector&lt;double&gt; The return is the "Strains_" vector with the incremental strains at all integration points of the element. </dd></dl>
+
+</div>
+</div>
+<a id="aeec7feea4f2fd59fbd459525cbb1a0bb" name="aeec7feea4f2fd59fbd459525cbb1a0bb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeec7feea4f2fd59fbd459525cbb1a0bb">&#9670;&#160;</a></span>get_Stresses_Force_Hourglass_MRESS()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">vector&lt; double &gt; NonlinearMRESS::get_Stresses_Force_Hourglass_MRESS </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Calculates the linear elastic stress tensor and the incremental hourglass force vector. </p>
+<dl class="section return"><dt>Returns</dt><dd>vector&lt;double&gt; The return is the "Stresses_" vector with the incremental stresses at all integration points of the element. </dd></dl>
 
 </div>
 </div>

@@ -4,7 +4,7 @@
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{classNonlinearMRESS_a281e13121cde89dcf26127c6602ff139}{Nonlinear\+MRESS}} (string path\+\_\+in, vector$<$ vector$<$ double $>$ $>$ \&xyz\+\_\+in, vector$<$ double $>$ \&stresses\+\_\+in, vector$<$ double $>$ \&DMatrix\+\_\+in, double Young\+\_\+in, double Poisson\+\_\+in, vector$<$ double $>$ \&zet\+GPcoord\+\_\+in, vector$<$ double $>$ \&zet\+GPweight\+\_\+in)
-\begin{DoxyCompactList}\small\item\em Constructor for a new Nonlinear 3D solid-\/shell MRESS object. This constructor can be used for the stiffness matrix. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Constructor for a new Nonlinear 3D solid-\/shell MRESS object. This constructor can be used for the stiffness matrix and/or the internal force vector. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classNonlinearMRESS_a86a38e5a747f8efc7e952f9641eb086b}{Nonlinear\+MRESS}} (string path\+\_\+in, vector$<$ vector$<$ double $>$ $>$ \&xyz\+\_\+in, vector$<$ double $>$ DMatrix\+\_\+in, double Young\+\_\+in, double Poisson\+\_\+in, vector$<$ double $>$ \&zet\+GPcoord\+\_\+in, vector$<$ double $>$ \&Displacements\+\_\+in, double afor\+\_\+in, double wkaa\+\_\+in, vector$<$ double $>$ \&rkad\+Tot\+\_\+in)
 \begin{DoxyCompactList}\small\item\em Constructor for a new Nonlinear 3D solid-\/shell MRESS object. This constructor can be used for the strains and stresses at the integration points of the element. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classNonlinearMRESS_ae36696e85c3a57636c96cda92fe9f693}{Nonlinear\+MRESS}} (string path\+\_\+in, vector$<$ vector$<$ double $>$ $>$ \&xyz\+\_\+in, vector$<$ double $>$ \&stresses\+\_\+in, vector$<$ double $>$ \&DMatrix\+\_\+in, double Young\+\_\+in, double Poisson\+\_\+in, vector$<$ double $>$ \&zet\+GPcoord\+\_\+in, vector$<$ double $>$ \&zet\+GPweight\+\_\+in, vector$<$ double $>$ \&ply\+\_\+centre\+\_\+coord\+\_\+parametric\+\_\+in, vector$<$ double $>$ \&ply\+\_\+thickness\+\_\+parametric\+\_\+in)
@@ -16,22 +16,39 @@ void \mbox{\hyperlink{classNonlinearMRESS_a7a04b0151d374bb1dfc5f55fd812bb23}{set
  For composites, the local axes must be setted so to account for the orientation of each ply. \end{DoxyCompactList}\item 
 vector$<$ double $>$ \mbox{\hyperlink{classNonlinearMRESS_ae761c047f9da1aa241c3d78fa99a3ba5}{get\+\_\+\+Local\+Axes}} ()
 \begin{DoxyCompactList}\small\item\em Get the local axes at all integration points (or plies) of the element. The return is a vector with the axes at all GPs which are stored in the same order as explained in the setter -\/ "{}set\+\_\+\+Local\+Axes"{}. \end{DoxyCompactList}\item 
+\Hypertarget{classNonlinearMRESS_a3f62c3f6beb7f9d4d7f32f64325431f6}\label{classNonlinearMRESS_a3f62c3f6beb7f9d4d7f32f64325431f6} 
+void {\bfseries Calculate\+\_\+\+Stifness\+\_\+\+MRESS} ()
+\begin{DoxyCompactList}\small\item\em Calculates the linear stiffness matrix "{}\+Stiffness\+\_\+"{} of the MRESS element. It includes the hourglass stabilization matrix. \end{DoxyCompactList}\item 
 vector$<$ double $>$ \mbox{\hyperlink{classNonlinearMRESS_a4c9376c728d0206314b50915c98b462e}{get\+\_\+\+Stiffness\+MRESS}} ()
-\begin{DoxyCompactList}\small\item\em Calculates and gets the linear stiffness matrix "{}\+Stiffness\+\_\+"{} of the MRESS element. It includes the hourglass stabilization matrix. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Getter for the linear stiffness matrix "{}\+Stiffness\+\_\+"{} of the MRESS element. It includes the hourglass stabilization matrix. \end{DoxyCompactList}\item 
+\Hypertarget{classNonlinearMRESS_a2ac381fcc57f4147fdc1b602bfb51f33}\label{classNonlinearMRESS_a2ac381fcc57f4147fdc1b602bfb51f33} 
+void {\bfseries Calculate\+\_\+\+Stifness\+\_\+\+Composites\+\_\+\+MRESS} ()
+\begin{DoxyCompactList}\small\item\em Calculates the linear tangent stiffness matrix for composites. \end{DoxyCompactList}\item 
 vector$<$ double $>$ \mbox{\hyperlink{classNonlinearMRESS_a39dd8bdec1d91d46031ed4054a3bcb54}{get\+\_\+\+Stiffness\+\_\+\+Composites\+\_\+\+MRESS}} ()
-\begin{DoxyCompactList}\small\item\em Calculates and gets the linear stiffness matrix "{}\+Stiffness\+\_\+"{} of the MRESS element for composite materials. It includes the hourglass stabilization matrix. \end{DoxyCompactList}\item 
-\Hypertarget{classNonlinearMRESS_ab187ca5e04173cf145156f740c5f011a}\label{classNonlinearMRESS_ab187ca5e04173cf145156f740c5f011a} 
-vector$<$ double $>$ {\bfseries get\+\_\+\+Stiffness\+\_\+\+Geo\+\_\+\+MRESS} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Getter for the linear stiffness matrix "{}\+Stiffness\+\_\+"{} of the MRESS element for composite materials. It includes the hourglass stabilization matrix. \end{DoxyCompactList}\item 
+\Hypertarget{classNonlinearMRESS_a80fe655eea42c09d3e605061ac042f0b}\label{classNonlinearMRESS_a80fe655eea42c09d3e605061ac042f0b} 
+void {\bfseries calculate\+\_\+\+Stiffness\+Initial\+Stress} ()
+\begin{DoxyCompactList}\small\item\em Calculates the Initial Stress Stiffness matrix (or geometric stiffness) for the MRESS element. This stiffness is fundamental for nonlinear continuum analysis. This must be called before the getter for the initial stresses stiffness. \end{DoxyCompactList}\item 
+vector$<$ double $>$ \mbox{\hyperlink{classNonlinearMRESS_ab187ca5e04173cf145156f740c5f011a}{get\+\_\+\+Stiffness\+\_\+\+Geo\+\_\+\+MRESS}} ()
+\begin{DoxyCompactList}\small\item\em Getter for the Initial Stress Stiffness matrix (or geometric stiffness) for the MRESS element. This stiffness is fundamental for nonlinear continuum analysis. \end{DoxyCompactList}\item 
+\Hypertarget{classNonlinearMRESS_abca67b17215ffced172821271af606c9}\label{classNonlinearMRESS_abca67b17215ffced172821271af606c9} 
+void {\bfseries Calculate\+\_\+\+Stiffness\+\_\+\+Internal\+\_\+\+Force} ()
+\begin{DoxyCompactList}\small\item\em Calculates the stiffness matrix and the internal force vector. The stiffness matrix includes the linear tangent + hourglass + initial stresses stiffness matrix. The internal forces include the constant field only, the hourglass contribution needs to be added outside this class. \end{DoxyCompactList}\item 
+vector$<$ double $>$ \mbox{\hyperlink{classNonlinearMRESS_a5ad5da72d0cdc3d9df034496d20f0058}{get\+\_\+\+Internal\+\_\+\+Forces}} ()
+\begin{DoxyCompactList}\small\item\em Get the Internal Forces vector. \end{DoxyCompactList}\item 
 \Hypertarget{classNonlinearMRESS_ab574f6eae66895e769401b66f875eef5}\label{classNonlinearMRESS_ab574f6eae66895e769401b66f875eef5} 
 vector$<$ double $>$ {\bfseries get\+\_\+\+Strains\+MRESS} ()
 \item 
+vector$<$ double $>$ \mbox{\hyperlink{classNonlinearMRESS_ade09195dc99a042a2a53301da480c618}{get\+\_\+\+Strains\+MRESS\+\_\+\+Forces\+\_\+\+Hourglass}} ()
+\begin{DoxyCompactList}\small\item\em Calculates the strain tensor and the incremental hourglass force vector. \end{DoxyCompactList}\item 
 \Hypertarget{classNonlinearMRESS_a63d3519b448ecca54a63715bed51d31f}\label{classNonlinearMRESS_a63d3519b448ecca54a63715bed51d31f} 
 vector$<$ double $>$ {\bfseries get\+\_\+\+Strains\+MRESS\+\_\+\+Global} ()
 \item 
 \Hypertarget{classNonlinearMRESS_a79167d57a095dc12b54cc6cbcfacc1ee}\label{classNonlinearMRESS_a79167d57a095dc12b54cc6cbcfacc1ee} 
 vector$<$ double $>$ {\bfseries get\+\_\+\+Stresses\+MRESS} ()
 \item 
+vector$<$ double $>$ \mbox{\hyperlink{classNonlinearMRESS_aeec7feea4f2fd59fbd459525cbb1a0bb}{get\+\_\+\+Stresses\+\_\+\+Force\+\_\+\+Hourglass\+\_\+\+MRESS}} ()
+\begin{DoxyCompactList}\small\item\em Calculates the linear elastic stress tensor and the incremental hourglass force vector. \end{DoxyCompactList}\item 
 \Hypertarget{classNonlinearMRESS_af3d55f7e311bddc0cd07351067db6627}\label{classNonlinearMRESS_af3d55f7e311bddc0cd07351067db6627} 
 vector$<$ double $>$ {\bfseries get\+\_\+\+Stresses\+MRESS\+\_\+\+Global} ()
 \item 
@@ -52,7 +69,9 @@ void {\bfseries Calculate\+\_\+\+Local\+\_\+\+Axes\+\_\+\+GP} ()
 \item 
 \Hypertarget{classNonlinearMRESS_aa5c278bce41a97cd1d53775547004656}\label{classNonlinearMRESS_aa5c278bce41a97cd1d53775547004656} 
 void {\bfseries Calculate\+\_\+\+Local\+\_\+\+Axes\+\_\+\+Composites\+\_\+\+GP} ()
-\end{DoxyCompactItemize}
+\item 
+vector$<$ double $>$ \mbox{\hyperlink{classNonlinearMRESS_af4c1d7e17739dbb0abeca038f24e2b63}{get\+\_\+\+Forces\+\_\+\+Hourglass}} ()
+\begin{DoxyCompactList}\small\item\em Getter for the incremental hourglass forces. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Constructor \& Destructor Documentation}
@@ -64,7 +83,7 @@ void {\bfseries Calculate\+\_\+\+Local\+\_\+\+Axes\+\_\+\+Composites\+\_\+\+GP} 
 
 
 
-Constructor for a new Nonlinear 3D solid-\/shell MRESS object. This constructor can be used for the stiffness matrix. 
+Constructor for a new Nonlinear 3D solid-\/shell MRESS object. This constructor can be used for the stiffness matrix and/or the internal force vector. 
 
 
 \begin{DoxyParams}{Parameters}
@@ -372,6 +391,32 @@ Constructor for a new Nonlinear 3D solid-\/shell MRESS object to be used with co
 
 
 \doxysubsection{Member Function Documentation}
+\Hypertarget{classNonlinearMRESS_af4c1d7e17739dbb0abeca038f24e2b63}\label{classNonlinearMRESS_af4c1d7e17739dbb0abeca038f24e2b63} 
+\index{NonlinearMRESS@{NonlinearMRESS}!get\_Forces\_Hourglass@{get\_Forces\_Hourglass}}
+\index{get\_Forces\_Hourglass@{get\_Forces\_Hourglass}!NonlinearMRESS@{NonlinearMRESS}}
+\doxysubsubsection{\texorpdfstring{get\_Forces\_Hourglass()}{get\_Forces\_Hourglass()}}
+{\footnotesize\ttfamily vector$<$ double $>$ Nonlinear\+MRESS\+::get\+\_\+\+Forces\+\_\+\+Hourglass (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Getter for the incremental hourglass forces. 
+
+\begin{DoxyReturn}{Returns}
+vector$<$double$>$ The return is the incremental hourglass force vector. 
+\end{DoxyReturn}
+\Hypertarget{classNonlinearMRESS_a5ad5da72d0cdc3d9df034496d20f0058}\label{classNonlinearMRESS_a5ad5da72d0cdc3d9df034496d20f0058} 
+\index{NonlinearMRESS@{NonlinearMRESS}!get\_Internal\_Forces@{get\_Internal\_Forces}}
+\index{get\_Internal\_Forces@{get\_Internal\_Forces}!NonlinearMRESS@{NonlinearMRESS}}
+\doxysubsubsection{\texorpdfstring{get\_Internal\_Forces()}{get\_Internal\_Forces()}}
+{\footnotesize\ttfamily vector$<$ double $>$ Nonlinear\+MRESS\+::get\+\_\+\+Internal\+\_\+\+Forces (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the Internal Forces vector. 
+
+\begin{DoxyReturn}{Returns}
+vector$<$double$>$ The return is the "{}\+Internal\+Forces\+\_\+"{} vector with the constant field for the internal force vector. The hourglass internal forces for nonlinear analysis are updated outside of this API\+: the incremental hourglass forces are calculated at the intermediate configuration (at increment n+1/2) during stress calculations and are then updated in the current/final (at increment n+1) configuration with the hourglass forces at reference configuration (at increment n). 
+\end{DoxyReturn}
 \Hypertarget{classNonlinearMRESS_ae761c047f9da1aa241c3d78fa99a3ba5}\label{classNonlinearMRESS_ae761c047f9da1aa241c3d78fa99a3ba5} 
 \index{NonlinearMRESS@{NonlinearMRESS}!get\_LocalAxes@{get\_LocalAxes}}
 \index{get\_LocalAxes@{get\_LocalAxes}!NonlinearMRESS@{NonlinearMRESS}}
@@ -389,29 +434,69 @@ vector$<$double$>$ The structure of the return vector "{}axesgp\+\_\+"{} is the 
 \index{NonlinearMRESS@{NonlinearMRESS}!get\_Stiffness\_Composites\_MRESS@{get\_Stiffness\_Composites\_MRESS}}
 \index{get\_Stiffness\_Composites\_MRESS@{get\_Stiffness\_Composites\_MRESS}!NonlinearMRESS@{NonlinearMRESS}}
 \doxysubsubsection{\texorpdfstring{get\_Stiffness\_Composites\_MRESS()}{get\_Stiffness\_Composites\_MRESS()}}
-{\footnotesize\ttfamily vector$<$ double $>$ Nonlinear\+MRESS\+::get\+\_\+\+Stiffness\+\_\+\+Composites\+\_\+\+MRESS (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily vector$<$ double $>$ Nonlinear\+MRESS\+::get\+\_\+\+Stiffness\+\_\+\+Composites\+\_\+\+MRESS (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
-Calculates and gets the linear stiffness matrix "{}\+Stiffness\+\_\+"{} of the MRESS element for composite materials. It includes the hourglass stabilization matrix. 
+Getter for the linear stiffness matrix "{}\+Stiffness\+\_\+"{} of the MRESS element for composite materials. It includes the hourglass stabilization matrix. 
 
 \begin{DoxyReturn}{Returns}
 vector$<$double$>$ The return is the stiffness matrix "{}\+Stiffness\+\_\+"{} in vector form (of size = 576). The first elements in the output vector (Stiffness\+\_\+\mbox{[}0\+:23\mbox{]}) correspond to the first 24 elements in the first row of the 24 x 24 stiffness ~\newline
  (stif\mbox{[}0\mbox{]}\mbox{[}0\+:23\mbox{]}), the next 24 elements in the output vector (Stiffness\+\_\+\mbox{[}24\+:47\mbox{]}) correspond to stif\mbox{[}1\mbox{]}\mbox{[}0\+:23\mbox{]}, and so on. 
 \end{DoxyReturn}
+\Hypertarget{classNonlinearMRESS_ab187ca5e04173cf145156f740c5f011a}\label{classNonlinearMRESS_ab187ca5e04173cf145156f740c5f011a} 
+\index{NonlinearMRESS@{NonlinearMRESS}!get\_Stiffness\_Geo\_MRESS@{get\_Stiffness\_Geo\_MRESS}}
+\index{get\_Stiffness\_Geo\_MRESS@{get\_Stiffness\_Geo\_MRESS}!NonlinearMRESS@{NonlinearMRESS}}
+\doxysubsubsection{\texorpdfstring{get\_Stiffness\_Geo\_MRESS()}{get\_Stiffness\_Geo\_MRESS()}}
+{\footnotesize\ttfamily vector$<$ double $>$ Nonlinear\+MRESS\+::get\+\_\+\+Stiffness\+\_\+\+Geo\+\_\+\+MRESS (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Getter for the Initial Stress Stiffness matrix (or geometric stiffness) for the MRESS element. This stiffness is fundamental for nonlinear continuum analysis. 
+
+\begin{DoxyReturn}{Returns}
+vector$<$double$>$ The return is the Initial Stress Stiffness matrix, "{}\+Stiffness\+Initial\+Stress\+\_\+"{}, stored in vector form (of size = 576). The first elements in the output vector (Stiffness\+Initial\+Stress\+\_\+\mbox{[}0\+:23\mbox{]}) correspond to the first 24 elements in the first row of the 24 x 24 "{}\+Stif\+Initial\+Stress"{} ~\newline
+ (Stif\+Initial\+Stress\mbox{[}0\mbox{]}\mbox{[}0\+:23\mbox{]}), the next 24 elements in the output vector (Stiffness\+Initial\+Stress\+\_\+\mbox{[}24\+:47\mbox{]}) correspond to Stif\+Initial\+Stress\mbox{[}1\mbox{]}\mbox{[}0\+:23\mbox{]}, and so on. 
+\end{DoxyReturn}
 \Hypertarget{classNonlinearMRESS_a4c9376c728d0206314b50915c98b462e}\label{classNonlinearMRESS_a4c9376c728d0206314b50915c98b462e} 
 \index{NonlinearMRESS@{NonlinearMRESS}!get\_StiffnessMRESS@{get\_StiffnessMRESS}}
 \index{get\_StiffnessMRESS@{get\_StiffnessMRESS}!NonlinearMRESS@{NonlinearMRESS}}
 \doxysubsubsection{\texorpdfstring{get\_StiffnessMRESS()}{get\_StiffnessMRESS()}}
-{\footnotesize\ttfamily vector$<$ double $>$ Nonlinear\+MRESS\+::get\+\_\+\+Stiffness\+MRESS (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily vector$<$ double $>$ Nonlinear\+MRESS\+::get\+\_\+\+Stiffness\+MRESS (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
-Calculates and gets the linear stiffness matrix "{}\+Stiffness\+\_\+"{} of the MRESS element. It includes the hourglass stabilization matrix. 
+Getter for the linear stiffness matrix "{}\+Stiffness\+\_\+"{} of the MRESS element. It includes the hourglass stabilization matrix. 
 
 \begin{DoxyReturn}{Returns}
 vector$<$double$>$ The return is the stiffness matrix "{}\+Stiffness\+\_\+"{} in vector form (of size = 576). The first elements in the output vector (Stiffness\+\_\+\mbox{[}0\+:23\mbox{]}) correspond to the first 24 elements in the first row of the 24 x 24 stiffness ~\newline
  (stif\mbox{[}0\mbox{]}\mbox{[}0\+:23\mbox{]}), the next 24 elements in the output vector (Stiffness\+\_\+\mbox{[}24\+:47\mbox{]}) correspond to stif\mbox{[}1\mbox{]}\mbox{[}0\+:23\mbox{]}, and so on. 
+\end{DoxyReturn}
+\Hypertarget{classNonlinearMRESS_ade09195dc99a042a2a53301da480c618}\label{classNonlinearMRESS_ade09195dc99a042a2a53301da480c618} 
+\index{NonlinearMRESS@{NonlinearMRESS}!get\_StrainsMRESS\_Forces\_Hourglass@{get\_StrainsMRESS\_Forces\_Hourglass}}
+\index{get\_StrainsMRESS\_Forces\_Hourglass@{get\_StrainsMRESS\_Forces\_Hourglass}!NonlinearMRESS@{NonlinearMRESS}}
+\doxysubsubsection{\texorpdfstring{get\_StrainsMRESS\_Forces\_Hourglass()}{get\_StrainsMRESS\_Forces\_Hourglass()}}
+{\footnotesize\ttfamily vector$<$ double $>$ Nonlinear\+MRESS\+::get\+\_\+\+Strains\+MRESS\+\_\+\+Forces\+\_\+\+Hourglass (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Calculates the strain tensor and the incremental hourglass force vector. 
+
+\begin{DoxyReturn}{Returns}
+vector$<$double$>$ The return is the "{}\+Strains\+\_\+"{} vector with the incremental strains at all integration points of the element. 
+\end{DoxyReturn}
+\Hypertarget{classNonlinearMRESS_aeec7feea4f2fd59fbd459525cbb1a0bb}\label{classNonlinearMRESS_aeec7feea4f2fd59fbd459525cbb1a0bb} 
+\index{NonlinearMRESS@{NonlinearMRESS}!get\_Stresses\_Force\_Hourglass\_MRESS@{get\_Stresses\_Force\_Hourglass\_MRESS}}
+\index{get\_Stresses\_Force\_Hourglass\_MRESS@{get\_Stresses\_Force\_Hourglass\_MRESS}!NonlinearMRESS@{NonlinearMRESS}}
+\doxysubsubsection{\texorpdfstring{get\_Stresses\_Force\_Hourglass\_MRESS()}{get\_Stresses\_Force\_Hourglass\_MRESS()}}
+{\footnotesize\ttfamily vector$<$ double $>$ Nonlinear\+MRESS\+::get\+\_\+\+Stresses\+\_\+\+Force\+\_\+\+Hourglass\+\_\+\+MRESS (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Calculates the linear elastic stress tensor and the incremental hourglass force vector. 
+
+\begin{DoxyReturn}{Returns}
+vector$<$double$>$ The return is the "{}\+Stresses\+\_\+"{} vector with the incremental stresses at all integration points of the element. 
 \end{DoxyReturn}
 \Hypertarget{classNonlinearMRESS_a7a04b0151d374bb1dfc5f55fd812bb23}\label{classNonlinearMRESS_a7a04b0151d374bb1dfc5f55fd812bb23} 
 \index{NonlinearMRESS@{NonlinearMRESS}!set\_LocalAxes@{set\_LocalAxes}}
